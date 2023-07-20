@@ -1,0 +1,349 @@
+{
+  "places": [
+    {
+      "name": "Bitexco Financial Tower",
+      "address": "Bitexco Financial Tower, 2 Hai Trieu, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [106.70436796799939, 10.771808423651885],
+      "ratings": 4.5,
+      "total_ratings": 18.032,
+      "entrance_fee": "0 VND",
+      "opening_hours": "8:00 AM - 11:00 PM",
+        "short_description" : "This building is among the highest skyscrapers in Vietnam with 68 floors in total",
+        "full_description" : "The Bitexco Financial Tower proudly stands among Vietnam's tallest skyscrapers, boasting a total impressive 68 floors. With its lotus-inspired design, it gives off a sense of determination and positive energy. Officially inaugurated in 2010, this architectural wonder has always been praised as one of Vietnam's finest achievements, captivating all who behold its aesthetic appearance.",",
+      "image_url": "bitexco",
+      "popular_activities": [
+        "Observation Deck",
+        "Restaurants",
+        "Skydeck",
+        "Shopping"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Saigon Skydeck",
+          "image_url": "eye.fill",
+          "ratings": 4.4,
+          "fee": 200000
+        },
+        {
+          "event_name": "Dinner at EON51 Restaurant",
+          "image_url": "fork.knife",
+          "ratings": 4.6,
+          "fee": 1000000
+        }
+      ]
+    },
+    {
+      "name": "Landmark 81",
+      "address": "Landmark 81, 720A Dien Bien Phu, Vinhomes Central Park, Binh Thanh District, Ho Chi Minh City, Vietnam",
+      "location": [10.795203968767177, 106.72180003838334],
+      "ratings": 4.6,
+        "total_ratings": 5.046,
+      "entrance_fee": "0 VND",
+      "opening_hours": "8:30 AM - 11:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "landmark81",
+      "popular_activities": [
+        "Observation Deck",
+        "Shopping",
+        "Restaurants"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Vinhomes Central Park",
+          "image_url": "leaf.fill",
+          "ratings": 4.5,
+          "fee": 0
+        }
+      ]
+    },
+    {
+      "name": "Ben Thanh Market",
+      "address": "Ben Thanh Market, Le Loi Street, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.772769743552642, 106.6980100672186],
+      "ratings": 4.0,
+        "total_ratings": 46.675,
+      "entrance_fee": "0 VND",
+      "opening_hours": "6:00 AM - 6:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "benthanhmarket",
+      "popular_activities": [
+        "Shopping",
+        "Street Food",
+        "Souvenirs",
+        "Local Crafts"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Mariamman Hindu Temple",
+          "image_url": "cross.fill",
+          "ratings": 4.7,
+          "fee": 0
+        },
+        {
+          "event_name": "Saigon Central Post Office",
+          "image_url": "envelope.fill",
+          "ratings": 4.5,
+          "fee": 20000
+        }
+      ]
+    },
+    {
+      "name": "Saigon Square",
+      "address": "Saigon Square, 77-89 Nam Ky Khoi Nghia, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.77301252285578, 106.70024628256073],
+      "ratings": 4.0,
+        "total_ratings": 6.709,
+      "entrance_fee": "0 VND",
+      "opening_hours": "9:00 AM - 9:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "saigonsquare",
+      "popular_activities": [
+        "Shopping",
+        "Fashion",
+        "Souvenirs"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Ho Chi Minh City Hall",
+          "image_url": "building.fill",
+          "ratings": 4.5,
+          "fee": 0
+        }
+      ]
+    },
+    {
+      "name": "War Remnants Museum",
+      "address": "War Remnants Museum, 28 Vo Van Tan, Ward 6, District 3, Ho Chi Minh City, Vietnam",
+      "location": [10.779752998161113, 106.69216669790308],
+      "ratings": 4.5,
+        "total_ratings": 29.094,
+      "entrance_fee": "40.000 VND",
+      "opening_hours": "7:30 AM - 5:30 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "warmuseum",
+      "popular_activities": [
+        "History Exhibits",
+        "Photography",
+        "Outdoor Displays"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Independence Palace",
+          "image_url": "building.2.fill",
+          "ratings": 4.4,
+          "fee": 40000
+        },
+        {
+          "event_name": "Ho Chi Minh City Museum",
+          "image_url": "building.columns.fill",
+          "ratings": 4.2,
+          "fee": 0
+        }
+      ]
+    },
+    {
+      "name": "Central Post Office",
+      "address": "Central Post Office, 125 Hai Ba Trung, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.780059248112432, 106.69989071040027],
+      "ratings": 4.5,
+        "total_ratings": 3.651,
+      "entrance_fee": "0 VND",
+      "opening_hours": "7:30 AM - 6:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "postoffice",
+      "popular_activities": [
+        "Architecture",
+        "History Exhibits",
+        "Photography"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Saigon Notre-Dame Basilica",
+          "image_url": "cross.fill",
+          "ratings": 4.5,
+          "fee": "Free"
+        },
+        {
+          "event_name": "Independence Palace",
+          "image_url": "building.2.fill",
+          "ratings": 4.4,
+          "fee": 40000
+        }
+      ]
+    },
+    {
+      "name": "Saigon Opera House",
+      "address": "Saigon Opera House, 7 Cong Truong Lam Son, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.776793283594854, 106.70315466721863],
+      "ratings": 4.5,
+        "total_ratings": 11.919,
+      "entrance_fee": "0 VND",
+      "opening_hours": "8:00 AM - 5:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "saigonoperahouse",
+      "popular_activities": [
+        "Architecture",
+        "Performing Arts",
+        "Opera Shows"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Ho Chi Minh City Hall",
+          "image_url": "building.fill",
+          "ratings": 4.5,
+          "fee": "Free"
+        },
+        {
+          "event_name": "Bitexco Financial Tower",
+          "image_url": "building.fill",
+          "ratings": 4.5,
+          "fee": "Free"
+        }
+      ]
+    },
+    {
+      "name": "Walking Street",
+      "address": "Walking Street, Nguyen Hue Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.774253064345054, 106.70365918256074],
+      "ratings": 4.7,
+      "total_ratings": 266,
+      "entrance_fee": "0 VND",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "opening_hours": "24/7",
+      "image_url": "walkingstreet",
+      "popular_activities": [
+        "Nightlife",
+        "Street Performances",
+        "Street Food"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Saigon River Cruise",
+          "image_url": "sailboat.fill",
+          "ratings": 4.5,
+          "fee": 300000
+        },
+      ]
+    },
+    {
+      "name": "Saigon Notre-Dame Cathedral",
+      "address": "Saigon Notre-Dame Cathedral, 01 Cong Xa Paris, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.779890884423711, 106.69904035372528],
+      "ratings": 4.5,
+        "total_ratings": 21.192,
+      "entrance_fee": "0 VND",
+      "opening_hours": "6:00 AM - 7:00 PM",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "image_url": "saigoncathedral",
+      "popular_activities": [
+        "Architecture",
+        "Religious Services",
+        "Photography"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Central Post Office",
+          "image_url": "signpost.right.fill",
+          "ratings": 4.5,
+          "fee": 20000
+        },
+        {
+          "event_name": "Saigon Central Book Street",
+          "image_url": "book.fill",
+          "ratings": 4.6,
+          "fee": 0
+        }
+      ]
+    },
+    {
+      "name": "Bui Vien Street",
+      "address": "Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam",
+      "location": [10.767570648504973, 106.69393685187636],
+      "ratings": 4.3,
+        "total_ratings": 11.914,
+      "entrance_fee": "0 VND",
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+      "opening_hours": "24/7",
+      "image_url": "buivien",
+      "popular_activities": [
+        "Nightlife",
+        "Bars",
+        "Street Food"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Ben Thanh Market",
+          "image_url": "building.fill",
+          "ratings": 4.0,
+          "fee": 0
+        }
+      ]
+    },
+    {
+      "name": "Dam Sen Water Park",
+      "address": "Dam Sen Water Park, 3 Hoa Binh, Ward 3, District 11, Ho Chi Minh City, Vietnam",
+      "location": [10.769063327548828, 106.63598316721851],
+      "ratings": 4.3,
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+        "total_ratings": 28.128,
+      "entrance_fee": "280.000 VND",
+      "opening_hours": "8:30 AM - 6:00 PM",
+      "image_url": "damsen",
+      "popular_activities": [
+        "Water Slides",
+        "Wave Pools",
+        "Lazy River"
+      ],
+      "nearby_activities": [
+        {
+          "event_name": "Ho Chi Minh City Children's Cultural House for Youth",
+          "image_url": "studentdesk",
+          "ratings": 4.4,
+          "fee": 20000
+        }
+      ]
+    },
+    {
+        "name": "Independence Palace",
+          "address": "Independence Palace, 135 Nam Ky Khoi Nghia, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+          "location": [106.695274, 10.776944],
+          "ratings": 4.7,
+          "total_ratings": 21.409,
+        "short_description" : "This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975",
+        "full_description" : "The Independence Palace, also known as Dinh Doc Lap, has always been one of the most       aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+          "entrance_fee": "40.000 VND",
+          "opening_hours": "7:30 AM - 5:00 PM",
+          "image_url": "independencepalace",
+          "popular_activities": [
+            "Historical Tours",
+            "Presidential Office",
+            "Helicopter on Rooftop",
+            "Bunker"
+          ],
+          "nearby_activities": [
+            {
+              "event_name": "War Remnants Museum",
+              "image_url": "warmuseum",
+              "ratings": 4.6,
+              "fee": 40000
+            },
+            {
+              "event_name": "Saigon Notre-Dame Cathedral",
+              "image_url": "saigoncathedral",
+              "ratings": 4.7,
+              "fee": 0
+            }
+          ]
+    }
+  ]
+}
