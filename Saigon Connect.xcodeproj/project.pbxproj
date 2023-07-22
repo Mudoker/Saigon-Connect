@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB50501C2A6A7E110079C0B6 /* Places.json in Resources */ = {isa = PBXBuildFile; fileRef = AB50501B2A6A7E110079C0B6 /* Places.json */; };
 		AB50501F2A6AD8B30079C0B6 /* Slide_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50501E2A6AD8B30079C0B6 /* Slide_Menu.swift */; };
 		AB5050212A6AF5620079C0B6 /* expandable_search.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5050202A6AF5620079C0B6 /* expandable_search.swift */; };
 		AB5A542D2A6902A000169B2D /* Content_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A542C2A6902A000169B2D /* Content_View.swift */; };
@@ -25,8 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB50501B2A6A7E110079C0B6 /* Places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Places.json; path = ../../Places.json; sourceTree = "<group>"; };
-		AB50501D2A6A9E630079C0B6 /* Places.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Places.json; sourceTree = "<group>"; };
 		AB50501E2A6AD8B30079C0B6 /* Slide_Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide_Menu.swift; sourceTree = "<group>"; };
 		AB5050202A6AF5620079C0B6 /* expandable_search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expandable_search.swift; sourceTree = "<group>"; };
 		AB5A542C2A6902A000169B2D /* Content_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content_View.swift; sourceTree = "<group>"; };
@@ -36,6 +33,7 @@
 		AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON_Manager.swift; sourceTree = "<group>"; };
 		ABF950052A6BC58000E9EC2C /* small_Card_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = small_Card_View.swift; sourceTree = "<group>"; };
 		ABF950072A6C33E900E9EC2C /* Author_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author_View.swift; sourceTree = "<group>"; };
+		ABF950092A6C5BCF00E9EC2C /* Places.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Places.json; sourceTree = "<group>"; };
 		E1358C252A666D4B0099EB5E /* Saigon Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saigon Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1358C282A666D4B0099EB5E /* Saigon_ConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saigon_ConnectApp.swift; sourceTree = "<group>"; };
 		E1358C2C2A666D4D0099EB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,7 +90,8 @@
 		AB5A54412A6A6BDF00169B2D /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				AB50501D2A6A9E630079C0B6 /* Places.json */,
+				ABF950092A6C5BCF00E9EC2C /* Places.json */,
+				AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -120,8 +119,6 @@
 				AB5A54342A69A5E400169B2D /* Components */,
 				E1358C2C2A666D4D0099EB5E /* Assets.xcassets */,
 				E1358C2E2A666D4D0099EB5E /* Preview Content */,
-				AB50501B2A6A7E110079C0B6 /* Places.json */,
-				AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */,
 			);
 			path = "Saigon Connect";
 			sourceTree = "<group>";
@@ -194,7 +191,6 @@
 			files = (
 				E1358C302A666D4D0099EB5E /* Preview Assets.xcassets in Resources */,
 				E1358C2D2A666D4D0099EB5E /* Assets.xcassets in Resources */,
-				AB50501C2A6A7E110079C0B6 /* Places.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

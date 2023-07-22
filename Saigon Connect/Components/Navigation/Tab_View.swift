@@ -9,8 +9,8 @@ import SwiftUI
 
 struct Tab_View: View {
     init() {
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
-        UITabBar.appearance().backgroundColor = UIColor.darkGray.withAlphaComponent(0.7)
+        UITabBar.appearance().unselectedItemTintColor = UIColor.darkGray
+        UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.7)
         UITabBar.appearance().backgroundImage = UIImage() // Set the background image to a transparent image
            UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().itemWidth = UIScreen.main.bounds.width / 2

@@ -36,7 +36,7 @@ struct small_Card_View: View {
                 Spacer()
                 HStack {
                     StarsView(rating: place.ratings, maxRating: 5)
-                        .padding(.leading,5)
+                        .padding(.leading)
                         .font(.caption2)
                     Spacer()
                     Text(place.entrance_fee)

@@ -11,7 +11,7 @@ struct Card_Views: View {
     //Make the gradient moving
     @State private var animateGradient = false
 
-    var place: Place = Place.topPlaces[6]
+    var place: Place = Place.topPlaces[1]
     var body: some View {
         
         ZStack(alignment: .top) {
@@ -35,8 +35,9 @@ struct Card_Views: View {
                     .opacity(0.9)
                 Spacer()
                 HStack {
+                    Text(String(place.ratings)).font(.caption).padding(.leading)
                     StarsView(rating: place.ratings, maxRating: 5)
-                        .padding(.leading)
+                    Text("(" + String(place.total_ratings.formatted()) + ")").font(.caption)
                     Spacer()
                     Text(place.entrance_fee)
                         .padding(.trailing)

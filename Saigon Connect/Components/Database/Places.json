@@ -29,7 +29,8 @@
                 "ratings": 4.6,
                 "fee": "1.000.000 VND"
             }
-        ]
+        ],
+        "category": "Landmarks"
     },
     {
         "name": "Landmark 81",
@@ -54,7 +55,8 @@
                 "ratings": 4.5,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Landmarks"
     },
     {
         "name": "Ben Thanh Market",
@@ -86,7 +88,8 @@
                 "ratings": 4.5,
                 "fee": "20.000 VND"
             }
-        ]
+        ],
+        "category": "Markets"
     },
     {
         "name": "Saigon Square",
@@ -111,7 +114,8 @@
                 "ratings": 4.5,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Markets"
     },
     {
         "name": "War Remnants Museum",
@@ -142,7 +146,8 @@
                 "ratings": 4.2,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Museums"
     },
     {
         "name": "Central Post Office",
@@ -173,7 +178,8 @@
                 "ratings": 4.4,
                 "fee": "40.000 VND"
             }
-        ]
+        ],
+        "category": "Historical Buildings"
     },
     {
         "name": "Saigon Opera House",
@@ -181,7 +187,7 @@
         "location": [10.776793283594854, 106.70315466721863],
         "ratings": 4.5,
         "total_ratings": 11919,
-        "entrance_fee": "Free",
+        "entrance_fee": "700.000 VND",
         "opening_hours": "8:00 AM - 5:00 PM",
         "short_description": "Immerse yourself in a classical atmosphere amidst the modernity of Saigon",
         "full_description": " The Saigon Opera House is a magnificent gem that embraces elegance and sophistication. Built in the late 19th century, it stands as a historic cultural landmark and hosts a myriad of captivating performances, from traditional Vietnamese opera to contemporary shows.",
@@ -204,7 +210,8 @@
                 "ratings": 4.5,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Theaters"
     },
     {
         "name": "Walking Street",
@@ -229,7 +236,8 @@
                 "ratings": 4.5,
                 "fee": "300.000 VND"
             }
-        ]
+        ],
+        "category": "Streets"
     },
     {
         "name": "Saigon Notre-Dame Cathedral",
@@ -260,7 +268,8 @@
                 "ratings": 4.6,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Religious Sites"
     },
     {
         "name": "Bui Vien Street",
@@ -285,7 +294,8 @@
                 "ratings": 4.0,
                 "fee": "Free"
             }
-        ]
+        ],
+        "category": "Streets"
     },
     {
         "name": "Dam Sen Water Park",
@@ -293,7 +303,7 @@
         "location": [10.769063327548828, 106.63598316721851],
         "ratings": 4.3,
         "total_ratings": 28128,
-        "entrance_fee": "280000 VND",
+        "entrance_fee": "280.000 VND",
         "opening_hours": "8:30 AM - 6:00 PM",
         "short_description": "A famous water park in Ho Chi Minh City.",
         "full_description": "Dam Sen Water Park is a renowned oasis of excitement and leisure in Ho Chi Minh City. Delight in a variety of water-based activities, including water slides, lazy rivers, and refreshing pools. Perfect for families and friend groups, it guarantees a memorable experience for all.",
@@ -310,7 +320,8 @@
                 "ratings": 4.4,
                 "fee": "20.000 VND"
             }
-        ]
+        ],
+        "category": "Parks"
     },
     {
         "name": "Independence Palace",
@@ -318,30 +329,236 @@
         "location": [106.695274, 10.776944],
         "ratings": 4.7,
         "total_ratings": 21409,
-        "entrance_fee": "40000 VND",
+        "entrance_fee": "40.000 VND",
         "opening_hours": "7:30 AM - 5:00 PM",
         "short_description": "A symbol of peace and national unity",
-        "full_description": "The Independence Palace has always been one of the most aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.",
+        "full_description": "The Independence Palace has always been one of the most aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a symbol of peace and national unity.",
         "image_url": "dinhdoclap",
         "popular_activities": [
-            "Historical Tours",
-            "Presidential Office",
-            "Helicopter on Rooftop",
-            "Bunker"
+            "Architecture",
+            "History Exhibits",
+            "Photography"
         ],
         "nearby_activities": [
             {
                 "event_name": "War Remnants Museum",
-                "image_url": "warmuseum",
-                "ratings": 4.6,
+                "image_url": "tortoise.fill",
+                "ratings": 4.5,
                 "fee": "40.000 VND"
             },
             {
-                "event_name": "Saigon Notre-Dame Cathedral",
-                "image_url": "saigoncathedral",
-                "ratings": 4.7,
-                "fee": "Free"
+                "event_name": "Central Post Office",
+                "image_url": "signpost.right.fill",
+                "ratings": 4.5,
+                "fee": "20.000 VND"
             }
-        ]
+        ],
+        "category": "Historical Buildings"
+    },
+    {
+        "name": "Saigon Central Book Street",
+        "address": "Saigon Central Book Street, Nguyen Van Binh Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [10.773646, 106.700821],
+        "ratings": 4.6,
+        "total_ratings": 1077,
+        "entrance_fee": "Free",
+        "opening_hours": "8:00 AM - 10:00 PM",
+        "short_description": "A dream destination for book enthusiasts",
+        "full_description": "Saigon Central Book Street is a dream destination for book enthusiasts, offering an array of bookshops and stalls. From classic novels to modern bestsellers, this vibrant street has it all. The street is a cultural hub, hosting events, book fairs, and signings. With its charming atmosphere and love for literature, it is a must-visit spot for all book lovers.",
+        "image_url": "bookstreet",
+        "popular_activities": [
+            "Book Shopping",
+            "Book Signing Events",
+            "Literary Events"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Saigon Notre-Dame Cathedral",
+                "image_url": "cross.fill",
+                "ratings": 4.5,
+                "fee": "Free"
+            },
+            {
+                "event_name": "Central Post Office",
+                "image_url": "signpost.right.fill",
+                "ratings": 4.5,
+                "fee": "20.000 VND"
+            }
+        ],
+        "category": "Streets"
+    },
+    {
+        "name": "Saigon Zoo and Botanical Gardens",
+        "address": "Saigon Zoo and Botanical Gardens, 2 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [10.787712017082608, 106.70533351139652],
+        "ratings": 4.2,
+        "total_ratings": 26122,
+        "entrance_fee": "50.000 VND",
+        "opening_hours": "7:00 AM - 5:30 PM",
+        "short_description": "An oasis of nature in the heart of the city",
+        "full_description": "Saigon Zoo and Botanical Gardens is a green area located in the heart of Ho Chi Minh City. Established in 1865, it is one of the oldest zoos in the world. The zoo boasts a diverse collection of animals and a beautiful botanical garden with various plant species. It provides a serene destination for families and nature lovers.",
+        "image_url": "saigonzoo",
+        "popular_activities": [
+            "Animal Watching",
+            "Picnics",
+            "Botanical Exploration"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Ho Chi Minh City Museum of Fine Arts",
+                "image_url": "paintpalette.fill",
+                "ratings": 4.3,
+                "fee": "30.000 VND"
+            },
+            {
+                "event_name": "History Museum",
+                "image_url": "book.fill",
+                "ratings": 4.4,
+                "fee": "30.000 VND"
+            }
+        ],
+        "category": "Parks"
+    },
+    {
+        "name": "Ho Chi Minh City Museum of Fine Arts",
+        "address": "Ho Chi Minh City Museum of Fine Arts, 97A Pho Duc Chinh, Nguyen Thai Binh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [10.773344368926844, 106.69914018281278],
+        "ratings": 4.3,
+        "total_ratings": 6727,
+        "entrance_fee": "30.000 VND",
+        "opening_hours": "8:00 AM - 5:00 PM",
+        "short_description": "An exquisite collection of artistic masterpieces",
+        "full_description": "The Ho Chi Minh City Museum of Fine Arts houses a remarkable collection of masterpieces, showcasing both traditional and contemporary Vietnamese art. The museum exhibits a wide range of items, from paintings and sculptures to ceramics. Art enthusiasts will appreciate the cultural treasures found within its walls.",
+        "image_url": "finearts",
+        "popular_activities": [
+            "Art Appreciation",
+            "Exhibitions",
+            "Workshops"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Saigon Central Post Office",
+                "image_url": "envelope.fill",
+                "ratings": 4.5,
+                "fee": "Free"
+            },
+            {
+                "event_name": "Saigon Opera House",
+                "image_url": "music.note",
+                "ratings": 4.5,
+                "fee": "700.000 VND"
+            }
+        ],
+        "category": "Museums"
+    },
+    {
+        "name": "History Museum",
+        "address": "History Museum, 2 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [10.788289626587737, 106.70471613838322],
+        "ratings": 4.4,
+        "total_ratings": 2626,
+        "entrance_fee": "30.000 VND",
+        "opening_hours": "8:00 AM - 5:00 PM",
+        "short_description": "A journey through Vietnam's fascinating history",
+        "full_description": "The History Museum in Ho Chi Minh City offers visitors a journey through Vietnam's rich history. From prehistoric times to the modern era, the museum showcases various artifacts, relics, and cultural objects that reflect the country's rich heritage. History enthusiasts and curious travelers will find this museum an enlightening and educational experience.",
+        "image_url": "historymuseum",
+        "popular_activities": [
+            "Historical Exhibits",
+            "Cultural Artifacts",
+            "Archaeological Discoveries"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Ho Chi Minh City Museum of Fine Arts",
+                "image_url": "paintpalette.fill",
+                "ratings": 4.3,
+                "fee": "30.000 VND"
+            },
+            {
+                "event_name": "Saigon Opera House",
+                "image_url": "music.note",
+                "ratings": 4.5,
+                "fee": "700.000 VND"
+            }
+        ],
+        "category": "Museums"
+    },
+    {
+        "name": "Giac Lam Pagoda",
+        "address": "Giac Lam Pagoda, 565 Lac Long Quan, Ward 10, Tan Binh District, Ho Chi Minh City, Vietnam",
+        "location": [10.778838875405707, 106.64927072197798],
+        "ratings": 4.6,
+        "total_ratings": 3021,
+        "entrance_fee": "Free",
+        "opening_hours": "5:00 AM - 8:00 PM",
+        "short_description": "The oldest pagoda in Ho Chi Minh City",
+        "full_description": "Giac Lam Pagoda is the oldest pagoda in Ho Chi Minh City, dating back to the early 18th century. This spiritual landmark is renowned for its impressive architecture, featuring a mix of Chinese, Vietnamese, and Khmer influences. Visitors will find tranquility and a sense of history while exploring the pagoda's halls and beautiful gardens.",
+        "image_url": "giaclam",
+        "popular_activities": [
+            "Religious Visits",
+            "Cultural Insights",
+            "Photography"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Dam Sen Water Park",
+                "image_url": "droplet.fill",
+                "ratings": 4.3,
+                "fee": "280.000 VND"
+            }
+        ],
+        "category": "Religious Sites"
+    },
+    {
+        "name": "Crescent Mall",
+        "address": "Crescent Mall, 101 Ton Dat Tien, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "location": [10.728662050673599, 106.71862007779667],
+        "ratings": 4.5,
+        "total_ratings": 15050,
+        "entrance_fee": "Free",
+        "opening_hours": "10:00 AM - 10:00 PM",
+        "short_description": "A modern shopping, dining and entertainment complex",
+        "full_description": "Crescent Mall is a popular destination located in District 7. The mall houses a wide variety of stores, boutiques, and international brands, making it a favorite places for shoppers. In addition to shopping, visitors can also enjoy dining at various restaurants, watching movies at the cinema, and participating in fun events and activities.",
+        "image_url": "crescentmall",
+        "popular_activities": [
+            "Shopping",
+            "Dining",
+            "Entertainment"
+        ],
+        "nearby_activities": [
+        ],
+        "category": "Shopping"
+    },
+    {
+        "name": "Tao Dan Park",
+        "address": "Tao Dan Park, 55C Nguyen Thi Minh Khai, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [10.774653802469079, 106.69252790848438],
+        "ratings": 4.5,
+        "total_ratings": 13573,
+        "entrance_fee": "Free",
+        "opening_hours": "6:00 AM - 9:00 PM",
+        "short_description": "A great place to enjoy the fresh air and rewind",
+        "full_description": "Tao Dan Park is a green oasis located in the heart of Ho Chi Minh City. The park is a favorite spot for locals and visitors alike to relax, exercise, and enjoy the tranquility within the bustling city. It features beautiful gardens, walking paths, exercising equiments and lots of tropical trees, creating a peaceful environment for leisure activities.",
+        "image_url": "taodanpark",
+        "popular_activities": [
+            "Relaxation",
+            "Morning Exercises",
+            "Nature Walks"
+        ],
+        "nearby_activities": [
+            {
+                "event_name": "Ho Chi Minh City Museum of Fine Arts",
+                "image_url": "paintpalette.fill",
+                "ratings": 4.3,
+                "fee": "30.000 VND"
+            },
+            {
+                "event_name": "Saigon Opera House",
+                "image_url": "music.note",
+                "ratings": 4.5,
+                "fee": "700.000 VND"
+            }
+        ],
+        "category": "Parks"
     }
 ]

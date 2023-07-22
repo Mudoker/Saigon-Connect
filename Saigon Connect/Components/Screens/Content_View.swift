@@ -90,7 +90,7 @@ struct Content_View: View {
                 }
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading) {
-                        Text(getFormattedDate()).frame(height: 10).padding(.leading)
+                        Text(getFormattedDate()).frame(height: 15).padding(.leading)
                         Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
                             .padding(.bottom).padding(.leading)
                         ScrollView(.horizontal, showsIndicators: false) {
