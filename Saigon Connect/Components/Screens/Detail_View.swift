@@ -9,50 +9,68 @@ import SwiftUI
 
 struct Detail_View: View {
     @State private var animateGradient = false
+    @Binding var isDetailView: Bool
+
+    var place: Place = Place.allPlace[0]
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
-                Image("dinhdoclap").resizable().aspectRatio(contentMode: .fit)
-                //                    .padding(.all)
-                
-                Text("The Independence Palace")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.leading)
-                
-                Text("This mansion used to be the workplace of the President of the Republic of Vietnam before 30/04/1975")
-                    .padding(.leading)
-                    .padding(.top, 0.1)
-                    .opacity(0.7)
-                Text("Price: 15.000 VND - 65.000 VND")
-                    .padding(.leading)
-                    .padding(.top, 0.1)
-                    .padding(.bottom)
-                    .opacity(0.7)
+            ZStack {
+                VStack(alignment: .leading) {
+                    Image(place.image_url)
+                        .resizable()
+                        .aspectRatio(contentMode:.fit)
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(maxWidth: .infinity) // Image will cover all the available space above it
+                    Spacer()
+                    //                    .padding(.all)
+                    
+                    Text(place.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.leading)
+                    
+                    Text(place.short_description)
+                        .padding(.leading)
+                        .padding(.top, 0.1)
+                        .opacity(0.7)
+                    Text(place.entrance_fee)
+                        .padding(.leading)
+                        .padding(.top, 0.1)
+                        .padding(.bottom)
+                        .opacity(0.7)
+                }
+                .ignoresSafeArea()
+                .edgesIgnoringSafeArea(.all)
+                .foregroundColor(.white)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color(red:0.75, green: 0.28, blue:0.28), Color(red: 0.28, green: 0.0, blue: 0.28)]), startPoint:animateGradient ? .bottomLeading : .topLeading, endPoint: animateGradient ? .topTrailing : .bottomTrailing)
+                        .onAppear {
+                            withAnimation(
+                                .easeInOut(duration:3.5).repeatForever(autoreverses:true)) {
+                                    animateGradient.toggle()
+                                }
+                        })
+            .cornerRadius(30)
             }
-            .foregroundColor(.white)
-            .background(
-                LinearGradient(gradient: Gradient(colors: [Color(red:0.75, green: 0.28, blue:0.28), Color(red: 0.28, green: 0.0, blue: 0.28)]), startPoint:animateGradient ? .bottomLeading : .topLeading, endPoint: animateGradient ? .topTrailing : .bottomTrailing)
-                    .onAppear {
-                        withAnimation(
-                            .easeInOut(duration:3.5).repeatForever(autoreverses:true)) {
-                                animateGradient.toggle()
-                            }
-                    })
             VStack (alignment: .leading) {
                
                 Text("About")
                     .font(.title)
                     .padding([.bottom, .trailing])
-                Text("The Independence Palace, also known as Dinh Doc Lap, has always been one of the most aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a must-visit destination for foreign heads of state.")
+                    .padding(.leading)
+                Text(place.full_description)
+                    .padding(.leading)
             }
-            .padding()
+        }.onDisappear {
+            isDetailView = false
         }
     }
 }
 
 struct Detail_View_Previews: PreviewProvider {
+    @State static var isDetailView = true // Provide a binding here
+
     static var previews: some View {
-        Detail_View()
+        Detail_View(isDetailView: $isDetailView)
     }
 }

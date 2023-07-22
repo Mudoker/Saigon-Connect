@@ -11,7 +11,7 @@ import SwiftUI
 struct Saigon_ConnectApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            Tab_View()
         }
     }
 }
