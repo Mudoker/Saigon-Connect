@@ -11,7 +11,7 @@ struct Card_Views: View {
     //Make the gradient moving
     @State private var animateGradient = false
 
-    var place: Place = Place.topPlaces[1]
+    var place: Place = Place.topPlaces[0]
     var body: some View {
         
         ZStack(alignment: .top) {
@@ -19,12 +19,11 @@ struct Card_Views: View {
             
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
-                    .cornerRadius(30)
-                    .opacity(1)
-                    .frame(width:280,height:200)
+                    .opacity(0.9)
+                    .frame(width:360,height:200)
                 
                 Text(place.name)
-                    .font(.title3)
+                    .font(.title)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
@@ -32,21 +31,20 @@ struct Card_Views: View {
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                     .font(.body)
-                    .opacity(1)
                 Spacer()
                 HStack {
-                    Text(String(place.ratings)).font(.caption).padding(.leading)
+                    Text(String(place.ratings)).font(.body).padding(.leading)
                     StarsView(rating: place.ratings, maxRating: 5)
-                    Text("(" + String(place.total_ratings.formatted()) + ")").font(.caption)
+                    Text("(" + String(place.total_ratings.formatted()) + ")").font(.body)
                     Spacer()
                     Text(place.entrance_fee)
                         .padding(.trailing)
-                    .opacity(1)
-                }.padding(.bottom, 7)
+                    .opacity(0.9)
+                }.padding(.bottom, 15)
             }
             .foregroundColor(.black)
-            .cornerRadius(30)
-            .frame(width: 280, height:320)
+            .cornerRadius(20)
+            .frame(width: 360, height:340)
             
         }
     }
@@ -56,8 +54,8 @@ struct Card_Views: View {
             CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
             }
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .opacity(0.8)
-        }.frame(width: 280, height: 320)
+            .opacity(0.65)
+        }.frame(width: 360, height: 340)
     }
 }
 
@@ -86,8 +84,7 @@ struct Card_Views_Previews: PreviewProvider {
 struct StarsView: View {
     let rating: CGFloat
     let maxRating: CGFloat
-    
-    private let size: CGFloat = 12
+    var size: CGFloat = 12
     var body: some View {
         let text = HStack(spacing: 0) {
             Image(systemName: "star.fill")

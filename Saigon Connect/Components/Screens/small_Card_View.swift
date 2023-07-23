@@ -19,8 +19,6 @@ struct small_Card_View: View {
             
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
-                    .cornerRadius(30)
-                    .opacity(0.9)
                     .frame(width:180,height:110)
                 
                 Text(place.name)
@@ -31,23 +29,21 @@ struct small_Card_View: View {
                 Text(place.short_description)
                     .multilineTextAlignment(.leading)
                     .padding(.leading,5)
-                    .font(.caption)
-                    .opacity(0.9)
+                    .font(.body)
                 Spacer()
                 HStack {
                     StarsView(rating: place.ratings, maxRating: 5)
-                        .padding(.leading)
+                        .padding(.leading,5)
                         .font(.caption2)
                     Spacer()
                     Text(place.entrance_fee)
                         .font(.caption2)
                         .padding(.trailing,5)
-                    .opacity(0.9)
                     
                 }.padding(.bottom)
             }
             .foregroundColor(.black)
-            .cornerRadius(30)
+            .cornerRadius(20)
             .frame(width: 180, height: 270)
         }
     }
@@ -56,8 +52,8 @@ struct small_Card_View: View {
         ZStack {
             CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
             }
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .opacity(0.65)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .opacity(0.75)
         }.frame(width: 180, height: 270)
     }
 }

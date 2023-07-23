@@ -8,6 +8,11 @@ import SwiftUI
 
 struct Content_View: View {
     @State private var isDetailView = false
+    @State private var background = LinearGradient(
+        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
     @State private var detailViewIndex = false
     @State private var showingAlert = false
     @State private var currentTime = Date()
@@ -92,7 +97,27 @@ struct Content_View: View {
                     VStack(alignment: .leading) {
                         Text(getFormattedDate()).frame(height: 15).padding(.leading)
                         Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
-                            .padding(.bottom).padding(.leading)
+                            .padding(.bottom,10).padding(.leading)
+                        Spacer()
+                        if searchInput == "" {
+                            TabView {
+                                   
+                                            ForEach(Place.topPlaces.indices, id: \.self) { index in
+                                                NavigationLink(
+                                                    destination: Detail_View(
+                                                        isDetailView: $isDetailView,
+                                                        place: Place.topPlaces[index])
+                                                ) { Card_Views(place: Place.topPlaces[index]) }
+                                                .simultaneousGesture(
+                                                    TapGesture().onEnded { isDetailView = true })
+                                            }
+                                    
+                                
+                            }
+                            .tabViewStyle(.page(indexDisplayMode: .never))
+                            .frame(height: 340)
+                        }
+                        Text("All Places").font(.title).padding(.leading).bold().frame(height: 20).padding(.top, 10)
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
                                 ForEach(0..<Place.allCategories.count, id: \.self) { index in
@@ -107,51 +132,7 @@ struct Content_View: View {
                                 }
                             }
                         }
-                        .frame(height: 50).padding(.leading, 5)
-                        Spacer()
-                        if searchInput == "" {
-                            Text("Top 10 destinations").font(.title).fontWeight(.bold).padding(.leading)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack(alignment: .top, spacing: 20) {
-                                    if filter != "" && filter != "All" {
-                                        
-                                            ForEach(
-                                                Place.topPlaces.indices
-                                                    .filter { Place.topPlaces[$0].category == filter}
-                                                    .prefix(10), id: \.self
-                                            ) { index in
-                                                NavigationLink(
-                                                    destination: Detail_View(
-                                                        isDetailView: $isDetailView,
-                                                        place: Place.topPlaces[index])
-                                                ) { Card_Views(place: Place.topPlaces[index]) }
-                                                .simultaneousGesture(
-                                                    TapGesture().onEnded { isDetailView = true })
-                                            }
-                                        
-                                        
-                                    } else {
-                                       
-                                            ForEach(Place.topPlaces.indices, id: \.self) { index in
-                                                NavigationLink(
-                                                    destination: Detail_View(
-                                                        isDetailView: $isDetailView,
-                                                        place: Place.topPlaces[index])
-                                                ) { Card_Views(place: Place.topPlaces[index]) }
-                                                .simultaneousGesture(
-                                                    TapGesture().onEnded { isDetailView = true })
-                                            }
-                                        
-                                        
-
-                                    }
-                                }
-                            }
-                            .padding(.leading, 5)
-                        }
-                        
-                        
-                        Text("All Places").font(.title).padding(.leading).bold()
+                        .frame(height: 50)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 0)]) {
                             if filter != "" && filter != "All" {
                                 if searchInput != "" {
@@ -269,8 +250,8 @@ struct Content_View: View {
                 }
             }
             .background(
-                Image("background_light").resizable().aspectRatio(contentMode: .fill)
-                    .frame(minHeight: 1000))
+                background
+                    )
         }
     }
     private func greeting(for date: Date) -> String {
@@ -309,12 +290,12 @@ struct filterCategory: View {
             }
             .padding(10)
         }
-    }
+}
     @ViewBuilder func GlassMorphicCard() -> some View {
         ZStack {
             CustomBlurView(effect: .systemUltraThinMaterialDark) { view in }
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .opacity(isActive ? 1 : 0.5)
+                .opacity(isActive ? 1 : 0.7)
         }
         .frame(minWidth: 80).frame(height: 40)
     }

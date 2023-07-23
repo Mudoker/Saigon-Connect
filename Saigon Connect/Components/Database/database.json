@@ -7,7 +7,7 @@
         "total_ratings": 18032,
         "entrance_fee": "Free",
         "opening_hours": "8:00 AM - 11:00 PM",
-        "short_description": "One of the highest skyscrapers in Vietnam with 68 floors in total",
+        "short_description": "One of the highest skyscrapers in Vietnam with 68 floors",
         "full_description": "The Bitexco Financial Tower proudly stands among Vietnam's tallest skyscrapers, boasting a total impressive 68 floors. With its lotus-inspired design, it gives off a sense of determination and positive energy. Officially inaugurated in 2010, this architectural wonder has always been praised as one of Vietnam's finest achievements, captivating all who behold its aesthetic appearance.",
         "image_url": "bitexco",
         "popular_activities": [
@@ -30,7 +30,8 @@
                 "fee": "1.000.000 VND"
             }
         ],
-        "category": "Landmarks"
+        "category": "Landmarks",
+        "wiki": "https://en.wikipedia.org/wiki/Bitexco_Financial_Tower"
     },
     {
         "name": "Landmark 81",
@@ -56,7 +57,8 @@
                 "fee": "Free"
             }
         ],
-        "category": "Landmarks"
+        "category": "Landmarks",
+        "wiki": "https://en.wikipedia.org/wiki/Landmark_81"
     },
     {
         "name": "Ben Thanh Market",
@@ -89,33 +91,9 @@
                 "fee": "20.000 VND"
             }
         ],
-        "category": "Markets"
-    },
-    {
-        "name": "Saigon Square",
-        "address": "Saigon Square, 77-89 Nam Ky Khoi Nghia, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.77301252285578, 106.70024628256073],
-        "ratings": 4.0,
-        "total_ratings": 6709,
-        "entrance_fee": "Free",
-        "opening_hours": "9:00 AM - 9:00 PM",
-        "short_description": "A shopping paradise for those who love fashion",
-        "full_description": "Saigon Square shopping centrey is a bustling marketplace that offers a wide range of goods, catering for the fashion needs of visitors. With its diverse selection of items, it has become a favorite destination for fashion lovers. The vibrant atmosphere and reasonable pricing make it a shopping paradise, where visitors can spend hours exploring and finding their perfect style",
-        "image_url": "saigonsquare",
-        "popular_activities": [
-            "Shopping",
-            "Fashion",
-            "Souvenirs"
-        ],
-        "nearby_activities": [
-            {
-                "event_name": "Ho Chi Minh City Hall",
-                "image_url": "building.fill",
-                "ratings": 4.5,
-                "fee": "Free"
-            }
-        ],
-        "category": "Markets"
+        "category": "Markets",
+        "wiki":"https://en.wikipedia.org/wiki/Bến_Thành_Market"
+
     },
     {
         "name": "War Remnants Museum",
@@ -147,7 +125,9 @@
                 "fee": "Free"
             }
         ],
-        "category": "Museums"
+        "category": "Museums",
+        "wiki":"https://en.wikipedia.org/wiki/War_Remnants_Museum"
+
     },
     {
         "name": "Central Post Office",
@@ -179,7 +159,9 @@
                 "fee": "40.000 VND"
             }
         ],
-        "category": "Historical Buildings"
+        "category": "Historical Buildings",
+        "wiki":"https://en.wikipedia.org/wiki/Saigon_Central_Post_Office"
+
     },
     {
         "name": "Saigon Opera House",
@@ -211,7 +193,9 @@
                 "fee": "Free"
             }
         ],
-        "category": "Theaters"
+        "category": "Theaters",
+        "wiki":"https://en.wikipedia.org/wiki/Municipal_Theatre,_Ho_Chi_Minh_City"
+
     },
     {
         "name": "Walking Street",
@@ -237,7 +221,9 @@
                 "fee": "300.000 VND"
             }
         ],
-        "category": "Streets"
+        "category": "Streets",
+        "wiki":"https://en.wikipedia.org/wiki/Nguyễn_Huệ_Street"
+
     },
     {
         "name": "Saigon Notre-Dame Cathedral",
@@ -269,7 +255,9 @@
                 "fee": "Free"
             }
         ],
-        "category": "Religious Sites"
+        "category": "Religious Sites",
+        "wiki":"https://en.wikipedia.org/wiki/Notre-Dame_Cathedral_Basilica_of_Saigon"
+
     },
     {
         "name": "Bui Vien Street",
@@ -295,7 +283,9 @@
                 "fee": "Free"
             }
         ],
-        "category": "Streets"
+        "category": "Streets",
+        "wiki":"https://vinpearl.com/en/bui-vien-street-saigon-nightlife-hot-spot-2023"
+
     },
     {
         "name": "Dam Sen Water Park",
@@ -321,7 +311,9 @@
                 "fee": "20.000 VND"
             }
         ],
-        "category": "Parks"
+        "category": "Parks",
+        "wiki":"https://en.wikipedia.org/wiki/Đầm_Sen_Park"
+
     },
     {
         "name": "Independence Palace",
@@ -353,7 +345,9 @@
                 "fee": "20.000 VND"
             }
         ],
-        "category": "Historical Buildings"
+        "category": "Historical Buildings",
+        "wiki":"https://en.wikipedia.org/wiki/Independence_Palace"
+
     },
     {
         "name": "Saigon Central Book Street",
@@ -385,7 +379,9 @@
                 "fee": "20.000 VND"
             }
         ],
-        "category": "Streets"
+        "category": "Streets",
+        "wiki":"https://vinpearl.com/en/ho-chi-minh-city-book-street-pinpoint-the-paradise-for-bookworms"
+
     },
     {
         "name": "Saigon Zoo and Botanical Gardens",
@@ -417,7 +413,9 @@
                 "fee": "30.000 VND"
             }
         ],
-        "category": "Parks"
+        "category": "Parks",
+        "wiki":"https://en.wikipedia.org/wiki/Saigon_Zoo_and_Botanical_Gardens"
+
     },
     {
         "name": "Ho Chi Minh City Museum of Fine Arts",
@@ -449,7 +447,9 @@
                 "fee": "700.000 VND"
             }
         ],
-        "category": "Museums"
+        "category": "Museums",
+        "wiki":"https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_Museum_of_Fine_Arts"
+
     },
     {
         "name": "History Museum",
@@ -481,7 +481,9 @@
                 "fee": "700.000 VND"
             }
         ],
-        "category": "Museums"
+        "category": "Museums",
+        "wiki":"https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_Museum_of_History"
+
     },
     {
         "name": "Giac Lam Pagoda",
@@ -507,7 +509,9 @@
                 "fee": "280.000 VND"
             }
         ],
-        "category": "Religious Sites"
+        "category": "Religious Sites",
+        "wiki":"https://en.wikipedia.org/wiki/Giác_Lâm_Temple"
+
     },
     {
         "name": "Crescent Mall",
@@ -527,7 +531,9 @@
         ],
         "nearby_activities": [
         ],
-        "category": "Shopping"
+        "category": "Shopping",
+        "wiki":"https://en.wikipedia.org/wiki/Crescent_Mall"
+
     },
     {
         "name": "Tao Dan Park",
@@ -559,6 +565,9 @@
                 "fee": "700.000 VND"
             }
         ],
-        "category": "Parks"
+        "category": "Parks",
+        "wiki":"https://en.wikipedia.org/wiki/Tao_Dan_Park"
+
     }
 ]
+

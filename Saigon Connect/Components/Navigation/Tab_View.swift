@@ -29,8 +29,8 @@ struct Tab_View: View {
                 
                 Author_View()
                     .tabItem {
-                        Image(systemName: "info.circle").font(.system(size: 26))
-                        Text("About me")
+                        Image(systemName: "person.circle").font(.system(size: 26))
+                        Text("About")
                     }
             }.accentColor(.blue)
         }

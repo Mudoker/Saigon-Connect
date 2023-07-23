@@ -14,12 +14,13 @@ struct Place: Codable {
     let popular_activities: [String]
     let nearby_activities: [Activity]
     let category: String
+    let wiki: String
     
-    static let allPlace = decodeJsonFromJsonFile(jsonFileName: "Places.json")
+    static let allPlace = decodeJsonFromJsonFile(jsonFileName: "database.json")
     static let allCategories = getUniqueCategories(from: allPlace)
     static let samplePlace: Place = allPlace[0]
     static let itemCount = allPlace.count
-    static let topPlaces = allPlace.sorted(by: { $0.ratings > $1.ratings })
+    static let topPlaces = allPlace.sorted(by: { $0.ratings > $1.ratings }).prefix(10)
 }
 
 struct Activity: Codable {
