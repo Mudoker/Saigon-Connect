@@ -20,7 +20,7 @@ struct Card_Views: View {
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
                     .cornerRadius(30)
-                    .opacity(0.9)
+                    .opacity(1)
                     .frame(width:280,height:200)
                 
                 Text(place.name)
@@ -31,8 +31,8 @@ struct Card_Views: View {
                 Text(place.short_description)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
-                    .font(.footnote)
-                    .opacity(0.9)
+                    .font(.body)
+                    .opacity(1)
                 Spacer()
                 HStack {
                     Text(String(place.ratings)).font(.caption).padding(.leading)
@@ -41,10 +41,10 @@ struct Card_Views: View {
                     Spacer()
                     Text(place.entrance_fee)
                         .padding(.trailing)
-                    .opacity(0.9)
+                    .opacity(1)
                 }.padding(.bottom, 7)
             }
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .cornerRadius(30)
             .frame(width: 280, height:320)
             
@@ -56,7 +56,7 @@ struct Card_Views: View {
             CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
             }
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .opacity(0.65)
+            .opacity(0.8)
         }.frame(width: 280, height: 320)
     }
 }

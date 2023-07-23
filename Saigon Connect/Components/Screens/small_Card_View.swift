@@ -46,7 +46,7 @@ struct small_Card_View: View {
                     
                 }.padding(.bottom)
             }
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .cornerRadius(30)
             .frame(width: 180, height: 270)
         }
