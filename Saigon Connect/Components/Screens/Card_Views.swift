@@ -10,13 +10,14 @@ import SwiftUI
 struct Card_Views: View {
     //Make the gradient moving
     @State private var animateGradient = false
+    @Binding var isDarkMode: Bool
+
 
     var place: Place = Place.topPlaces[0]
     var body: some View {
         
         ZStack(alignment: .top) {
-            GlassMorphicCard()
-            
+            GlassMorphicCard(isDarkMode: $isDarkMode)
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
                     .opacity(0.9)
@@ -27,19 +28,29 @@ struct Card_Views: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 Text(place.short_description)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                     .font(.body)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 Spacer()
                 HStack {
                     Text(String(place.ratings)).font(.body).padding(.leading)
+                        .foregroundColor(isDarkMode ? .white : .black)
+
                     StarsView(rating: place.ratings, maxRating: 5)
                     Text("(" + String(place.total_ratings.formatted()) + ")").font(.body)
+                        .foregroundColor(isDarkMode ? .white : .black)
+
                     Spacer()
                     Text(place.entrance_fee)
                         .padding(.trailing)
                     .opacity(0.9)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 }.padding(.bottom, 15)
             }
             .foregroundColor(.black)
@@ -48,36 +59,37 @@ struct Card_Views: View {
             
         }
     }
-    @ViewBuilder
-    func GlassMorphicCard() -> some View {
+
+}
+
+struct GlassMorphicCard: View {
+    @Binding var isDarkMode: Bool
+    
+    var body: some View {
         ZStack {
-            CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .opacity(0.65)
-        }.frame(width: 360, height: 340)
+            CustomBlurView(effect: isDarkMode ? .light : .systemUltraThinMaterialDark)
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .opacity(0.65)
+        }
+        .frame(width: 360, height: 340)
     }
 }
 
-struct CustomBlurView: UIViewRepresentable{
+struct CustomBlurView: UIViewRepresentable {
     var effect: UIBlurEffect.Style
-    var onChange: (UIVisualEffectView) -> ()
     
-    func makeUIView(context: Context) ->  UIVisualEffectView{
-        return  UIVisualEffectView(effect: UIBlurEffect (style: effect))
+    func makeUIView(context: Context) ->  UIVisualEffectView {
+        return UIVisualEffectView(effect: UIBlurEffect(style: effect))
     }
     
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-        DispatchQueue.main.async {
-            onChange(uiView)
-        }
-    }
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
+
 
 
 struct Card_Views_Previews: PreviewProvider {
     static var previews: some View {
-        Card_Views()
+        Card_Views(isDarkMode: .constant(true))
     }
 }
 

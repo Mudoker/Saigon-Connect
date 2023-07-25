@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct Author_View: View {
+    @Binding var isDarkMode: Bool
     var body: some View {
         ZStack {
-            GlassMorphicCard()
+            GlassMorphicCard(isDarkMode: $isDarkMode)
             VStack {
                 Image("author").resizable().frame(width: 120, height: 120).clipShape(Circle())
                 Text("Doan Huu Quoc").bold().font(.title)
@@ -48,19 +49,10 @@ struct Author_View: View {
             Image("background_light").resizable().aspectRatio(contentMode: .fill)
                 .frame(minHeight: 1000)).ignoresSafeArea().edgesIgnoringSafeArea(.all)
     }
-    @ViewBuilder
-    func GlassMorphicCard() -> some View {
-        ZStack {
-            CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .opacity(0.5)
-        }.frame(width: 290, height: 380)
-    }
 }
 
 struct Author_View_Previews: PreviewProvider {
     static var previews: some View {
-        Author_View()
+        Author_View(isDarkMode: .constant(true))
     }
 }

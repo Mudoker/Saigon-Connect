@@ -10,26 +10,32 @@ import SwiftUI
 struct small_Card_View: View {
     //Make the gradient moving
     @State private var animateGradient = false
+    @Binding var isDarkMode: Bool
 
     var place: Place = Place.topPlaces[6]
     var body: some View {
         
         ZStack(alignment: .top) {
-            GlassMorphicCard()
+            GlassMorphicCard(isDarkMode: $isDarkMode)
             
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
                     .frame(width:180,height:110)
-                
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 Text(place.name)
                     .font(.headline)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading,5)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 Text(place.short_description)
                     .multilineTextAlignment(.leading)
                     .padding(.leading,5)
                     .font(.body)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
                 Spacer()
                 HStack {
                     StarsView(rating: place.ratings, maxRating: 5)
@@ -39,27 +45,19 @@ struct small_Card_View: View {
                     Text(place.entrance_fee)
                         .font(.caption2)
                         .padding(.trailing,5)
+                        .foregroundColor(isDarkMode ? .white : .black)
+
                     
                 }.padding(.bottom)
             }
-            .foregroundColor(.black)
             .cornerRadius(20)
             .frame(width: 180, height: 270)
         }
-    }
-    @ViewBuilder
-    func GlassMorphicCard() -> some View {
-        ZStack {
-            CustomBlurView(effect: .systemUltraThinMaterialDark) { view in
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .opacity(0.75)
-        }.frame(width: 180, height: 270)
     }
 }
 
 struct small_Card_View_Previews: PreviewProvider {
     static var previews: some View {
-        small_Card_View()
+        small_Card_View(isDarkMode: .constant(true))
     }
 }

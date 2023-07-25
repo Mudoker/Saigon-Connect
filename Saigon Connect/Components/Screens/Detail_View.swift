@@ -6,103 +6,170 @@
 //
 
 import SwiftUI
-
+import CoreLocation
+import MapKit
 
 struct Detail_View: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State private var animateGradient = false
     @Binding var isDetailView: Bool
     @State private var isMapView = false
-    @State var place: Place = Place.allPlace[0]
-
+    @State var place: Place = Place.topPlaces[0]
+    @State private var imageOpacity: Float = 1
+    @State private var scrollOffset: CGFloat = 0
     @State private var background = LinearGradient(
         gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
         startPoint: .top,
         endPoint: .bottom
     )
+    
+    @State var background_light = LinearGradient(
+        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+    @State var background_dark = LinearGradient(
+        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
-                background.edgesIgnoringSafeArea(.all) // Apply the background gradient to the ZStack
+                if !isMapView {
+                    if isDarkMode {
+                        background_dark.edgesIgnoringSafeArea(.all)
+                    } else {
+                        background_light.edgesIgnoringSafeArea(.all)
+                    }
+                    
+                    
+                } else {
+                    Map_View()
+                        .frame(height: 400)
+                        .edgesIgnoringSafeArea(.all)
+                }
                 
                 VStack(alignment: .leading) {
                     if !isMapView {
-                        Text(place.category)
-                            .padding(.horizontal)
-                            .frame(height: 5)
-                        Text(place.name)
-                            .font(.largeTitle)
-                            .fontWeight(.black)
-                            .padding(.horizontal)
-                            .frame(height: 100)
+                        VStack(alignment: .leading) {
+                            Text(place.category)
+                                .padding(.horizontal)
+                                .foregroundColor(isDarkMode ? .white : .black)
+
+                                .padding(.top)
+                            Text(place.name)
+                                .font(.largeTitle)
+                                .fontWeight(.black)
+                                .padding(.horizontal)
+                                .foregroundColor(isDarkMode ? .white : .black)
+
+                        }.frame(height: 125)
 
                     } else {
-                        VStack{}.frame(height: 5)
-                        VStack{}.frame(height: 100)
+                        VStack{}.frame(height: 125)
                         
                     }
                     
-                    Top_View(place: place, isMapView: isMapView)
+                    Top_View(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
                         .padding(.horizontal)
                         .zIndex(1)
+                        .foregroundColor(isDarkMode ? .white : .black)
+
                     VStack(alignment: .center) {
                         ScrollView(showsIndicators: false) {
 //                            VStack{}.frame(height: 100)
-                            HStack {
-                                Button {
-                                    isMapView = false
+                            VStack {
+                                HStack {
+                                    Button {
+                                        isMapView = false
 
-                                } label: {
-                                    Image(systemName: "doc.circle").resizable()
-                                        .frame(width: 50, height: 50).foregroundColor(.black)
-                                }
-                                .padding(.trailing)
-                                Button {
-                                    isMapView = true
+                                    } label: {
+                                        Image(systemName: "doc.circle").resizable()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(isDarkMode ? .white : .black)
 
-                                } label: {
-                                    Image(systemName: "map.circle.fill").resizable()
-                                        .frame(width: 50, height: 50).foregroundColor(.black)
+                                    }
+                                    .padding(.trailing)
+                                    Button {
+                                        isMapView = true
+
+                                    } label: {
+                                        Image(systemName: "map.circle.fill").resizable()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(isDarkMode ? .white : .black)
+
+                                    }
+                                    Spacer()
                                 }
-                                Spacer()
-                            }
-                            .padding(.horizontal)
-                            .frame(height: 100)
-                        
-                            
-                            ratings_open_hour()
-                            Text (place.full_description)
-                                .font(.body)
-                                .opacity(0.7)
                                 .padding(.horizontal)
-                            
-                            HStack {
-                                Text("Popular activiites")
-                                    .padding([.horizontal, .top])
-                                    .font(.title.bold())
-                                Spacer()
-                            }.frame(height: 20)
-                                                        
-                            popular_activities(place: place).padding(.leading)
-                                .padding(.top,10)
-                            
-                            HStack {
-                                Text("Nearby")
-                                    .padding([.horizontal, .top])
-                                    .font(.title.bold())
-                                Spacer()
-                            }.frame(height: 20)
-                            
-                            nearby_activities(place: place).padding(.leading)
-                                .padding(.top,10)
- 
-                        }
-                        .padding(.top, -100)
+                                .frame(height: 100)
+                                ratings_open_hour()
+                                    .foregroundColor(isDarkMode ? .white : .black)
+
+                                Text (place.full_description)
+                                    .font(.body)
+                                    .opacity(0.7)
+                                    .padding(.horizontal)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+
+                                
+                                if place.popular_activities.count >= 1 {
+                                    HStack {
+                                        Text("Popular activiites")
+                                            .padding([.horizontal, .top])
+                                            .font(.title.bold())
+                                            .foregroundColor(isDarkMode ? .white : .black)
+
+                                        Spacer()
+                                    }.frame(height: 20)
+                                                                
+                                    popular_activities(place: place).padding(.leading)
+                                        .padding(.top,10)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                }
+                                
+                                if place.nearby_activities.count >= 1 {
+                                    HStack {
+                                        Text("Nearby")
+                                            .padding([.horizontal, .top])
+                                            .font(.title.bold())
+                                            .foregroundColor(isDarkMode ? .white : .black)
+
+                                        Spacer()
+                                    }.frame(height: 20)
+                                    
+                                    nearby_activities(place: place).padding(.leading)
+                                        .padding(.top,10)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                }
+                                                                
+                                    Spacer()
+                                
+     
+                            }
+                            .background(GeometryReader {
+                                Color.clear.preference(key: ViewOffsetKey.self,
+                                    value: -$0.frame(in: .named("scroll")).origin.y)
+                            })
+                            .onPreferenceChange(ViewOffsetKey.self) {   scrollOffset = $0
+                            }
+                        }.coordinateSpace(name: "scroll")
+                        
+                        .padding(.top, -70)
                         Spacer()
-                        expolore_more(background: background)
+                        expolore_more(background: isDarkMode ? background_dark : background_light)
+                            .foregroundColor(isDarkMode ? .white : .black)
+
+
 
                     }
-                    .background(Color.white.clipShape(Custom_Top_Border()).edgesIgnoringSafeArea(.all).padding(.top, -100))
+                    .background(isDarkMode ? Color.gray.clipShape(Custom_Top_Border())
+                        .edgesIgnoringSafeArea(.all).padding(.top, -70) :Color.white.clipShape(Custom_Top_Border())
+                        .edgesIgnoringSafeArea(.all).padding(.top, -70))
                     .shadow(radius: 20)
                     
                 }
@@ -129,18 +196,26 @@ struct Detail_View_Previews: PreviewProvider {
 struct Top_View: View {
     @State var isAnimation = false
     @State var place: Place = Place.allPlace[0]
+    @Binding var imageOpacity: CGFloat
      var isMapView: Bool
 
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 if !isMapView {
-                    Text("Price")
+                    Text("Entrence fee")
                         .fontWeight(.bold)
                         .frame(height: 5)
-                    Text(place.entrance_fee)
-                        .font(.system(size: 30, weight: .bold))
-                        .frame(height: 30)
+                    if (place.entrance_fee == "Free") {
+                        Text(place.entrance_fee)
+                            .font(.system(size: 30, weight: .bold))
+                            .frame(height: 30)
+                    }else {
+                        Text(place.entrance_fee)
+                            .font(.system(size: 25, weight: .bold))
+                            .frame(height: 30)
+                    }
+                    
                 } else {
                     VStack{}.frame(height: 35)
                 }
@@ -153,6 +228,7 @@ struct Top_View: View {
             Image(place.image_url)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
                 .frame(width: 200, height: 200)
                 .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7))
                 .shadow(radius: 40)
@@ -163,6 +239,13 @@ struct Top_View: View {
                 isAnimation = true
             }
         }
+    }
+    func calculateOpacity()-> CGFloat{
+        if (imageOpacity >= 0) {
+            let opacity = 0.6 - imageOpacity/100
+            return opacity
+        }
+        return 1
     }
 }
 
@@ -219,10 +302,10 @@ struct expolore_more: View {
                 .font(.title2.bold())
             Text(place.address)
                 .italic().font(.callout)
-            Spacer()
+//            Spacer()
             
         }
-        .padding(.horizontal)
+        .padding(.leading)
         .edgesIgnoringSafeArea(.all)
         .frame(height: 100)
 //        .frame(maxHeight: .infinity)
@@ -233,17 +316,17 @@ struct expolore_more: View {
 
 
 struct popular_activities: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State var place: Place = Place.allPlace[0]
     @State var selectedIndexCat = 0
-    
     var body: some View {
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 20) {
             ForEach(place.popular_activities, id: \.self) { activity in
                 Text(activity)
                     .padding()
                     .frame(width: UIScreen.main.bounds.width / 2 - 20)
-                    .background(Color.white)
-                    .foregroundColor(.black)
+                    .background(isDarkMode ? Color.gray : Color.white)
+                    .foregroundColor(isDarkMode ? Color.white : Color.black)
                     .cornerRadius(20)
                      // Adjust the width based on the screen size and spacing
             }
@@ -253,6 +336,7 @@ struct popular_activities: View {
 
 
 struct nearby_activities: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State var place: Place = Place.allPlace[0]
     
     var body: some View {
@@ -261,25 +345,28 @@ struct nearby_activities: View {
                 ForEach(place.nearby_activities.indices, id: \.self) { index in
                     HStack {
                         Image(systemName: place.nearby_activities[index].image_url)
-                            .foregroundColor(.black)
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
                             .padding(.leading)
 //                        Spacer()
                         Text(place.nearby_activities[index].event_name)
-                            .foregroundColor(.black)
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
                         Spacer()
                         VStack {
                             StarsView(rating: place.nearby_activities[index].ratings, maxRating: 5)
                                 .padding(.trailing)
-                            Text( place.nearby_activities[index].fee).foregroundColor(.black)
+                            Text( place.nearby_activities[index].fee)
+                                .foregroundColor(isDarkMode ? Color.white : Color.black)
+
                         }
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.white)
-                    .foregroundColor(.white)
+                    .background(isDarkMode ? Color.gray : Color.white)
                     .cornerRadius(20)
                 }
             }
         }
     }
 }
+
+

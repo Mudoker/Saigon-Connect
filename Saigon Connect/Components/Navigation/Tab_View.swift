@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Tab_View: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
+
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.darkGray
         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.7)
@@ -20,14 +22,14 @@ struct Tab_View: View {
     var body: some View {
         ZStack {
             TabView {
-                Content_View()
+                Content_View(isDarkMode: $isDarkMode)
                     .tabItem {
                         
                         Image(systemName: "house")
                         Text("Home").font(.largeTitle)
                     }
                 
-                Author_View()
+                Author_View(isDarkMode: $isDarkMode)
                     .tabItem {
                         Image(systemName: "person.circle").font(.system(size: 26))
                         Text("About")

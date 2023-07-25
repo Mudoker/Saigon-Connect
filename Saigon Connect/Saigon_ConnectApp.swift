@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Saigon_ConnectApp: App {
+    @StateObject var themeManager = ThemeManager()
     var body: some Scene {
         WindowGroup {
-            Tab_View()
+            SplashScreenView()
         }
     }
 }

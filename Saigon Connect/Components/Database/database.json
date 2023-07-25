@@ -2,7 +2,7 @@
     {
         "name": "Bitexco Financial Tower",
         "address": "Bitexco Financial Tower, 2 Hai Trieu, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [106.70436796799939, 10.771808423651885],
+        "location": [10.771808423651885, 106.70436796799939],
         "ratings": 4.5,
         "total_ratings": 18032,
         "entrance_fee": "Free",
@@ -334,7 +334,7 @@
         "nearby_activities": [
             {
                 "event_name": "War Remnants Museum",
-                "image_url": "tortoise.fill",
+                "image_url": "flame.fill",
                 "ratings": 4.5,
                 "fee": "40.000 VND"
             },
