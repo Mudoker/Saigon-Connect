@@ -18,6 +18,7 @@ struct Card_Views: View {
         
         ZStack(alignment: .top) {
             GlassMorphicCard(isDarkMode: $isDarkMode)
+                
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
                     .opacity(0.9)
@@ -56,7 +57,10 @@ struct Card_Views: View {
             .foregroundColor(.black)
             .cornerRadius(20)
             .frame(width: 360, height:340)
-            
+//            .background(
+//                    RoundedRectangle(cornerRadius: 20)
+//                        .fill(Color.black.opacity(0.65)) // Set the opacity here
+//                )
         }
     }
 
@@ -64,26 +68,63 @@ struct Card_Views: View {
 
 struct GlassMorphicCard: View {
     @Binding var isDarkMode: Bool
-    
+    @State var width: CGFloat = 360
+    @State var height: CGFloat = 340
+    @State var minWidth: CGFloat = 0
+    @State var useMinWidth = false
+
     var body: some View {
-        ZStack {
-            CustomBlurView(effect: isDarkMode ? .light : .systemUltraThinMaterialDark)
-                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .opacity(0.65)
+        if useMinWidth {
+            ZStack {
+                GlassMorphicCardView(isDarkMode: $isDarkMode)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .opacity(0.65)
+            }
+            .frame(minWidth: minWidth)
+            .frame(height: height)
+        } else {
+            ZStack {
+                GlassMorphicCardView(isDarkMode: $isDarkMode)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .opacity(0.65)
+            }
+            .frame(width: width, height: height)
         }
-        .frame(width: 360, height: 340)
+        
     }
 }
 
-struct CustomBlurView: UIViewRepresentable {
-    var effect: UIBlurEffect.Style
-    
-    func makeUIView(context: Context) ->  UIVisualEffectView {
-        return UIVisualEffectView(effect: UIBlurEffect(style: effect))
+struct GlassMorphicCardView: UIViewRepresentable {
+    @Binding var isDarkMode: Bool
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
-    
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let view = UIVisualEffectView(effect: nil)
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        return view
+    }
+
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        let effectStyle: UIBlurEffect.Style = isDarkMode ? .systemMaterialDark  : .regular
+        let newEffect = UIBlurEffect(style: effectStyle)
+
+        uiView.effect = newEffect
+    }
+
+    class Coordinator {
+        var parent: GlassMorphicCardView
+
+        init(_ parent: GlassMorphicCardView) {
+            self.parent = parent
+        }
+    }
 }
+
+
+
 
 
 

@@ -16,7 +16,7 @@ struct small_Card_View: View {
     var body: some View {
         
         ZStack(alignment: .top) {
-            GlassMorphicCard(isDarkMode: $isDarkMode)
+            GlassMorphicCard(isDarkMode: $isDarkMode, width: 180, height: 270)
             
             VStack(alignment: .leading) {
                 Image(place.image_url).resizable()
@@ -49,11 +49,13 @@ struct small_Card_View: View {
 
                     
                 }.padding(.bottom)
+                    .padding(.horizontal)
             }
             .cornerRadius(20)
             .frame(width: 180, height: 270)
         }
     }
+    
 }
 
 struct small_Card_View_Previews: PreviewProvider {

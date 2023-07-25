@@ -22,7 +22,7 @@ struct Tab_View: View {
     var body: some View {
         ZStack {
             TabView {
-                Content_View(isDarkMode: $isDarkMode)
+                Content_View(isDarkMode: isDarkMode)
                     .tabItem {
                         
                         Image(systemName: "house")

@@ -1,5 +1,29 @@
 import Foundation
 
+struct User: Codable {
+    let account: String
+    let password: String
+    let username: String
+    let pronouns: String
+    let bio: String
+    let skill: String
+    let followers: Int
+    let following: Int
+    let likes: Int
+    let avatar: String
+    let type: String
+    let connections: Connections
+    let joinDate: String
+    
+    struct Connections: Codable {
+        let facebook: String?
+        let github: String?
+        let spotify: String?
+    }
+    
+    static let allUsers = decodeJsonFromJsonFile(jsonFileName: "user.json")
+}
+
 struct Place: Codable {
     let name: String
     let address: String

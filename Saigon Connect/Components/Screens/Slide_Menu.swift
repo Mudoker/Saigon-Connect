@@ -99,7 +99,8 @@ struct Slide_Menu: View {
                 .frame(maxHeight: .infinity)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .background(isDarkMode ? background_dark : background_light)
+//        .background(isDarkMode ? background_dark : background_light)
+        .background( isDarkMode ? Image("background_dark")  : Image("background_light"))
         .ignoresSafeArea(.container, edges: .vertical)
     }
 

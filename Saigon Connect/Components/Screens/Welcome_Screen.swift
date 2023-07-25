@@ -12,38 +12,44 @@ struct welcomeScreen: View {
     @State private var showingAlert = false
     @State private var useLargeTitle = false
     @State private var isTransition = false
-    @State private var banner = "𝐖𝐞𝐥𝐜𝐨𝐦𝐞"
-    @State private var banner2 = "𝐭𝐨"
-    @State private var banner3 = "𝐒𝐚𝐢𝐠𝐨𝐧 𝐂𝐨𝐧𝐧𝐞𝐜𝐭"
-    
+    @State private var banner = "𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨"
+    @State private var banner2 = "𝐒𝐚𝐢𝐠𝐨𝐧 𝐂𝐨𝐧𝐧𝐞𝐜𝐭"
+    @State private var banner3 = "Unveil the soul of Vietnam"
+    @State private var backgroundImageName = "saigon3"
+    @State private var backgroundAnimation = true
+    private let backgroundChangeInterval: TimeInterval = 3.0
     var body: some View {
         NavigationStack {
                 ZStack {
-                    
-
-
                     VStack {
-                        ZStack(alignment: .center) {
-                            Image("app logo dark")
+                        Spacer()
+                        VStack {
+                            Image("rmit-logo-white")
                                 .resizable()
-                                .aspectRatio( contentMode: .fill)
-                                .frame(height: 250)
-                            Image(systemName: "r.circle").resizable().frame(width: 20, height: 20).foregroundColor(.black)
-                                .padding(.leading, 350)
-                                .padding(.bottom, 90)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 50, height: 50)
+                            .padding(.top, 50)
+                            ZStack(alignment: .center) {
+                                Image("app logo light")
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fill)
+                                    .frame(height: 250)
+                            }.frame(height: 150)
                         }
                         
-                        VStack {
-                            colored_Text(text: banner)
+                        
+                        VStack (alignment: .leading) {
+                            Spacer()
+                            colored_Text(text: banner, size: 40)
                                 .padding(.horizontal)
 
-                            colored_Text(text: banner2)
+                            colored_Text(text: banner2, size: 50)
                                 .padding(.horizontal)
 
-                            colored_Text(text: banner3)
+                            colored_Text(text: banner3, size: 20)
                                 .padding(.horizontal)
-
                         }
+                        .padding(.bottom, 40)
                         
                         Spacer()
                         Button {
@@ -54,10 +60,10 @@ struct welcomeScreen: View {
                                 Spacer()
                                 Image(systemName: "arrow.up.forward")
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .padding(.horizontal,25)
                             .frame(width: 340, height: 70)
-                            .background(.black)
+                            .background(.white)
                             .clipShape(Capsule())
                             .padding(.bottom)
                         }.navigationDestination(
@@ -80,10 +86,21 @@ struct welcomeScreen: View {
                         }
                     }
                     .edgesIgnoringSafeArea(.top)
-                }.background(Image("landmark81").resizable()
-                 .aspectRatio(contentMode:.fill)
-                 .edgesIgnoringSafeArea(.all))
-                
+                }.background(
+                    Image(backgroundImageName)
+                        .resizable()
+                        .overlay(Color.black.opacity(0.3))
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .offset(x: backgroundAnimation ? 10 : -50)
+                        .animation(Animation.easeInOut(duration: 4.0).repeatForever(), value: backgroundAnimation)
+                )
+                .onAppear {
+                            // Start the animation when the view appears
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                backgroundAnimation.toggle()
+                            }
+                        }
             }
         
     }
@@ -97,24 +114,27 @@ struct welcomeScreen_Preview: PreviewProvider {
 
 struct colored_Text: View {
     var text: String
+    var size: CGFloat = 50
     @State private var bannerAnimation = false
+    @State private var textColor = Color.black // Default color
 
     private func randomColor() -> Color {
-        return Color(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1))
+        return Color(red: CGFloat.random(in: 0.6...1), green: CGFloat.random(in: 0.6...1), blue: CGFloat.random(in: 0...1))
     }
 
     var body: some View {
         ZStack {
             Text(text)
-                .font(.system(size: 50, weight: .bold))
-                .opacity(0.3)
+                .font(.system(size: size, weight: .bold))
+                .foregroundColor(.white)
+                .opacity(0.6)
 
             HStack(spacing: 0) {
                 ForEach(0..<text.count, id: \.self) { index in
                     Text(String(text[text.index(text.startIndex, offsetBy: index)]))
-                        .foregroundColor(randomColor())
+                        .foregroundColor(textColor)
                         .opacity(1.0)
-                        .font(.system(size: 50, weight: .bold))
+                        .font(.system(size: size, weight: .bold))
                 }
             }
             .mask(
@@ -126,9 +146,13 @@ struct colored_Text: View {
                     .offset(x: bannerAnimation ? 300 : -150) // Adjust the offset to cover the entire text
             )
             .onAppear {
+                textColor = randomColor() // Set the initial text color
                 withAnimation(Animation.linear(duration: 4).repeatForever(autoreverses: false)) {
                     self.bannerAnimation.toggle()
                 }
+            }
+            .onChange(of: bannerAnimation) { _ in
+                textColor = randomColor() // Update text color when bannerAnimation changes
             }
         }
     }

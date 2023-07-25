@@ -6,11 +6,9 @@ struct Map_View: View {
     
     @State private var region: MKCoordinateRegion
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
-
     init() {
         let coordinate = CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1])
         _region = State(initialValue: MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004)))
-        
     }
 
     // CustomAnnotation to represent the location on the map
@@ -28,22 +26,27 @@ struct Map_View: View {
             VStack {
                 HStack {
                     Spacer()
-                    Button(action: {
-                        let coordinate = CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1])
-                        region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004))
-                    }) {
-                        Image(systemName: "location.circle.fill").resizable()
-                            .frame(width: 40, height: 40).foregroundColor(.blue)
-                            .padding(.top,20)
+                    VStack {
+                        Button(action: {
+                            let coordinate = CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1])
+                            region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004))
+                        }) {
+                            Image(systemName: "location.circle.fill").resizable()
+                                .frame(width: 40, height: 40).foregroundColor(.blue)
+                                .padding(.top,20)
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 40)
                     }
-                .padding().offset(x: -10)
                 }
                 Spacer()
             }
         }
-        
+        .preferredColorScheme(isDarkMode ? .dark : .light) // Set the color scheme based on isDarkMode
+        .accentColor(isDarkMode ? .white : .black) // Set the accent color based on isDarkMode
     }
 }
+
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {

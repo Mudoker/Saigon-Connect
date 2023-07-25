@@ -9,21 +9,21 @@ import SwiftUI
 struct Content_View: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State private var isDetailView = false
-    @State private var background = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-    @State var background_light = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-    @State var background_dark = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
+//    @State private var background = LinearGradient(
+//        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
+//                startPoint: .top,
+//                endPoint: .bottom
+//            )
+//    @State var background_light = LinearGradient(
+//        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
+//                startPoint: .top,
+//                endPoint: .bottom
+//            )
+//    @State var background_dark = LinearGradient(
+//        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
+//                startPoint: .top,
+//                endPoint: .bottom
+//            )
     @State private var detailViewIndex = false
     @State private var showingAlert = false
     @State private var currentTime = Date()
@@ -116,28 +116,39 @@ struct Content_View: View {
                     }
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading) {
-                            Text(getFormattedDate()).frame(height: 15).padding(.leading)
-                                .foregroundColor(isDarkMode ? .white : .black)
-
-                            Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
-                                .padding(.bottom,10).padding(.leading)
-                                .foregroundColor(isDarkMode ? .white : .black)
-
-                            Spacer()
                             if searchInput == "" {
+                                Text(getFormattedDate()).frame(height: 15).padding(.leading)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+
+                                Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
+                                    .padding(.bottom,10).padding(.leading)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+
+                                Spacer()
                                 TabView {
                                     ForEach(Place.topPlaces.indices, id: \.self) { index in
-                                        NavigationLink(
-                                            destination: Detail_View(
-                                                isDetailView: $isDetailView,
-                                                place: Place.topPlaces[index])
-                                        ) { Card_Views(isDarkMode: $isDarkMode, place: Place.topPlaces[index]) }
-                                        .simultaneousGesture(
+                                        GeometryReader { proxy in
+                                            NavigationLink(
+                                                destination: Detail_View(
+                                                    isDetailView: $isDetailView,
+                                                    place: Place.topPlaces[index])
+                                            ) {
+                                                Card_Views(isDarkMode: $isDarkMode, place: Place.topPlaces[index])
+                                                    .padding(.horizontal)
+                                                    .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -10), axis: (x: 0, y: 1, z: 0))
+                                                    .shadow(color: Color.gray.opacity(0.3),
+                                                            radius: 10,
+                                                            x: 0,
+                                                            y: 10)
+                                                
+                                            }
+                                            .simultaneousGesture(
                                             TapGesture().onEnded { isDetailView = true })
+                                        }
                                     }
                                 }
                                 .tabViewStyle(.page(indexDisplayMode: .never))
-                                .frame(height: 340)
+                                .frame(height: 370)
                             }
                             Text("All Places").font(.title).padding(.leading).bold().frame(height: 20).padding(.top, 10)
                                 .foregroundColor(isDarkMode ? .white : .black)
@@ -225,6 +236,7 @@ struct Content_View: View {
                                             .count == 0
                                         {
                                             Text("Result not found!").font(.title2).bold().opacity(0.5)
+                                                .foregroundColor(isDarkMode ? .white : .black)
                                         } else {
                                             ForEach(
                                                 Place.allPlace.indices
@@ -263,7 +275,7 @@ struct Content_View: View {
                                             .simultaneousGesture(
                                                 TapGesture()
                                                     .onEnded {
-                                                        isDetailView = true  // Set isDetailView to true when the NavigationLink is activated
+                                                        isDetailView = true
                                                     })
                                         }
                                     }
@@ -279,9 +291,10 @@ struct Content_View: View {
                 .scaleEffect(isOpenSlideMenu ? 0.8 : 1)
                 
             }
-            .background( isDarkMode ? background_dark :
-                background_light
-            )
+//            .background( isDarkMode ? background_dark :
+//                background_light
+//            )
+            .background( isDarkMode ? Image("background_dark")  : Image("background_light"))
             .edgesIgnoringSafeArea(.bottom)
         }
     }
@@ -314,12 +327,12 @@ struct filterCategory: View {
     let text: String
     var body: some View {
         ZStack {
-            GlassMorphicCard(isDarkMode: $isDarkMode)
+            GlassMorphicCard(isDarkMode: $isDarkMode, height: 40, minWidth: 80, useMinWidth: true)
                 
             VStack(alignment: .leading, spacing: 0) {
                 if isDarkMode {
                     Text(text).font(.title3)
-                        .foregroundColor(isActive ? .black : Color.white.opacity(0.7))
+                        .foregroundColor(isActive ? .white : Color.white.opacity(0.7))
 
                 } else {
                     Text(text).font(.title3)

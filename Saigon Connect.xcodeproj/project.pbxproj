@@ -16,7 +16,9 @@
 		AB5A54432A6A6BFD00169B2D /* JSON_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */; };
 		ABA62C242A6E415100AC2760 /* map_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C232A6E415100AC2760 /* map_view.swift */; };
 		ABA62C262A6E58C400AC2760 /* testScollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C252A6E58C400AC2760 /* testScollview.swift */; };
-		ABA62C282A6E7EBA00AC2760 /* welcome_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C272A6E7EBA00AC2760 /* welcome_view.swift */; };
+		ABA62C2C2A6FA1B300AC2760 /* Onboarding_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C2B2A6FA1B300AC2760 /* Onboarding_Screen.swift */; };
+		ABA62C2E2A6FE4EC00AC2760 /* user.json in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C2D2A6FE4EC00AC2760 /* user.json */; };
+		ABA62C302A6FE80D00AC2760 /* Login_screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C2F2A6FE80D00AC2760 /* Login_screen.swift */; };
 		ABF950062A6BC58000E9EC2C /* small_Card_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF950052A6BC58000E9EC2C /* small_Card_View.swift */; };
 		ABF950082A6C33E900E9EC2C /* Author_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF950072A6C33E900E9EC2C /* Author_View.swift */; };
 		ABF9500F2A6D448700E9EC2C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = ABF9500E2A6D448700E9EC2C /* database.json */; };
@@ -38,7 +40,9 @@
 		AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON_Manager.swift; sourceTree = "<group>"; };
 		ABA62C232A6E415100AC2760 /* map_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = map_view.swift; sourceTree = "<group>"; };
 		ABA62C252A6E58C400AC2760 /* testScollview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testScollview.swift; sourceTree = "<group>"; };
-		ABA62C272A6E7EBA00AC2760 /* welcome_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcome_view.swift; sourceTree = "<group>"; };
+		ABA62C2B2A6FA1B300AC2760 /* Onboarding_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_Screen.swift; sourceTree = "<group>"; };
+		ABA62C2D2A6FE4EC00AC2760 /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		ABA62C2F2A6FE80D00AC2760 /* Login_screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_screen.swift; sourceTree = "<group>"; };
 		ABF950052A6BC58000E9EC2C /* small_Card_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = small_Card_View.swift; sourceTree = "<group>"; };
 		ABF950072A6C33E900E9EC2C /* Author_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author_View.swift; sourceTree = "<group>"; };
 		ABF9500E2A6D448700E9EC2C /* database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
@@ -87,7 +91,8 @@
 				ABF950102A6D4B0B00E9EC2C /* transition_animation.swift */,
 				ABA62C232A6E415100AC2760 /* map_view.swift */,
 				ABA62C252A6E58C400AC2760 /* testScollview.swift */,
-				ABA62C272A6E7EBA00AC2760 /* welcome_view.swift */,
+				ABA62C2B2A6FA1B300AC2760 /* Onboarding_Screen.swift */,
+				ABA62C2F2A6FE80D00AC2760 /* Login_screen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				AB5A54422A6A6BFD00169B2D /* JSON_Manager.swift */,
 				ABF9500E2A6D448700E9EC2C /* database.json */,
+				ABA62C2D2A6FE4EC00AC2760 /* user.json */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 				E1358C292A666D4B0099EB5E /* Saigon_ConnectApp.swift in Sources */,
 				ABF950082A6C33E900E9EC2C /* Author_View.swift in Sources */,
 				E1358C372A666D750099EB5E /* Welcome_Screen.swift in Sources */,
-				ABA62C282A6E7EBA00AC2760 /* welcome_view.swift in Sources */,
 				E1358C392A669C700099EB5E /* Splash_screen_view.swift in Sources */,
+				ABA62C2C2A6FA1B300AC2760 /* Onboarding_Screen.swift in Sources */,
+				ABA62C302A6FE80D00AC2760 /* Login_screen.swift in Sources */,
+				ABA62C2E2A6FE4EC00AC2760 /* user.json in Sources */,
 				AB5A543C2A6A3A1000169B2D /* Card_Views.swift in Sources */,
 				AB50501F2A6AD8B30079C0B6 /* Slide_Menu.swift in Sources */,
 				AB5A54432A6A6BFD00169B2D /* JSON_Manager.swift in Sources */,

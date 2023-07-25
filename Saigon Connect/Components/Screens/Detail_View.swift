@@ -29,21 +29,20 @@ struct Detail_View: View {
                 endPoint: .bottom
             )
     @State var background_dark = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
-                startPoint: .top,
-                endPoint: .bottom
+        gradient: Gradient(colors: [Color(red: 0.33, green: 0.15, blue: 0.53), Color(red: 0.42, green: 0.21, blue: 0.61), Color(red: 0.50, green: 0.31, blue: 0.70)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
             )
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
                 if !isMapView {
-                    if isDarkMode {
-                        background_dark.edgesIgnoringSafeArea(.all)
-                    } else {
-                        background_light.edgesIgnoringSafeArea(.all)
-                    }
-                    
+//                    if isDarkMode {
+//                        background_dark.edgesIgnoringSafeArea(.all)
+//                    } else {
+//                        background_light.edgesIgnoringSafeArea(.all)
+//                    }
                     
                 } else {
                     Map_View()
@@ -71,11 +70,16 @@ struct Detail_View: View {
                         VStack{}.frame(height: 125)
                         
                     }
+                    if !isMapView {
+                        Top_View(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
+                            .padding(.horizontal)
+                            .zIndex(1)
+                            .foregroundColor(isDarkMode ? .white : .black)
+                            .frame(height: 180)
+                    } else {
+                        VStack{}.frame(height: 180)
+                    }
                     
-                    Top_View(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
-                        .padding(.horizontal)
-                        .zIndex(1)
-                        .foregroundColor(isDarkMode ? .white : .black)
 
                     VStack(alignment: .center) {
                         ScrollView(showsIndicators: false) {
@@ -110,7 +114,7 @@ struct Detail_View: View {
 
                                 Text (place.full_description)
                                     .font(.body)
-                                    .opacity(0.7)
+                                    .opacity(0.9)
                                     .padding(.horizontal)
                                     .foregroundColor(isDarkMode ? .white : .black)
 
@@ -167,7 +171,7 @@ struct Detail_View: View {
 
 
                     }
-                    .background(isDarkMode ? Color.gray.clipShape(Custom_Top_Border())
+                    .background(isDarkMode ? Color(red: 0.20, green: 0.20, blue: 0.20).clipShape(Custom_Top_Border())
                         .edgesIgnoringSafeArea(.all).padding(.top, -70) :Color.white.clipShape(Custom_Top_Border())
                         .edgesIgnoringSafeArea(.all).padding(.top, -70))
                     .shadow(radius: 20)
@@ -175,7 +179,9 @@ struct Detail_View: View {
                 }
                 .frame(width: geometry.size.width, alignment: .leading)
                 
-            }.zIndex(0)
+            }
+            .background( isDarkMode ? Image("background_dark") : Image("background_light"))
+            .zIndex(0)
         }
         .edgesIgnoringSafeArea(.bottom)
         .onDisappear {
@@ -186,7 +192,7 @@ struct Detail_View: View {
 
 
 struct Detail_View_Previews: PreviewProvider {
-    @State static var isDetailView = true // Provide a binding here
+    @State static var isDetailView = false // Provide a binding here
 
     static var previews: some View {
         Detail_View(isDetailView: $isDetailView)
@@ -265,6 +271,14 @@ struct Custom_TopLeft_Border: Shape {
     }
 }
 
+struct Custom_Bottom_Border: Shape {
+    var radius = 35
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
 struct ratings_open_hour: View {
     @State var place: Place = Place.allPlace[0]
     var body: some View {
@@ -273,7 +287,7 @@ struct ratings_open_hour: View {
                 Text("Ratings (" + String(place.total_ratings.formatted()) + ")")
                     .frame(height: 0 )
                     .bold()
-                    .opacity(0.5)
+                    .opacity(0.7)
                 HStack() {
                     Text(String(place.ratings)).font(.body)
                     StarsView(rating: place.ratings, maxRating: 5,size: 16)
@@ -284,7 +298,7 @@ struct ratings_open_hour: View {
             VStack(alignment: .trailing) {
                 Text("Opening hours")
                     .bold()
-                    .opacity(0.5)
+                    .opacity(0.7)
                 Text(place.opening_hours)
                     .font(.system(size: 16, weight: .bold))
             }
@@ -325,7 +339,7 @@ struct popular_activities: View {
                 Text(activity)
                     .padding()
                     .frame(width: UIScreen.main.bounds.width / 2 - 20)
-                    .background(isDarkMode ? Color.gray : Color.white)
+                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
                     .foregroundColor(isDarkMode ? Color.white : Color.black)
                     .cornerRadius(20)
                      // Adjust the width based on the screen size and spacing
@@ -361,7 +375,7 @@ struct nearby_activities: View {
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(isDarkMode ? Color.gray : Color.white)
+                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
                     .cornerRadius(20)
                 }
             }
