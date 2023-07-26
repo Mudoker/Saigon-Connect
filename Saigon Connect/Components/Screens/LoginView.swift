@@ -11,6 +11,9 @@
     Q.Doan, "app logo light" unpublished, Jul. 2023.
     T.Huynh. "Week 3 - Intro to SwiftUI, Xcode & Layouts (I'm Rich App)" rmit.instructure.com.https://rmit.instructure.com/courses/121597/pages/w3-whats-happening-this-week?module_item_id=5219563
       (accessed Jul. 20, 2023).
+ Account (both should all be in lowercased):
+    username: admin
+    password: admin
 */
 
 import SwiftUI
