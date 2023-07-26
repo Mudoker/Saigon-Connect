@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct Map_View: View {
+struct MapView: View {
     var place: Place = Place.allPlace[0]
     
     @State private var region: MKCoordinateRegion
@@ -42,14 +42,14 @@ struct Map_View: View {
                 Spacer()
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light) // Set the color scheme based on isDarkMode
-        .accentColor(isDarkMode ? .white : .black) // Set the accent color based on isDarkMode
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .accentColor(isDarkMode ? .white : .black)
     }
 }
 
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        Map_View()
+        MapView()
     }
 }

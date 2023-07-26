@@ -12,7 +12,7 @@ struct Saigon_ConnectApp: App {
     @StateObject var themeManager = ThemeManager()
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            SplashView()
         }
     }
 }

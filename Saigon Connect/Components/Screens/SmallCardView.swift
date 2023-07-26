@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct small_Card_View: View {
+struct SmallCardView: View {
     //Make the gradient moving
     @State private var animateGradient = false
     @Binding var isDarkMode: Bool
@@ -55,11 +55,10 @@ struct small_Card_View: View {
             .frame(width: 180, height: 270)
         }
     }
-    
 }
 
 struct small_Card_View_Previews: PreviewProvider {
     static var previews: some View {
-        small_Card_View(isDarkMode: .constant(true))
+        SmallCardView(isDarkMode: .constant(true))
     }
 }

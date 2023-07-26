@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-struct Detail_View: View {
+struct DetailView: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State private var animateGradient = false
     @Binding var isDetailView: Bool
@@ -17,11 +17,6 @@ struct Detail_View: View {
     @State var place: Place = Place.topPlaces[0]
     @State private var imageOpacity: Float = 1
     @State private var scrollOffset: CGFloat = 0
-    @State private var background = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
-        startPoint: .top,
-        endPoint: .bottom
-    )
     
     @State var background_light = LinearGradient(
         gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
@@ -38,14 +33,9 @@ struct Detail_View: View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
                 if !isMapView {
-//                    if isDarkMode {
-//                        background_dark.edgesIgnoringSafeArea(.all)
-//                    } else {
-//                        background_light.edgesIgnoringSafeArea(.all)
-//                    }
                     
                 } else {
-                    Map_View()
+                    MapView()
                         .frame(height: 400)
                         .edgesIgnoringSafeArea(.all)
                 }
@@ -71,7 +61,7 @@ struct Detail_View: View {
                         
                     }
                     if !isMapView {
-                        Top_View(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
+                        TopView(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
                             .padding(.horizontal)
                             .zIndex(1)
                             .foregroundColor(isDarkMode ? .white : .black)
@@ -83,7 +73,6 @@ struct Detail_View: View {
 
                     VStack(alignment: .center) {
                         ScrollView(showsIndicators: false) {
-//                            VStack{}.frame(height: 100)
                             VStack {
                                 HStack {
                                     Button {
@@ -109,7 +98,7 @@ struct Detail_View: View {
                                 }
                                 .padding(.horizontal)
                                 .frame(height: 100)
-                                ratings_open_hour()
+                                RatingOpenHour()
                                     .foregroundColor(isDarkMode ? .white : .black)
 
                                 Text (place.full_description)
@@ -129,7 +118,7 @@ struct Detail_View: View {
                                         Spacer()
                                     }.frame(height: 20)
                                                                 
-                                    popular_activities(place: place).padding(.leading)
+                                    popularActivitiy(place: place).padding(.leading)
                                         .padding(.top,10)
                                         .foregroundColor(isDarkMode ? .white : .black)
 
@@ -145,8 +134,24 @@ struct Detail_View: View {
                                         Spacer()
                                     }.frame(height: 20)
                                     
-                                    nearby_activities(place: place).padding(.leading)
+                                    nearbyActivity(place: place).padding(.leading)
                                         .padding(.top,10)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                }
+                                
+                                if place.reviews.count >= 1 {
+                                    HStack {
+                                        Text("Top reviews")
+                                            .padding([.horizontal, .top])
+                                            .font(.title.bold())
+                                            .foregroundColor(isDarkMode ? .white : .black)
+
+                                        Spacer()
+                                    }.frame(height: 20)
+                                                                
+                                    reviewView(place: place).padding(.leading)
+                                        .padding(.top,20)
                                         .foregroundColor(isDarkMode ? .white : .black)
 
                                 }
@@ -165,14 +170,14 @@ struct Detail_View: View {
                         
                         .padding(.top, -70)
                         Spacer()
-                        expolore_more(background: isDarkMode ? background_dark : background_light)
+                        expoloreMore(background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
 
 
 
                     }
-                    .background(isDarkMode ? Color(red: 0.20, green: 0.20, blue: 0.20).clipShape(Custom_Top_Border())
-                        .edgesIgnoringSafeArea(.all).padding(.top, -70) :Color.white.clipShape(Custom_Top_Border())
+                    .background(isDarkMode ? Color(red: 0.20, green: 0.20, blue: 0.20).clipShape(CustomTopBorder())
+                        .edgesIgnoringSafeArea(.all).padding(.top, -70) :Color.white.clipShape(CustomTopBorder())
                         .edgesIgnoringSafeArea(.all).padding(.top, -70))
                     .shadow(radius: 20)
                     
@@ -192,14 +197,14 @@ struct Detail_View: View {
 
 
 struct Detail_View_Previews: PreviewProvider {
-    @State static var isDetailView = false // Provide a binding here
+    @State static var isDetailView = false
 
     static var previews: some View {
-        Detail_View(isDetailView: $isDetailView)
+        DetailView(isDetailView: $isDetailView)
     }
 }
 
-struct Top_View: View {
+struct TopView: View {
     @State var isAnimation = false
     @State var place: Place = Place.allPlace[0]
     @Binding var imageOpacity: CGFloat
@@ -255,7 +260,7 @@ struct Top_View: View {
     }
 }
 
-struct Custom_Top_Border: Shape {
+struct CustomTopBorder: Shape {
     var radius = 35
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: radius, height: radius))
@@ -263,7 +268,7 @@ struct Custom_Top_Border: Shape {
     }
 }
 
-struct Custom_TopLeft_Border: Shape {
+struct CustomTopLeftBorder: Shape {
     var radius = 35
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: radius, height: radius))
@@ -271,7 +276,7 @@ struct Custom_TopLeft_Border: Shape {
     }
 }
 
-struct Custom_Bottom_Border: Shape {
+struct CustomBottomBorder: Shape {
     var radius = 35
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
@@ -279,7 +284,7 @@ struct Custom_Bottom_Border: Shape {
     }
 }
 
-struct ratings_open_hour: View {
+struct RatingOpenHour: View {
     @State var place: Place = Place.allPlace[0]
     var body: some View {
         HStack (alignment: .bottom) {
@@ -290,7 +295,7 @@ struct ratings_open_hour: View {
                     .opacity(0.7)
                 HStack() {
                     Text(String(place.ratings)).font(.body)
-                    StarsView(rating: place.ratings, maxRating: 5,size: 16)
+                    StarsView(rating: place.ratings, maxRating: 5, size: 16)
                     .font(.body)
                 }
             }
@@ -307,7 +312,7 @@ struct ratings_open_hour: View {
     }
 }
 
-struct expolore_more: View {
+struct expoloreMore: View {
     @State var place: Place = Place.allPlace[0]
     var background: LinearGradient
     var body: some View {
@@ -316,20 +321,17 @@ struct expolore_more: View {
                 .font(.title2.bold())
             Text(place.address)
                 .italic().font(.callout)
-//            Spacer()
-            
         }
         .padding(.leading)
         .edgesIgnoringSafeArea(.all)
         .frame(height: 100)
-//        .frame(maxHeight: .infinity)
         .background(background)
-        .clipShape(Custom_TopLeft_Border(radius: 180))
+        .clipShape(CustomTopLeftBorder(radius: 180))
     }
 }
 
 
-struct popular_activities: View {
+struct popularActivitiy: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State var place: Place = Place.allPlace[0]
     @State var selectedIndexCat = 0
@@ -342,14 +344,13 @@ struct popular_activities: View {
                     .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
                     .foregroundColor(isDarkMode ? Color.white : Color.black)
                     .cornerRadius(20)
-                     // Adjust the width based on the screen size and spacing
             }
         }
     }
 }
 
 
-struct nearby_activities: View {
+struct nearbyActivity: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
     @State var place: Place = Place.allPlace[0]
     
@@ -361,7 +362,6 @@ struct nearby_activities: View {
                         Image(systemName: place.nearby_activities[index].image_url)
                             .foregroundColor(isDarkMode ? Color.white : Color.black)
                             .padding(.leading)
-//                        Spacer()
                         Text(place.nearby_activities[index].event_name)
                             .foregroundColor(isDarkMode ? Color.white : Color.black)
                         Spacer()
@@ -383,4 +383,52 @@ struct nearby_activities: View {
     }
 }
 
+struct reviewView: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
+    @State var place: Place = Place.allPlace[0]
+    var body: some View {
+        ForEach(place.reviews.indices, id: \.self) { index in
+            VStack {
+                HStack {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(isDarkMode ? Color.white : Color.black)
 
+                    VStack {
+                        Text(place.reviews[index].reviewer_name)
+                            .font(.title3)
+                            .bold()
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
+
+                        Text(place.reviews[index].timestamp)
+                            .opacity(0.6)
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
+
+                    }
+                    Spacer()
+                    HStack {
+                        Text(String(place.reviews[index].given_stars))
+                            .opacity(0.6)
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
+
+                        StarsView(rating: CGFloat(place.reviews[index].given_stars), maxRating: 5)
+                    }
+                    .padding(.horizontal)
+                }
+                Text(place.reviews[index].content)
+                    .opacity(0.6)
+                    .foregroundColor(isDarkMode ? Color.white : Color.black)
+                Divider()
+                    .foregroundColor(isDarkMode ? Color.white : Color.black)
+            }
+        }
+    }
+}
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
+    }
+}

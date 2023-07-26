@@ -18,18 +18,17 @@ struct Tab_View: View {
         UITabBar.appearance().itemWidth = UIScreen.main.bounds.width / 2
         UITabBar.appearance().itemSpacing = 0
     }
-    
     var body: some View {
         ZStack {
             TabView {
-                Content_View(isDarkMode: isDarkMode)
+                ContentView(isDarkMode: isDarkMode)
                     .tabItem {
                         
                         Image(systemName: "house")
                         Text("Home").font(.largeTitle)
                     }
                 
-                Author_View(isDarkMode: $isDarkMode)
+                ProfileView(isDarkMode: $isDarkMode)
                     .tabItem {
                         Image(systemName: "person.circle").font(.system(size: 26))
                         Text("About")

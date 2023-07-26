@@ -1,23 +1,21 @@
 [
     {
         "account": "admin",
-    "password": "admin",
-    "username": "mudoker",
-    "pronouns": "he/him"
-    "bio": "Sophomore at RMIT University",
-    "Skill": "React Native - SwiftUI - Java",
-    "followers": 1381,
-    "following": 73,
-    "Likes": 6,
-    "avatar": "user",
-    "type": "Administrator",
-    "connections":
-        {
-            "facebook": "https://www.facebook.com/quocdoan.76/"
-            "github": "https://github.com/Mudoker"
+        "password": "admin",
+        "username": "mudoker",
+        "pronouns": "he/him",
+        "bio": "Sophomore at RMIT University",
+        "Skill": "React Native - SwiftUI - Java",
+        "followers": 1381,
+        "following": 73,
+        "Likes": 6,
+        "avatar": "user",
+        "type": "Administrator",
+        "connections": {
+            "facebook": "https://www.facebook.com/quocdoan.76/",
+            "github": "https://github.com/Mudoker",
             "spotify": "https://open.spotify.com/user/ui6uqxgvk0mm2hso2brms5zfq"
-        }
-    },
-    "join_date": "25/07/2023"
-    
+        },
+        "join_date": "25/07/2023"
+    }
 ]

@@ -13,6 +13,7 @@ struct User: Codable {
     let avatar: String
     let type: String
     let connections: Connections
+    let isRegistered: Bool
     let joinDate: String
     
     struct Connections: Codable {
@@ -21,8 +22,9 @@ struct User: Codable {
         let spotify: String?
     }
     
-    static let allUsers = decodeJsonFromJsonFile(jsonFileName: "user.json")
+    static let allUsers = decodeUserFromJsonFile(jsonFileName: "user.json")
 }
+
 
 struct Place: Codable {
     let name: String
@@ -38,7 +40,7 @@ struct Place: Codable {
     let popular_activities: [String]
     let nearby_activities: [Activity]
     let category: String
-    let wiki: String?
+    let reviews: [Reviews]
     
     static let allPlace = decodeJsonFromJsonFile(jsonFileName: "database.json")
     static let allCategories = getUniqueCategories(from: allPlace)
@@ -47,6 +49,12 @@ struct Place: Codable {
     static let topPlaces = allPlace.sorted(by: { $0.ratings > $1.ratings }).prefix(10)
 }
 
+struct Reviews: Codable {
+    let reviewer_name: String
+    let given_stars: Int
+    let content: String
+    let timestamp: String
+}
 struct Activity: Codable {
     let event_name: String
     let image_url: String
@@ -60,6 +68,23 @@ func decodeJsonFromJsonFile(jsonFileName: String) -> [Place] {
             do {
                 let decoder = JSONDecoder()
                 let decoded = try decoder.decode([Place].self, from: data)
+                return decoded
+            } catch let error {
+                fatalError("Failed to decode JSON: \(error)")
+            }
+        }
+    } else {
+        fatalError("Couldn't load \(jsonFileName) file")
+    }
+    return []
+}
+
+func decodeUserFromJsonFile(jsonFileName: String) -> [User] {
+    if let file = Bundle.main.url(forResource: jsonFileName, withExtension: nil) {
+        if let data = try? Data(contentsOf: file) {
+            do {
+                let decoder = JSONDecoder()
+                let decoded = try decoder.decode([User].self, from: data)
                 return decoded
             } catch let error {
                 fatalError("Failed to decode JSON: \(error)")
