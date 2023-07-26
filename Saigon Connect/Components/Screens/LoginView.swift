@@ -108,7 +108,7 @@ struct LoginView: View {
                         .padding(.horizontal)
                         .foregroundColor(.white)
                         NavigationLink(
-                            destination: ContentView(),
+                            destination: Tab_View(),
                             label: {
                                 Button {
                                     for index in User.allUsers.indices {
@@ -173,7 +173,7 @@ struct LoginView: View {
                             }
                             .navigationDestination(
                                 isPresented: $isTransition) {
-                                ContentView().navigationBarBackButtonHidden(true)
+                                    Tab_View().navigationBarBackButtonHidden(true)
                             }
                         }
                         .padding(.top, 5)

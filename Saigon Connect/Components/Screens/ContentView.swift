@@ -254,7 +254,7 @@ struct ContentView: View {
                                                 .simultaneousGesture(
                                                     TapGesture()
                                                     .onEnded {
-                                                        isDetailView = true  // Set isDetailView to true when the NavigationLink is activated
+                                                        isDetailView = true
                                                     })
                                             }
                                         }
@@ -285,10 +285,12 @@ struct ContentView: View {
                             }
                             .padding(.leading, 5)
                         }
+                        VStack {
+                            
+                        }.frame(height: 100)
                     }
                 }
                 .blur(radius: isOpenSlideMenu ? 50 : 0)
-                .edgesIgnoringSafeArea(.bottom)
                 .offset(x: isOpenSlideMenu ? 300 : 0)
                 .scaleEffect(isOpenSlideMenu ? 0.8 : 1)
             }
@@ -349,7 +351,4 @@ struct filterCategory: View {
         }
     }
 
-}
-class ThemeManager: ObservableObject {
-    @Published var isDarkMode: Bool = true
 }

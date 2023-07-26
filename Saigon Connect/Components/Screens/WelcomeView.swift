@@ -13,7 +13,7 @@ struct WelcomeScreen: View {
     @State private var banner = "𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨"
     @State private var banner2 = "𝐒𝐚𝐢𝐠𝐨𝐧 𝐂𝐨𝐧𝐧𝐞𝐜𝐭"
     @State private var banner3 = "Unveil the soul of Vietnam"
-    @State private var backgroundImageName = "saigon3"
+    @State private var backgroundImageName = "welcome_background"
     @State private var backgroundAnimation = true
     private let backgroundChangeInterval: TimeInterval = 3.0
     var body: some View {

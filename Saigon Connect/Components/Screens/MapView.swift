@@ -32,8 +32,8 @@ struct MapView: View {
                             region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004))
                         }) {
                             Image(systemName: "location.circle.fill").resizable()
-                                .frame(width: 40, height: 40).foregroundColor(.blue)
-                                .padding(.top,20)
+                                .frame(width: 50, height: 50).foregroundColor(.blue)
+                                .padding(.top,40)
                         }
                         .padding(.horizontal)
                         .padding(.top, 40)
