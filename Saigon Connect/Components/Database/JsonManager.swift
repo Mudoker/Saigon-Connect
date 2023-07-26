@@ -1,3 +1,17 @@
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 20/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    T.Huynh. "Lecture 5 - Codable Protocol & SwiftUI State.pdf" rmit.instructure.com.https://rmit.instructure.com/courses/121597/pages/w5-whats-happening-this-week?module_item_id=5219565
+            (accessed Jul. 20, 2023).
+*/
+
 import Foundation
 
 struct User: Codable {

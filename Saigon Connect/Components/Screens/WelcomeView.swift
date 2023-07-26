@@ -1,9 +1,18 @@
-//
-//  ContentView.swift
-//  Saigon Connect
-//
-//  Created by Quoc Doan Huu on 18/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    Kavsoft. SwiftUI Animated Text Shimmer Effect - Custom Animations - SwiftUI Tutorials (Dec. 30, 2020). Accessed Jul. 18, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=KYokxl1inRs&t=116s
+    Q.Doan, "app logo light" unpublished, Jul. 2023.
+    T.Huynh. "Week 3 - Intro to SwiftUI, Xcode & Layouts (I'm Rich App)" rmit.instructure.com.https://rmit.instructure.com/courses/121597/pages/w3-whats-happening-this-week?module_item_id=5219563
+         (accessed Jul. 20, 2023).
+*/
 
 import SwiftUI
 struct WelcomeScreen: View {
@@ -77,7 +86,7 @@ struct WelcomeScreen: View {
                         return Alert(
                             title: Text("Saigon Connect"),
                             message: (Text("""
-                                Author: Quoc Huu Doan
+                                Author: Huu Quoc Doan
                                 Sid: S3927776
                                 Major: Software Engineering
                                 Version: 1.1.0

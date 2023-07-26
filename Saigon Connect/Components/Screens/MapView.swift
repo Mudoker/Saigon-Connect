@@ -1,13 +1,26 @@
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    T.Huynh. "Lecture 4 - Shapes, Navigation List & Map" rmit.instructure.com.https://rmit.instructure.com/courses/121597/pages/w4-whats-happening-this-week?module_item_id=5219564 (accessed Jul. 24, 2023).
+*/
+
 import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var place: Place = Place.allPlace[0]
-    
+    @State private var coordinate: CLLocationCoordinate2D
     @State private var region: MKCoordinateRegion
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
-    init() {
-        let coordinate = CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1])
+
+    init(coordinate: CLLocationCoordinate2D) {
+        _coordinate = State(initialValue: coordinate)
         _region = State(initialValue: MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004)))
     }
 
@@ -19,7 +32,7 @@ struct MapView: View {
 
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $region, annotationItems: [CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1]))]) { annotation in
+            Map(coordinateRegion: $region, annotationItems: [CustomAnnotation(coordinate: coordinate)]) { annotation in
                 MapMarker(coordinate: annotation.coordinate, tint: .red)
             }
             
@@ -28,11 +41,10 @@ struct MapView: View {
                     Spacer()
                     VStack {
                         Button(action: {
-                            let coordinate = CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1])
                             region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004))
                         }) {
                             Image(systemName: "location.circle.fill").resizable()
-                                .frame(width: 50, height: 50).foregroundColor(.blue)
+                                .frame(width: 45, height: 45).foregroundColor(.blue)
                                 .padding(.top,40)
                         }
                         .padding(.horizontal)
@@ -50,6 +62,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(coordinate: CLLocationCoordinate2D(latitude: 37.3317, longitude: -122.0307))
     }
 }

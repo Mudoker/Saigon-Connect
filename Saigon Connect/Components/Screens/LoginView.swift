@@ -1,3 +1,18 @@
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    Q.Doan, "app logo light" unpublished, Jul. 2023.
+    T.Huynh. "Week 3 - Intro to SwiftUI, Xcode & Layouts (I'm Rich App)" rmit.instructure.com.https://rmit.instructure.com/courses/121597/pages/w3-whats-happening-this-week?module_item_id=5219563
+      (accessed Jul. 20, 2023).
+*/
+
 import SwiftUI
 struct LoginView: View {
     @State var accountInput: String = ""

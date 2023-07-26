@@ -1,12 +1,16 @@
-
-
-//
-//  Slide_Menu.swift
-//  Saigon Connect
-//
-//  Created by quoc on 21/07/2023.
-//
-
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    AppStuff. Side Menu in SwiftUI 2.0 Like A Professional | Select Menu Options (Dec. 9, 2020). Accessed Jul. 25, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=5jPmILEQygY&t=627s
+    
+*/
 import SwiftUI
 
 struct SlideMenuView: View {
@@ -140,33 +144,33 @@ struct SlideMenuView: View {
                                 .padding()  // Infor button
                                 
                             }
+                            Button {
+                                isConfirmLogOut.toggle()
+                            } label: {
+                                ZStack {
+                                    Text("Sign out")
+                                        .foregroundColor(.red)
+                                        .bold()
+                                        .font(.title3)
+                                }
+
+                            }
+                            .alert(isPresented: $isConfirmLogOut) {
+                                Alert(
+                                    title: Text("Confirmation"),
+                                    message: Text("Are you sure you want to sign out?"),
+                                    primaryButton: .destructive(Text("Sign out")) {
+                                        isLogOut = true
+                                    },
+                                    secondaryButton: .cancel(Text("Cancel"))
+                                )
+                            }
+                            .fullScreenCover(isPresented: $isLogOut) {
+                                        LoginView()
+                            }
                             
                         }
-                        Button {
-                            isConfirmLogOut.toggle()
-                        } label: {
-                            ZStack {
-                                Text("Sign out")
-                                    .foregroundColor(.red)
-                                    .bold()
-                                    .font(.title3)
-                            }
-
-                        }
-                        .alert(isPresented: $isConfirmLogOut) {
-                            Alert(
-                                title: Text("Confirmation"),
-                                message: Text("Are you sure you want to sign out?"),
-                                primaryButton: .destructive(Text("Sign out")) {
-                                    isLogOut = true
-                                },
-                                secondaryButton: .cancel(Text("Cancel"))
-                            )
-                        }
-                        .fullScreenCover(isPresented: $isLogOut) {
-                                    LoginView()
-                                }
-                        .padding()
+                       
                     }
                     .padding()
                     .frame(maxHeight: .infinity)

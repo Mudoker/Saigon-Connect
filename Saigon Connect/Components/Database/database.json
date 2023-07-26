@@ -513,7 +513,7 @@
     {
         "name": "Independence Palace",
         "address": "Independence Palace, 135 Nam Ky Khoi Nghia, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [106.695274, 10.776944],
+        "location": [10.777194441811236, 106.69535573909313],
         "ratings": 4.7,
         "total_ratings": 21409,
         "entrance_fee": "40.000 VND",
@@ -565,7 +565,7 @@
     {
         "name": "Saigon Central Book Street",
         "address": "Saigon Central Book Street, Nguyen Van Binh Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.773646, 106.700821],
+        "location": [10.781138820783813, 106.7000962660809],
         "ratings": 4.6,
         "total_ratings": 1077,
         "entrance_fee": "Free",

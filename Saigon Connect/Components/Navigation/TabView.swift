@@ -1,9 +1,14 @@
-//
-//  Tab_View.swift
-//  Saigon Connect
-//
-//  Created by quoc on 20/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 20/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement: None
+*/
 
 import SwiftUI
 

@@ -1,8 +1,40 @@
-//  Content_View.swift
-//  Saigon Connect
-//
-//  Created by quoc on 20/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    Q.Doan, "app logo dark" unpublished, Jul. 2023.
+    Q.Doan, "app logo light" unpublished, Jul. 2023.
+    DesignCode. Building your first iOS app - SwiftUI Livestream (Apr. 24, 2021). Accessed Jul. 24, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=1AXyC24NCkE&t=5s
+    Kavsoft. Expandable Search Bar Using SwiftUI - Custom Search Bar Using SwiftUI - SwiftUI Tutorial (Mar. 10, 2020). Accessed Jul. 20, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=4_uP61b0d1E
+    DesignCode. Carousel with 3D Rotation and Parallax in SwiftUI (Dec. 2, 2021). Accessed Jul. 24, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=Ms1Khcnms3g&t=925s
+    L.Nguyen. "Nhà thờ Đức Bà" Pinterest. https://www.pinterest.com/pin/112660428155589052/ (accessed Jul. 19, 2023).
+    Tràng An. "Khám phá chợ Bến Thành: Khu chợ cổ trở thành biểu tượng của Sài Gòn" Tràng An. https://disantrangan.vn/cho-ben-thanh (accessed Jul. 19, 2023).
+    savills. "BITEXCO FINANCIAL TOWER" savills. https://vn.savills.com.vn/find-a-property/commercial-leasing/hcm-bitexco-financial-tower.aspx (accessed Jul. 19, 2023).
+    i Tour Vietnam. "Saigon Opera House" i Tour Vietnam. https://www.itourvn.com/blog/saigon-opera-house (accessed Jul. 19, 2023).
+    Duyen. "Saigon Central Post Office" Origin Vietnam. https://www.originvietnam.com/destinations/saigon-central-post-office/ (accessed Jul. 19, 2023).
+    G. Rodgers. "War Remnants Museum: a Must-See Vietnam War Memorial in Saigon" tripsavvy. https://www.tripsavvy.com/war-remnants-museum-1629320 (accessed Jul. 19, 2023).
+    SKYGEM HOTEL. "SAIGON SQUARE" Sky Gem Hotel. https://www.bluediamondhotel.com.vn/saigon-square (accessed Jul. 19, 2023).
+    Phuong Vy. "Có gì vui ở phố đi bộ Nguyễn Huệ mỗi tối?" 1 phút Saigon. https://1phutsaigon.vn/co-gi-vui-o-pho-di-bo-nguyen-hue/ (accessed Jul. 19, 2023).
+    Trung Son. "Phố đi bộ Bùi Viện đã gọn, đẹp hơn" Phu Nu Newspaper. https://www.phunuonline.com.vn/pho-di-bo-bui-vien-da-gon-dep-hon-a1461576.html (accessed Jul. 19, 2023).
+    H.Nguyen. "Công viên Tao Đàn – Cảnh đẹp tựa vườn thượng uyển Sài Gòn xưa" DULICH3MIEN. https://dulich3mien.vn/ho-chi-minh/cong-vien-tao-dan/ (accessed Jul. 19, 2023).
+    Vingroup. "Saigon Zoo and Botanical Gardens: ALL you need to know before visiting" VinWonders. https://vinwonders.com/en/news/saigon-zoo-and-botanical-gardens-all-you-need-to-know-before-visiting/ (accessed Jul. 19, 2023).
+    Ho Chi Minh City Museum of Fine Arts. "" Ho Chi Minh City Museum of Fine Arts. http://baotangmythuattphcm.com.vn (accessed Jul. 19, 2023).
+    Q.Tran. "Bảo tàng đầu tiên ở Sài Gòn" ivivu.com. https://www.ivivu.com/blog/2019/09/bao-tang-dau-tien-o-sai-gon/ (accessed Jul. 19, 2023).
+    iVIVU.com. "Khám phá chùa Giác Lâm – ngôi cổ tự trăm năm giữa lòng Sài Gòn" iVIVU.com. https://www.ivivu.com/blog/2022/10/kham-pha-chua-giac-lam-ngoi-co-tu-tram-nam-giua-long-sai-gon/ (accessed Jul. 19, 2023).
+    Wallpaper Flare. "HD wallpaper: vietnam, ho chi minh city, bitexco, saigon, spaceship, building exterior" Wallpaper Flare. https://www.wallpaperflare.com/vietnam-ho-chi-minh-city-bitexco-saigon-spaceship-building-exterior-wallpaper-erkbd (accessed Jul. 19, 2023).
+    Viet Holiday Travel. "Dam Sen Water Park" Viet Holiday Travel. http://www.holidayinvietnam.com/vietnam/ho-chi-minh/dam-sen-water-park (accessed Jul. 19, 2023).
+    VOV2. "Hai công trình kiến trúc tại TP.HCM được xếp hạng Di tích quốc gia đặc biệt" VOV2. https://vov2.vov.vn/van-hoa-giai-tri/hai-cong-trinh-kien-truc-tai-tphcm-duoc-xep-hang-di-tich-quoc-gia-dac-biet-38574 (accessed Jul. 19, 2023).
+    Vingroup. "" Landmark 81 Sky View. https://www.landmark81skyview.com (accessed Jul. 19, 2023).
+    Travel Saigon. "Ho Chi Minh City Book Street" Travel Saigon. https://travelsaigon.org/place/ho-chi-minh-city-book-street/ (accessed Jul. 19, 2023).
+    Xây Dựng Số. "gradient wallpaper 5k đa dạng chất lượng hình ảnh" Travel Saigon. https://xaydungso.vn/bai-viet-khac/gradient-wallpaper-5k-da-dang-chat-luong-hinh-anh-vi-cb.html  Xây Dựng Số (accessed Jul. 19, 2023).
+*/
+
 import SwiftUI
 struct ContentView: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = true

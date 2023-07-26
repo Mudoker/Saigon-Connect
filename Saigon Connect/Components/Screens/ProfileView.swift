@@ -1,9 +1,15 @@
-//
-//  Author_View.swift
-//  Saigon Connect
-//
-//  Created by quoc on 22/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    P.Hudson. "How to open web links in Safari" HACKING WITH SWIFT. https://www.hackingwithswift.com/quick-start/swiftui/how-to-open-web-links-in-safari (accessed Jul. 25, 2023).
+*/
 
 import SwiftUI
 
@@ -65,17 +71,25 @@ struct ProfileView: View {
                         } else {
                             HStack {
                                 
-                                if let facebook = userCreds[userIndex].connections.facebook, let url = URL(string: facebook) {
-                                    Image (systemName: "f.cursive.circle.fill")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
-                                    Link("Facebook", destination: url)
-                                        .font(.title)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                    Spacer()
-                                    Image (systemName: "arrow.up.forward")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
+                                if let facebook = userCreds[userIndex].connections.facebook, let _ = URL(string: facebook) {
+                                    Link(destination: URL(string: facebook)!) {
+                                        HStack {
+                                            Image(systemName: "f.cursive.circle.fill")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                            
+                                            Text("Facebook")
+                                                .font(.title)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+
+                                            Spacer()
+
+                                            Image(systemName: "arrow.up.forward")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                        }
+                                    }
+
                                 }
 
                             }
@@ -85,17 +99,24 @@ struct ProfileView: View {
                             Divider()
                                 .background(isDarkMode ? .white : .black)
                             HStack {
-                                if let github = userCreds[userIndex].connections.github, let url = URL(string: github) {
-                                    Image (systemName: "poweroutlet.type.f.fill")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
-                                    Link("Github", destination: url)
-                                        .font(.title)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                    Spacer()
-                                    Image (systemName: "arrow.up.forward")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
+                                if let github = userCreds[userIndex].connections.github, let _ = URL(string: github) {
+                                    Link(destination: URL(string: github)!) {
+                                        HStack {
+                                            Image(systemName: "poweroutlet.type.f.fill")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                            
+                                            Text("Github")
+                                                .font(.title)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+
+                                            Spacer()
+
+                                            Image(systemName: "arrow.up.forward")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                        }
+                                    }
                                 }
                             }
                             .padding(.bottom, 10)
@@ -106,17 +127,24 @@ struct ProfileView: View {
 
                             
                             HStack {
-                                if let spotify = userCreds[userIndex].connections.spotify, let url = URL(string: spotify) {
-                                    Image (systemName: "line.3.horizontal.decrease.circle.fill")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
-                                    Link("Spotify", destination: url)
-                                        .font(.title)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                    Spacer()
-                                    Image (systemName: "arrow.up.forward")
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .font(.title)
+                                if let spotify = userCreds[userIndex].connections.spotify, let _ = URL(string: spotify) {
+                                    Link(destination: URL(string: spotify)!) {
+                                        HStack {
+                                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                            
+                                            Text("Spotify")
+                                                .font(.title)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+
+                                            Spacer()
+
+                                            Image(systemName: "arrow.up.forward")
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .font(.title)
+                                        }
+                                    }
                                     
                                 }
                             }
@@ -135,7 +163,7 @@ struct ProfileView: View {
                 Spacer()
                 
             }
-            .padding(.top, 140)
+            .padding(.top, 100)
         }.background( isDarkMode ? Image("background_dark") : Image("background_light"))
     }
 }

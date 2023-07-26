@@ -1,9 +1,14 @@
-//
-//  Saigon_ConnectApp.swift
-//  Saigon Connect
-//
-//  Created by Quoc Doan Huu on 18/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement: None
+*/
 
 import SwiftUI
 

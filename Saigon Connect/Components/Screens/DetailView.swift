@@ -1,9 +1,16 @@
-//
-//  Detail_View.swift
-//  Saigon Connect
-//
-//  Created by quoc on 20/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Doan Huu Quoc
+  ID: 3927776
+  Created  date: 18/07/2023
+  Last modified: 26/07/2023
+  Acknowledgement:
+    Credo Academy. How to improve the UX with SwiftUI - Beginner iOS App Development Tutorial - Part 9 (Mar. 8, 2021). Accessed Jul. 19, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=zfPqWO_Syzs&t=365s
+    Please refer to ContentView.swift file to see references for image used
+*/
 
 import SwiftUI
 import CoreLocation
@@ -14,7 +21,7 @@ struct DetailView: View {
     @State private var animateGradient = false
     @Binding var isDetailView: Bool
     @State private var isMapView = false
-    @State var place: Place = Place.topPlaces[0]
+    @State var place: Place = Place.allPlace[5]
     @State private var imageOpacity: Float = 1
     @State private var scrollOffset: CGFloat = 0
     
@@ -32,34 +39,25 @@ struct DetailView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
-                if !isMapView {
-                    
-                } else {
-                    MapView()
-                        .frame(height: 400)
-                        .edgesIgnoringSafeArea(.all)
-                }
-                
+                MapView(coordinate: CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1]))
+                    .frame(height: 400)
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(isMapView ? 1.0 : 0)
                 VStack(alignment: .leading) {
-                    if !isMapView {
-                        VStack(alignment: .leading) {
-                            Text(place.category)
-                                .padding(.horizontal)
-                                .foregroundColor(isDarkMode ? .white : .black)
+                    VStack(alignment: .leading) {
+                        Text(place.category)
+                            .padding(.horizontal)
+                            .foregroundColor(isDarkMode ? .white : .black)
 
-                                .padding(.top)
-                            Text(place.name)
-                                .font(.largeTitle)
-                                .fontWeight(.black)
-                                .padding(.horizontal)
-                                .foregroundColor(isDarkMode ? .white : .black)
+                            .padding(.top)
+                        Text(place.name)
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .padding(.horizontal)
+                            .foregroundColor(isDarkMode ? .white : .black)
+                    }.frame(height: 125)
+                        .opacity(!isMapView ? 1.0 : 0)
 
-                        }.frame(height: 125)
-
-                    } else {
-                        VStack{}.frame(height: 125)
-                        
-                    }
                     if !isMapView {
                         TopView(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
                             .padding(.horizontal)
@@ -76,29 +74,34 @@ struct DetailView: View {
                             VStack {
                                 HStack {
                                     Button {
-                                        isMapView = false
+                                        DispatchQueue.main.async {
+                                            isMapView = false
+                                        }
 
                                     } label: {
                                         Image(systemName: "doc.circle").resizable()
-                                            .frame(width: 50, height: 50)
+                                            .frame(width: 55, height: 55)
                                             .foregroundColor(isDarkMode ? .white : .black)
 
                                     }
-                                    .padding(.trailing)
+                                    .padding(.trailing, 20)
+                                    
                                     Button {
-                                        isMapView = true
-
+                                        DispatchQueue.main.async {
+                                            isMapView = true
+                                        }
                                     } label: {
                                         Image(systemName: "map.circle.fill").resizable()
-                                            .frame(width: 50, height: 50)
+                                            .frame(width: 55, height: 55)
                                             .foregroundColor(isDarkMode ? .white : .black)
 
                                     }
                                     Spacer()
                                 }
+                                .padding(.top)
                                 .padding(.horizontal)
                                 .frame(height: 100)
-                                RatingOpenHour()
+                                RatingOpenHour(place: place)
                                     .foregroundColor(isDarkMode ? .white : .black)
 
                                 Text (place.full_description)
@@ -132,7 +135,9 @@ struct DetailView: View {
                                             .foregroundColor(isDarkMode ? .white : .black)
 
                                         Spacer()
-                                    }.frame(height: 20)
+                                    }
+                                    .padding(.vertical)
+                                    .frame(height: 20)
                                     
                                     nearbyActivity(place: place).padding(.leading)
                                         .padding(.top,10)
@@ -148,7 +153,10 @@ struct DetailView: View {
                                             .foregroundColor(isDarkMode ? .white : .black)
 
                                         Spacer()
-                                    }.frame(height: 20)
+                                    }
+                                    .padding(.vertical)
+                                    .frame(height: 20)
+            
                                                                 
                                     reviewView(place: place).padding(.leading)
                                         .padding(.top,20)
@@ -170,7 +178,7 @@ struct DetailView: View {
                         
                         .padding(.top, -70)
                         Spacer()
-                        expoloreMore(background: isDarkMode ? background_dark : background_light)
+                        expoloreMore( place: place, background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
 
 
@@ -184,6 +192,11 @@ struct DetailView: View {
                 }
                 .frame(width: geometry.size.width, alignment: .leading)
                 
+            }
+            .onAppear {
+                if isMapView {
+                    
+                }
             }
             .background( isDarkMode ? Image("background_dark") : Image("background_light"))
             .zIndex(0)
@@ -216,14 +229,13 @@ struct TopView: View {
                 if !isMapView {
                     Text("Entrence fee")
                         .fontWeight(.bold)
-                        .frame(height: 5)
                     if (place.entrance_fee == "Free") {
                         Text(place.entrance_fee)
                             .font(.system(size: 30, weight: .bold))
                             .frame(height: 30)
                     }else {
                         Text(place.entrance_fee)
-                            .font(.system(size: 25, weight: .bold))
+                            .font(.system(size: 23, weight: .bold))
                             .frame(height: 30)
                     }
                     
@@ -313,7 +325,7 @@ struct RatingOpenHour: View {
 }
 
 struct expoloreMore: View {
-    @State var place: Place = Place.allPlace[0]
+    @State var place: Place = Place.allPlace[1]
     var background: LinearGradient
     var body: some View {
         HStack {
@@ -388,14 +400,14 @@ struct reviewView: View {
     @State var place: Place = Place.allPlace[0]
     var body: some View {
         ForEach(place.reviews.indices, id: \.self) { index in
-            VStack {
+            VStack (alignment: .leading) {
                 HStack {
                     Image(systemName: "person.circle")
                         .resizable()
                         .frame(width: 40, height: 40)
                         .foregroundColor(isDarkMode ? Color.white : Color.black)
 
-                    VStack {
+                    VStack (alignment: .leading) {
                         Text(place.reviews[index].reviewer_name)
                             .font(.title3)
                             .bold()
@@ -408,9 +420,7 @@ struct reviewView: View {
                     }
                     Spacer()
                     HStack {
-                        Text(String(place.reviews[index].given_stars))
-                            .opacity(0.6)
-                            .foregroundColor(isDarkMode ? Color.white : Color.black)
+                        Spacer()
 
                         StarsView(rating: CGFloat(place.reviews[index].given_stars), maxRating: 5)
                     }
@@ -430,5 +440,18 @@ struct ViewOffsetKey: PreferenceKey {
     static var defaultValue = CGFloat.zero
     static func reduce(value: inout Value, nextValue: () -> Value) {
         value += nextValue()
+    }
+}
+
+struct ConditionalMapView: View {
+    let isVisible: Bool
+    let coordinate: CLLocationCoordinate2D
+
+    var body: some View {
+        if isVisible {
+            MapView(coordinate: coordinate)
+        } else {
+            Color.clear // Empty view if MapView should not be visible
+        }
     }
 }
