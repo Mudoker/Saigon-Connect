@@ -15,7 +15,7 @@
 		AB5A54432A6A6BFD00169B2D /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A54422A6A6BFD00169B2D /* JsonManager.swift */; };
 		ABA62C242A6E415100AC2760 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C232A6E415100AC2760 /* MapView.swift */; };
 		ABA62C302A6FE80D00AC2760 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62C2F2A6FE80D00AC2760 /* LoginView.swift */; };
-		ABA62C322A6FFF5B00AC2760 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA62C312A6FFF5B00AC2760 /* user.json */; };
+		ABA62C362A7252E800AC2760 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA62C352A7252E800AC2760 /* user.json */; };
 		ABF950062A6BC58000E9EC2C /* SmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF950052A6BC58000E9EC2C /* SmallCardView.swift */; };
 		ABF950082A6C33E900E9EC2C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF950072A6C33E900E9EC2C /* ProfileView.swift */; };
 		ABF9500F2A6D448700E9EC2C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = ABF9500E2A6D448700E9EC2C /* database.json */; };
@@ -35,7 +35,7 @@
 		AB5A54422A6A6BFD00169B2D /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		ABA62C232A6E415100AC2760 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		ABA62C2F2A6FE80D00AC2760 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		ABA62C312A6FFF5B00AC2760 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = ../../../../user.json; sourceTree = "<group>"; };
+		ABA62C352A7252E800AC2760 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		ABF950052A6BC58000E9EC2C /* SmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCardView.swift; sourceTree = "<group>"; };
 		ABF950072A6C33E900E9EC2C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		ABF9500E2A6D448700E9EC2C /* database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		AB5A54412A6A6BDF00169B2D /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				ABA62C312A6FFF5B00AC2760 /* user.json */,
 				AB5A54422A6A6BFD00169B2D /* JsonManager.swift */,
+				ABA62C352A7252E800AC2760 /* user.json */,
 				ABF9500E2A6D448700E9EC2C /* database.json */,
 			);
 			path = Database;
@@ -196,7 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA62C322A6FFF5B00AC2760 /* user.json in Resources */,
+				ABA62C362A7252E800AC2760 /* user.json in Resources */,
 				E1358C302A666D4D0099EB5E /* Preview Assets.xcassets in Resources */,
 				E1358C2D2A666D4D0099EB5E /* Assets.xcassets in Resources */,
 				ABF9500F2A6D448700E9EC2C /* database.json in Resources */,
