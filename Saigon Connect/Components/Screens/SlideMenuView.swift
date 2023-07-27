@@ -20,7 +20,8 @@ struct SlideMenuView: View {
     @Binding var isDarkMode: Bool
     @State var isLogOut: Bool = false
     @State var isConfirmLogOut: Bool = false
-
+    @State var isShowProfile: Bool = false
+    
     var background_light = LinearGradient(
         gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
                 startPoint: .top,

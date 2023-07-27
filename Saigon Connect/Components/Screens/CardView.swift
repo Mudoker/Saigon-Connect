@@ -53,7 +53,7 @@ struct CardView: View {
             }
             .foregroundColor(.black)
             .cornerRadius(20)
-            .frame(width: 360, height:340)
+            .frame(width: 360, height:360)
 
         }
     }
@@ -62,7 +62,7 @@ struct CardView: View {
 struct GlassMorphicCard: View {
     @Binding var isDarkMode: Bool
     @State var width: CGFloat = 360
-    @State var height: CGFloat = 340
+    @State var height: CGFloat = 360
     @State var minWidth: CGFloat = 0
     @State var useMinWidth = false
     var body: some View {

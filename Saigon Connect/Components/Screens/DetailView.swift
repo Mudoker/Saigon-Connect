@@ -21,7 +21,7 @@ struct DetailView: View {
     @State private var animateGradient = false
     @Binding var isDetailView: Bool
     @State private var isMapView = false
-    @State var place: Place = Place.allPlace[5]
+    @State var place: Place = Place.topPlaces[0]
     @State private var imageOpacity: Float = 1
     @State private var scrollOffset: CGFloat = 0
     
@@ -55,7 +55,7 @@ struct DetailView: View {
                             .fontWeight(.black)
                             .padding(.horizontal)
                             .foregroundColor(isDarkMode ? .white : .black)
-                    }.frame(height: 125)
+                    }.frame(height: 145)
                         .opacity(!isMapView ? 1.0 : 0)
 
                     if !isMapView {
@@ -176,7 +176,7 @@ struct DetailView: View {
                             }
                         }.coordinateSpace(name: "scroll")
                         
-                        .padding(.top, -70)
+                        .padding(.top, -50)
                         Spacer()
                         expoloreMore( place: place, background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
@@ -185,18 +185,13 @@ struct DetailView: View {
 
                     }
                     .background(isDarkMode ? Color(red: 0.20, green: 0.20, blue: 0.20).clipShape(CustomTopBorder())
-                        .edgesIgnoringSafeArea(.all).padding(.top, -70) :Color.white.clipShape(CustomTopBorder())
-                        .edgesIgnoringSafeArea(.all).padding(.top, -70))
+                        .edgesIgnoringSafeArea(.all).padding(.top, -50) :Color.white.clipShape(CustomTopBorder())
+                        .edgesIgnoringSafeArea(.all).padding(.top, -50))
                     .shadow(radius: 20)
                     
                 }
                 .frame(width: geometry.size.width, alignment: .leading)
                 
-            }
-            .onAppear {
-                if isMapView {
-                    
-                }
             }
             .background( isDarkMode ? Image("background_dark") : Image("background_light"))
             .zIndex(0)
@@ -331,10 +326,11 @@ struct expoloreMore: View {
         HStack {
             Image(systemName: "mappin.and.ellipse")
                 .font(.title2.bold())
+                .padding(.leading)
             Text(place.address)
                 .italic().font(.callout)
+            Spacer()
         }
-        .padding(.leading)
         .edgesIgnoringSafeArea(.all)
         .frame(height: 100)
         .background(background)
