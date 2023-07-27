@@ -142,7 +142,7 @@ struct SlideMenuView: View {
                                     }
 
                                 }
-                                .padding()  // Infor button
+                                .padding()
                                 
                             }
                             Button {
@@ -185,7 +185,6 @@ struct SlideMenuView: View {
 
     func creatButton (title: String, image: String) -> some View
     {
-        //serch icon
         Button{
         }label :{
             HStack {

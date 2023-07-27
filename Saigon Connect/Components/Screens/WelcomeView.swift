@@ -75,7 +75,6 @@ struct WelcomeScreen: View {
                         isPresented: $isTransition) {
                         LoginView().navigationBarBackButtonHidden(true)
                     }
-                    // Infor button
                     Button{
                         showingAlert = true;
                     }
@@ -105,7 +104,6 @@ struct WelcomeScreen: View {
                 .offset(x: backgroundAnimation ? 10 : -50)
                 .animation(Animation.easeInOut(duration: 4.0).repeatForever(), value: backgroundAnimation))
             .onAppear {
-                // Start the animation when the view appears
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     backgroundAnimation.toggle()
                 }

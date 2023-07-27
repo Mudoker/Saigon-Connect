@@ -150,10 +150,6 @@ struct ProfileView: View {
                             }
                             .padding(.horizontal)
                         }
-
-                        
-
-
                     }
                     Spacer()
                 }

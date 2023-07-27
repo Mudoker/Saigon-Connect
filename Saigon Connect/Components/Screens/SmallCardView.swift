@@ -13,7 +13,6 @@
 import SwiftUI
 
 struct SmallCardView: View {
-    //Make the gradient moving
     @State private var animateGradient = false
     @Binding var isDarkMode: Bool
 

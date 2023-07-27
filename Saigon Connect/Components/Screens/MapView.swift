@@ -24,7 +24,6 @@ struct MapView: View {
         _region = State(initialValue: MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004)))
     }
 
-    // CustomAnnotation to represent the location on the map
     struct CustomAnnotation: Identifiable {
         let id = UUID()
         let coordinate: CLLocationCoordinate2D

@@ -18,7 +18,7 @@ struct Tab_View: View {
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.darkGray
         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.7)
-        UITabBar.appearance().backgroundImage = UIImage() // Set the background image to a transparent image
+        UITabBar.appearance().backgroundImage = UIImage()
            UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().itemWidth = UIScreen.main.bounds.width / 2
         UITabBar.appearance().itemSpacing = 0
