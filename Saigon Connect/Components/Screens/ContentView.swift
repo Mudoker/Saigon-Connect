@@ -47,14 +47,15 @@ struct ContentView: View {
     @State var selectedIndexCat = 0
     @State var filter = ""
     @State var isOpenSlideMenu = false
+    @State var isProfileView = false
+
     var body: some View {
         NavigationStack {
             ZStack {
                 if isOpenSlideMenu {
-                    SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode)
+                    SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode, isProfileView: $isProfileView)
                 }
                 VStack(alignment: .leading) {
-                    if isDetailView != true {
                         HStack(alignment: .center) {
                             // navbar button
                             Button {
@@ -123,7 +124,7 @@ struct ContentView: View {
                             }
                         }
                         .frame(height: 80)
-                    }
+                    
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading) {
                             if searchInput == "" {
@@ -161,7 +162,7 @@ struct ContentView: View {
                                 .tabViewStyle(.page(indexDisplayMode: .never))
                                 .frame(height: 370)
                             }
-                            Text("All Places").font(.title).padding(.leading).bold().frame(height: 20).padding(.top, 10)
+                            Text("All Places").font(.title).padding(.horizontal).bold().frame(height: 20).padding(.top, 10)
                             .foregroundColor(isDarkMode ? .white : .black)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack {

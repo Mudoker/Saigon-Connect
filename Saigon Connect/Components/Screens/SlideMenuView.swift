@@ -20,8 +20,8 @@ struct SlideMenuView: View {
     @Binding var isDarkMode: Bool
     @State var isLogOut: Bool = false
     @State var isConfirmLogOut: Bool = false
-    @State var isShowProfile: Bool = false
-    
+    @Binding var isProfileView: Bool
+
     var background_light = LinearGradient(
         gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
                 startPoint: .top,
@@ -119,6 +119,23 @@ struct SlideMenuView: View {
 
                         ScrollView (.vertical,showsIndicators: false) {
                             HStack {
+                                Button {
+                                    isDarkMode.toggle()
+                                } label: {
+                                    Image(systemName: "person.circle")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                    Text("Profile")
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                }
+                                .padding(.top)
+                                Spacer()
+                            }
+
+                            HStack {
                                 Image(systemName: "moon.circle")
                                     .resizable()
                                     .frame(width: 35, height: 35)
@@ -143,7 +160,7 @@ struct SlideMenuView: View {
 
                                 }
                                 .padding()
-                                
+                                Spacer()
                             }
                             Button {
                                 isConfirmLogOut.toggle()
@@ -205,7 +222,7 @@ struct SlideMenuView: View {
 
 struct SlideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SlideMenuView(isOpenSlideMenu: .constant(true), isDarkMode: .constant(false))
+        SlideMenuView(isOpenSlideMenu: .constant(true), isDarkMode: .constant(false), isProfileView: .constant(false))
     }
 }
 

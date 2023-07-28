@@ -24,6 +24,7 @@
 		E1358C302A666D4D0099EB5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1358C2F2A666D4D0099EB5E /* Preview Assets.xcassets */; };
 		E1358C372A666D750099EB5E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1358C362A666D750099EB5E /* WelcomeView.swift */; };
 		E1358C392A669C700099EB5E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1358C382A669C700099EB5E /* SplashView.swift */; };
+		E13D815F2A737965000361DF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D815E2A737965000361DF /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E1358C2F2A666D4D0099EB5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1358C362A666D750099EB5E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E1358C382A669C700099EB5E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E13D815E2A737965000361DF /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				ABF950052A6BC58000E9EC2C /* SmallCardView.swift */,
 				ABA62C232A6E415100AC2760 /* MapView.swift */,
 				ABF950072A6C33E900E9EC2C /* ProfileView.swift */,
+				E13D815E2A737965000361DF /* CustomTabBar.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				E1358C292A666D4B0099EB5E /* Saigon_ConnectApp.swift in Sources */,
 				ABF950082A6C33E900E9EC2C /* ProfileView.swift in Sources */,
+				E13D815F2A737965000361DF /* CustomTabBar.swift in Sources */,
 				E1358C372A666D750099EB5E /* WelcomeView.swift in Sources */,
 				E1358C392A669C700099EB5E /* SplashView.swift in Sources */,
 				ABA62C302A6FE80D00AC2760 /* LoginView.swift in Sources */,
