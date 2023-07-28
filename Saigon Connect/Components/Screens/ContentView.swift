@@ -55,156 +55,187 @@ struct ContentView: View {
                 if isOpenSlideMenu {
                     SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode, isProfileView: $isProfileView)
                 }
-                VStack(alignment: .leading) {
-                        HStack(alignment: .center) {
-                            // navbar button
-                            Button {
-                                withAnimation(.spring()) {
-                                    isOpenSlideMenu.toggle()
+                if isProfileView {
+                    ProfileView(isDarkMode: $isDarkMode)
+                } else {
+                    VStack(alignment: .leading) {
+                            HStack(alignment: .center) {
+                                // navbar button
+                                Button {
+                                    withAnimation(.spring()) {
+                                        isOpenSlideMenu.toggle()
+                                    }
                                 }
-                            }
-                            label: {
-                                Image(systemName: "line.3.horizontal").resizable()
-                                .frame(width: 40, height: 20)
-                                .foregroundColor(isDarkMode ? .white : .black)
-                            }
-                            .padding()  // Infor button
-                            Spacer()
-                            if !self.showSearch {
-                                if isDarkMode {
-                                    Image("app logo light").resizable().aspectRatio(contentMode: .fit)
-                                    .frame(width: 200, height: 200)
+                                label: {
+                                    Image(systemName: "line.3.horizontal").resizable()
+                                    .frame(width: 40, height: 20)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+                                }
+                                .padding()  // Infor button
+                                Spacer()
+                                if !self.showSearch {
+                                    if isDarkMode {
+                                        Image("app logo light").resizable().aspectRatio(contentMode: .fit)
+                                        .frame(width: 200, height: 200)
+                                    }
+                                    else {
+                                        Image("app logo dark").resizable().aspectRatio(contentMode: .fit)
+                                        .frame(width: 200, height: 200)
+                                    }
+                                    Spacer()
+                                }
+                                if self.showSearch {
+                                    Capsule()
+                                    .foregroundColor(isDarkMode ? .white : .gray)
+                                    .opacity(0.2)
+                                    .frame(height: 40)
+                                    .overlay(
+                                        HStack {
+                                            Image(systemName: "magnifyingglass")
+                                            .resizable()
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(isDarkMode ? .white : .black)
+                                            .padding(.leading, 12)
+                                            TextField("", text: $searchInput, prompt: Text("Type something...").foregroundColor( isDarkMode ? .white : .black))
+
+                                            .padding(.leading, 8)
+                                        })
+                                    .padding(.horizontal)
+                                    Button(action: {
+                                        withAnimation(.easeInOut(duration: 0.1)) {
+                                            self.searchInput = ""
+                                            self.showSearch.toggle()
+                                        }
+                                    })
+                                    {
+                                        Image(systemName: "xmark.circle.fill").resizable()
+                                        .frame(width: 25, height: 25)                                    .foregroundColor(isDarkMode ? .white : .black)
+                                    }
+                                    .padding().offset(x: -10)
                                 }
                                 else {
-                                    Image("app logo dark").resizable().aspectRatio(contentMode: .fit)
-                                    .frame(width: 200, height: 200)
-                                }
-                                Spacer()
-                            }
-                            if self.showSearch {
-                                Capsule()
-                                .foregroundColor(isDarkMode ? .white : .gray)
-                                .opacity(0.2)
-                                .frame(height: 40)
-                                .overlay(
-                                    HStack {
-                                        Image(systemName: "magnifyingglass")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                        .padding(.leading, 12)
-                                        TextField("Type something...", text: self.$searchInput)
-                                        .padding(.leading, 8)
+                                    Button(action: {
+                                        withAnimation(.easeInOut(duration: 0.1)) {
+                                            self.showSearch.toggle()
+                                        }
                                     })
-                                .padding(.horizontal)
-                                Button(action: {
-                                    withAnimation(.easeInOut(duration: 0.1)) {
-                                        self.searchInput = ""
-                                        self.showSearch.toggle()
+                                    {
+                                        Image(systemName: "magnifyingglass").resizable()
+                                        .frame(width: 30, height: 30)                                    .foregroundColor(isDarkMode ? .white : .black)
+                                        .padding()
                                     }
-                                })
-                                {
-                                    Image(systemName: "xmark.circle.fill").resizable()
-                                    .frame(width: 25, height: 25)                                    .foregroundColor(isDarkMode ? .white : .black)
+                                    .foregroundColor(isDarkMode ? .white : .black)
                                 }
-                                .padding().offset(x: -10)
                             }
-                            else {
-                                Button(action: {
-                                    withAnimation(.easeInOut(duration: 0.1)) {
-                                        self.showSearch.toggle()
-                                    }
-                                })
-                                {
-                                    Image(systemName: "magnifyingglass").resizable()
-                                    .frame(width: 30, height: 30)                                    .foregroundColor(isDarkMode ? .white : .black)
-                                    .padding()
-                                }
-                                .foregroundColor(isDarkMode ? .white : .black)
-                            }
-                        }
-                        .frame(height: 80)
-                    
-                    ScrollView(showsIndicators: false) {
-                        VStack(alignment: .leading) {
-                            if searchInput == "" {
-                                Text(getFormattedDate()).frame(height: 15).padding(.leading)
-                                .foregroundColor(isDarkMode ? .white : .black)
-                                Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
-                                .padding(.bottom,10).padding(.leading)
-                                .foregroundColor(isDarkMode ? .white : .black)
-                                Spacer()
-                                TabView {
-                                    ForEach(Place.topPlaces.indices, id: \.self) {
-                                        index in
-                                        GeometryReader {
-                                            proxy in
-                                            NavigationLink(
-                                                destination: DetailView(
-                                                    isDetailView: $isDetailView,
-                                                    place: Place.topPlaces[index]))
-                                            {
-                                                CardView(isDarkMode: $isDarkMode, place: Place.topPlaces[index])
-                                                .padding(.horizontal)
-                                                .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -10), axis: (x: 0, y: 1, z: 0))
-                                                .shadow(color: Color.gray.opacity(0.3),
-                                                        radius: 10,
-                                                        x: 0,
-                                                        y: 10)
+                            .frame(height: 80)
+                        
+                        ScrollView(showsIndicators: false) {
+                            VStack(alignment: .leading) {
+                                if searchInput == "" {
+                                    Text(getFormattedDate()).frame(height: 15).padding(.leading)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+                                    Text(greeting(for: currentTime)).font(.largeTitle).frame(height: 30).bold()
+                                    .padding(.bottom,10).padding(.leading)
+                                    .foregroundColor(isDarkMode ? .white : .black)
+                                    Spacer()
+                                    TabView {
+                                        ForEach(Place.topPlaces.indices, id: \.self) {
+                                            index in
+                                            GeometryReader {
+                                                proxy in
+                                                NavigationLink(
+                                                    destination: DetailView(
+                                                        isDetailView: $isDetailView,
+                                                        place: Place.topPlaces[index]))
+                                                {
+                                                    CardView(isDarkMode: $isDarkMode, place: Place.topPlaces[index])
+                                                    .padding(.horizontal)
+                                                    .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -10), axis: (x: 0, y: 1, z: 0))
+                                                    .shadow(color: Color.gray.opacity(0.3),
+                                                            radius: 10,
+                                                            x: 0,
+                                                            y: 10)
+                                                }
+                                                .simultaneousGesture(
+                                                    TapGesture().onEnded {
+                                                        isDetailView = true
+                                                    })
                                             }
-                                            .simultaneousGesture(
-                                                TapGesture().onEnded {
-                                                    isDetailView = true
-                                                })
                                         }
                                     }
+                                    .tabViewStyle(.page(indexDisplayMode: .never))
+                                    .frame(height: 370)
                                 }
-                                .tabViewStyle(.page(indexDisplayMode: .never))
-                                .frame(height: 370)
-                            }
-                            Text("All Places").font(.title).padding(.horizontal).bold().frame(height: 20).padding(.top, 10)
-                            .foregroundColor(isDarkMode ? .white : .black)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack {
-                                    ForEach(0..<Place.allCategories.count, id: \.self) {
-                                        index in
-                                        filterCategory(
-                                            isActive: index == selectedIndexCat,
-                                            text: Place.allCategories[index])
-                                        .onTapGesture {
-                                            selectedIndexCat = index
-                                            filter = Place.allCategories[index]
+                                Text("All Places").font(.title).padding(.horizontal).bold().frame(height: 20).padding(.top, 10)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    LazyHStack {
+                                        ForEach(0..<Place.allCategories.count, id: \.self) {
+                                            index in
+                                            filterCategory(
+                                                isActive: index == selectedIndexCat,
+                                                text: Place.allCategories[index])
+                                            .onTapGesture {
+                                                selectedIndexCat = index
+                                                filter = Place.allCategories[index]
+                                            }
                                         }
                                     }
+                                    .padding(.leading)
                                 }
-                                .padding(.leading)
-                            }
-                            .frame(height: 50)
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 0)]) {
-                                if filter != "" && filter != "All" {
-                                    if searchInput != "" {
-                                        if Place.allPlace.indices
-                                        .filter({
-                                            Place.allPlace[$0].category == filter
-                                            &&
-                                            Place.allPlace[$0].name.lowercased()
-                                            .contains(searchInput.lowercased())
-                                        })
-                                        .count == 0
-                                        {
-                                            Text("Result not found!").font(.title2).bold().opacity(0.5)
+                                .frame(height: 50)
+                                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 0)]) {
+                                    if filter != "" && filter != "All" {
+                                        if searchInput != "" {
+                                            if Place.allPlace.indices
+                                            .filter({
+                                                Place.allPlace[$0].category == filter
+                                                &&
+                                                Place.allPlace[$0].name.lowercased()
+                                                .contains(searchInput.lowercased())
+                                            })
+                                            .count == 0
+                                            {
+                                                Text("Result not found!").font(.title2).bold().opacity(0.5)
+                                            }
+                                            else {
+                                                ForEach(
+                                                    Place.allPlace.indices
+                                                    .filter {
+                                                        Place.allPlace[$0].category == filter
+                                                        && Place.allPlace[$0].name.lowercased()
+                                                        .contains(searchInput.lowercased())
+                                                    }
+                                                    .sorted {
+                                                        Place.allPlace[$0].name
+                                                        < Place.allPlace[$1].name
+                                                    }
+                                                    , id: \.self)
+                                                {
+                                                    index in
+                                                    NavigationLink(
+                                                        destination: DetailView(
+                                                            isDetailView: $isDetailView,
+                                                            place: Place.allPlace[index]))
+                                                    {
+                                                        SmallCardView(isDarkMode: $isDarkMode, place: Place.allPlace[index])
+                                                    }
+                                                    .simultaneousGesture(
+                                                        TapGesture()
+                                                        .onEnded {
+                                                            isDetailView = true
+                                                        })
+                                                }
+                                            }
                                         }
                                         else {
                                             ForEach(
                                                 Place.allPlace.indices
                                                 .filter {
                                                     Place.allPlace[$0].category == filter
-                                                    && Place.allPlace[$0].name.lowercased()
-                                                    .contains(searchInput.lowercased())
                                                 }
                                                 .sorted {
-                                                    Place.allPlace[$0].name
-                                                    < Place.allPlace[$1].name
+                                                    Place.allPlace[$0].name < Place.allPlace[$1].name
                                                 }
                                                 , id: \.self)
                                             {
@@ -214,65 +245,61 @@ struct ContentView: View {
                                                         isDetailView: $isDetailView,
                                                         place: Place.allPlace[index]))
                                                 {
-                                                    SmallCardView(isDarkMode: $isDarkMode, place: Place.allPlace[index])
+                                                    SmallCardView(isDarkMode: $isDarkMode ,place: Place.allPlace[index])
                                                 }
                                                 .simultaneousGesture(
                                                     TapGesture()
                                                     .onEnded {
-                                                        isDetailView = true  
+                                                        isDetailView = true
                                                     })
                                             }
                                         }
                                     }
                                     else {
-                                        ForEach(
-                                            Place.allPlace.indices
-                                            .filter {
-                                                Place.allPlace[$0].category == filter
-                                            }
-                                            .sorted {
-                                                Place.allPlace[$0].name < Place.allPlace[$1].name
-                                            }
-                                            , id: \.self)
-                                        {
-                                            index in
-                                            NavigationLink(
-                                                destination: DetailView(
-                                                    isDetailView: $isDetailView,
-                                                    place: Place.allPlace[index]))
+                                        if searchInput != "" {
+                                            if Place.allPlace.indices
+                                            .filter({
+                                                Place.allPlace[$0].name.lowercased()
+                                                .contains(searchInput.lowercased())
+                                            })
+                                            .count == 0
                                             {
-                                                SmallCardView(isDarkMode: $isDarkMode ,place: Place.allPlace[index])
+                                                Text("Result not found!").font(.title2).bold().opacity(0.5)
+                                                .foregroundColor(isDarkMode ? .white : .black)
                                             }
-                                            .simultaneousGesture(
-                                                TapGesture()
-                                                .onEnded {
-                                                    isDetailView = true
-                                                })
-                                        }
-                                    }
-                                }
-                                else {
-                                    if searchInput != "" {
-                                        if Place.allPlace.indices
-                                        .filter({
-                                            Place.allPlace[$0].name.lowercased()
-                                            .contains(searchInput.lowercased())
-                                        })
-                                        .count == 0
-                                        {
-                                            Text("Result not found!").font(.title2).bold().opacity(0.5)
-                                            .foregroundColor(isDarkMode ? .white : .black)
+                                            else {
+                                                ForEach(
+                                                    Place.allPlace.indices
+                                                    .filter({
+                                                        Place.allPlace[$0].name.lowercased()
+                                                        .contains(searchInput.lowercased())
+                                                    })
+                                                    .sorted {
+                                                        Place.allPlace[$0].name
+                                                        < Place.allPlace[$1].name
+                                                    }
+                                                    , id: \.self)
+                                                {
+                                                    index in
+                                                    NavigationLink(
+                                                        destination: DetailView(
+                                                            isDetailView: $isDetailView,
+                                                            place: Place.allPlace[index]))
+                                                    {
+                                                        SmallCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
+                                                    }
+                                                    .simultaneousGesture(
+                                                        TapGesture()
+                                                        .onEnded {
+                                                            isDetailView = true
+                                                        })
+                                                }
+                                            }
                                         }
                                         else {
                                             ForEach(
-                                                Place.allPlace.indices
-                                                .filter({
-                                                    Place.allPlace[$0].name.lowercased()
-                                                    .contains(searchInput.lowercased())
-                                                })
-                                                .sorted {
-                                                    Place.allPlace[$0].name
-                                                    < Place.allPlace[$1].name
+                                                Place.allPlace.indices.sorted {
+                                                    Place.allPlace[$0].name < Place.allPlace[$1].name
                                                 }
                                                 , id: \.self)
                                             {
@@ -292,40 +319,19 @@ struct ContentView: View {
                                             }
                                         }
                                     }
-                                    else {
-                                        ForEach(
-                                            Place.allPlace.indices.sorted {
-                                                Place.allPlace[$0].name < Place.allPlace[$1].name
-                                            }
-                                            , id: \.self)
-                                        {
-                                            index in
-                                            NavigationLink(
-                                                destination: DetailView(
-                                                    isDetailView: $isDetailView,
-                                                    place: Place.allPlace[index]))
-                                            {
-                                                SmallCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
-                                            }
-                                            .simultaneousGesture(
-                                                TapGesture()
-                                                .onEnded {
-                                                    isDetailView = true
-                                                })
-                                        }
-                                    }
                                 }
+                                .padding(.leading, 5)
                             }
-                            .padding(.leading, 5)
+                            VStack {
+                                
+                            }.frame(height: 100)
                         }
-                        VStack {
-                            
-                        }.frame(height: 100)
                     }
+                    .blur(radius: isOpenSlideMenu ? 50 : 0)
+                    .offset(x: isOpenSlideMenu ? 300 : 0)
+                    .scaleEffect(isOpenSlideMenu ? 0.8 : 1)
                 }
-                .blur(radius: isOpenSlideMenu ? 50 : 0)
-                .offset(x: isOpenSlideMenu ? 300 : 0)
-                .scaleEffect(isOpenSlideMenu ? 0.8 : 1)
+                
             }
             .background( isDarkMode ? Image("background_dark")  : Image("background_light"))
             .edgesIgnoringSafeArea(.bottom)

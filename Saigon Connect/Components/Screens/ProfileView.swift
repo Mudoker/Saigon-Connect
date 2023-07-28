@@ -14,151 +14,196 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State var isEditProfile: Bool = false
     @Binding var isDarkMode: Bool
     @State var userCreds: [User] = User.allUsers
+    @State var isOpenSlideMenu = false
+    @State var isProfileView = true
+    @State var isFavourite = true
+    @State var isLink = false
     @AppStorage("userIndex") var userIndex = 0
     var body: some View {
-        ZStack {
-            GlassMorphicCard(isDarkMode: $isDarkMode, height: 550)
-            VStack (spacing: 5) {
-                Image(systemName: userCreds[userIndex].avatar).resizable().frame(width: 120, height: 120)
-                    .foregroundColor(isDarkMode ? .white : .black)
-                    .padding(.top)
-
-                HStack {
-                    Text(userCreds[userIndex].username).bold().font(.title)
-                        .foregroundColor(isDarkMode ? .white : .black)
-                    if userCreds[userIndex].pronouns != "" {
-                        Text("( " + userCreds[userIndex].pronouns + " )")
-                            .foregroundColor(isDarkMode ? .white : .black)
-                    }
+        NavigationStack {
+            ZStack {
+                if isOpenSlideMenu {
+                    SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode, isProfileView: $isProfileView)
                 }
-
-                Text("@" + userCreds[userIndex].type).bold().font(.caption)
-                    .foregroundColor(isDarkMode ? .white : .black)
-                
-                Text(userCreds[userIndex].bio).italic()
-                    .font(.title2)
-                    .foregroundColor(isDarkMode ? .white : .black)
-
-                Text(userCreds[userIndex].skill)
-                    .font(.title3)
-                    .foregroundColor(isDarkMode ? .white : .black)
-
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Connections")
-                            .font(.title)
-                            .bold()
-                            .foregroundColor(isDarkMode ? .white : .black)
-                            .padding(.bottom, 10)
-                            .padding(.horizontal)
-
-                        if userCreds[userIndex].connections.facebook == "" && userCreds[userIndex].connections.github == "" &&
-                            userCreds[userIndex].connections.spotify == ""
-                        {
-                            HStack {
+                if !isProfileView {
+                    ContentView()
+                } else {
+                    VStack {
+                        HStack() {
+                            // navbar button
+                            Button {
+                                withAnimation(.spring()) {
+                                    isOpenSlideMenu.toggle()
+                                }
+                            }
+                            label: {
+                                Image(systemName: "line.3.horizontal").resizable()
+                                .frame(width: 40, height: 20)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                            }
+                            Text("Profile")
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(isDarkMode ? .white : .black)//
+                            Spacer()
+                            
+                        }
+                        .padding(.horizontal)
+                        .frame(height: 80)
+                        VStack {
+                            Image(systemName: userCreds[userIndex].avatar)
+                                .resizable().frame(width: 120, height: 120)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                            
+                            Text(userCreds[userIndex].username)
+                                .font(.title)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                            
+                            Text(userCreds[userIndex].bio)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                                .font(.title3)
+                            Text(userCreds[userIndex].skill)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                                .italic()
+                            HStack (spacing: 30) {
                                 Spacer()
-                                Text("Nothing to show")
-                                    .opacity(0.5)
-                                    .bold()
-                                    .foregroundColor(isDarkMode ? .white : .black)
-                                    .font(.title)
-                                .padding(.horizontal)
+                                VStack {
+                                    Text(String(userCreds[userIndex].following))
+                                        .font(.largeTitle)
+                                        .bold()
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                    Text("Following")
+                                        .font(.title3)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                        .opacity(0.5)
+                                }
+                                
+                                VStack {
+                                    Text(String(userCreds[userIndex].followers))
+                                        .font(.largeTitle)
+                                        .bold()
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                    Text("Followers")
+                                        .font(.title3)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                        .opacity(0.5)
+
+                                }
+                                
+                                VStack {
+                                    Text(String(userCreds[userIndex].likes))
+                                        .font(.largeTitle)
+                                        .bold()
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                    Text("Likes")
+                                        .font(.title3)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                        .opacity(0.5)
+
+                                }
+                                
                                 Spacer()
                             }
+                            .padding(.vertical, 5)
+                            .padding(.trailing,35)
+                            
+//                            if userIndex != 1 {
+//                                NavigationLink(
+//                                    destination: EditProfileView(isDarkMode: $isDarkMode))
+//                                {
+//                                    Text("Edit profile")
+//                                            .foregroundColor(isDarkMode ? .white : .black)
+//                                            .padding()
+//                                            .background(isDarkMode ? .purple : Color.white)
+//                                            .cornerRadius(20)
+//                                }
+//                            }
+                            
+                            ScrollView {
+                                if let spotify = userCreds[userIndex].connections.spotify, let _ = URL(string: spotify) {
+                                    Link(destination: URL(string: spotify)!) {
+                                        HStack {
+                                            Image(systemName: "line.3.horizontal.decrease.circle")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(.green)
+                                                .padding()
+                                            Text("Spotify")
+                                                .font(.title)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                            Spacer()
+                                            Image(systemName: "arrow.up.forward.app")
+                                                .resizable()
+                                                .frame(width: 35, height: 35)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                        }
+                                        .padding(.horizontal)
+                                        .background(isDarkMode ? .purple : Color.white)
+                                            .cornerRadius(20)
+                                    }
+                                }
                                 
-                        } else {
-                            HStack {
+                                if let github = userCreds[userIndex].connections.github, let _ = URL(string: github) {
+                                    Link(destination: URL(string: github)!) {
+                                        HStack {
+                                            Image(systemName: "poweroutlet.type.f.fill")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                                .padding()
+                                            Text("Spotify")
+                                                .font(.title)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                            Spacer()
+                                            Image(systemName: "arrow.up.forward.app")
+                                                .resizable()
+                                                .frame(width: 35, height: 35)
+                                                .foregroundColor(isDarkMode ? .white : .black)
+                                        }
+                                        .padding(.horizontal)
+                                        .background(isDarkMode ? .purple : Color.white)
+                                            .cornerRadius(20)
+                                    }
+                                }
                                 
                                 if let facebook = userCreds[userIndex].connections.facebook, let _ = URL(string: facebook) {
                                     Link(destination: URL(string: facebook)!) {
                                         HStack {
                                             Image(systemName: "f.cursive.circle.fill")
-                                                .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
-                                            
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(Color(red: 0.26, green: 0.40, blue: 0.70))
+                                                .padding()
                                             Text("Facebook")
                                                 .font(.title)
                                                 .foregroundColor(isDarkMode ? .white : .black)
-
                                             Spacer()
-
-                                            Image(systemName: "arrow.up.forward")
+                                            Image(systemName: "arrow.up.forward.app")
+                                                .resizable()
+                                                .frame(width: 35, height: 35)
                                                 .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
                                         }
-                                    }
-
-                                }
-
-                            }
-                            .padding(.bottom, 10)
-                            .padding(.horizontal)
-
-                            Divider()
-                                .background(isDarkMode ? .white : .black)
-                            HStack {
-                                if let github = userCreds[userIndex].connections.github, let _ = URL(string: github) {
-                                    Link(destination: URL(string: github)!) {
-                                        HStack {
-                                            Image(systemName: "poweroutlet.type.f.fill")
-                                                .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
-                                            
-                                            Text("Github")
-                                                .font(.title)
-                                                .foregroundColor(isDarkMode ? .white : .black)
-
-                                            Spacer()
-
-                                            Image(systemName: "arrow.up.forward")
-                                                .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
-                                        }
+                                        .padding(.horizontal)
+                                        .background(isDarkMode ? .purple : Color.white)
+                                            .cornerRadius(20)
                                     }
                                 }
                             }
-                            .padding(.bottom, 10)
-                            .padding(.horizontal)
-
-                            Divider()
-                                .background(isDarkMode ? .white : .black)
-
-                            
-                            HStack {
-                                if let spotify = userCreds[userIndex].connections.spotify, let _ = URL(string: spotify) {
-                                    Link(destination: URL(string: spotify)!) {
-                                        HStack {
-                                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                                .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
-                                            
-                                            Text("Spotify")
-                                                .font(.title)
-                                                .foregroundColor(isDarkMode ? .white : .black)
-
-                                            Spacer()
-
-                                            Image(systemName: "arrow.up.forward")
-                                                .foregroundColor(isDarkMode ? .white : .black)
-                                                .font(.title)
-                                        }
-                                    }
-                                    
-                                }
-                            }
-                            .padding(.horizontal)
+                            .padding(.top, 25)
                         }
-                    }
-                    Spacer()
+                        Spacer()
+                    }.blur(radius: isOpenSlideMenu ? 50 : 0)
+                        .offset(x: isOpenSlideMenu ? 300 : 0)
+                        .scaleEffect(isOpenSlideMenu ? 0.8 : 1)
                 }
-                .padding(.horizontal)
-                Spacer()
                 
-            }
-            .padding(.top, 100)
+                
         }.background( isDarkMode ? Image("background_dark") : Image("background_light"))
+        }
+        
     }
 }
 

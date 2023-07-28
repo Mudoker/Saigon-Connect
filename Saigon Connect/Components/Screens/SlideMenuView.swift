@@ -120,7 +120,29 @@ struct SlideMenuView: View {
                         ScrollView (.vertical,showsIndicators: false) {
                             HStack {
                                 Button {
-                                    isDarkMode.toggle()
+                                    isProfileView = false
+                                } label: {
+                                    Image(systemName: "house.circle")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                    Text("Dashboard")
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                        .padding(.trailing, 15)
+                                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                }
+                                .padding(.top)
+                                Spacer()
+                            }
+                            Divider()
+                            HStack {
+                                Button {
+                                    isProfileView = true
                                 } label: {
                                     Image(systemName: "person.circle")
                                         .resizable()
@@ -129,11 +151,17 @@ struct SlideMenuView: View {
 
                                     Text("Profile")
                                         .foregroundColor(isDarkMode ? .white : .black)
+                                        .padding(.trailing, 50)
+                                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .foregroundColor(isDarkMode ? .white : .black)
 
                                 }
                                 .padding(.top)
                                 Spacer()
                             }
+                            Divider()
 
                             HStack {
                                 Image(systemName: "moon.circle")
@@ -162,6 +190,8 @@ struct SlideMenuView: View {
                                 .padding()
                                 Spacer()
                             }
+                            Divider()
+
                             Button {
                                 isConfirmLogOut.toggle()
                             } label: {
