@@ -14,26 +14,27 @@
 import SwiftUI
 
 struct SlideMenuView: View {
+    // variables to store the user credentials
     @State var userCreds: [User] = User.allUsers
+
+    // variables to store the index of the user and the state of the slide menu
     @AppStorage("userIndex") var userIndex = 0
+
+    // variables to check for the state of the slide menu
     @Binding var isOpenSlideMenu: Bool
+
+    // variables to check for dark mode
     @Binding var isDarkMode: Bool
+
+    // Consider to remove this variable
     @State var isLogOut: Bool = false
     @State var isConfirmLogOut: Bool = false
     @Binding var isProfileView: Bool
 
-    var background_light = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-    var background_dark = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
     var body: some View {
+            // Slide menu
             ZStack {
+                // close menu button
                 VStack {
                     HStack {
                         Spacer()
@@ -53,7 +54,10 @@ struct SlideMenuView: View {
                     .padding(.top, 50)
                     Spacer()
                 }
+
+                // menu content
                 VStack (alignment: .leading, spacing: 0) {
+                        // user avatar and name
                         HStack {
                             HStack (alignment: .center) {
                                 Image(systemName: userCreds[userIndex].avatar)
@@ -63,25 +67,28 @@ struct SlideMenuView: View {
                                     .frame(width: 100, height: 100)
 
                                 VStack {
-                                    Text(userCreds[userIndex].username).font(.title2.bold())
+                                    Text(userCreds[userIndex].username)
+                                        .font(.title2.bold())
                                         .foregroundColor(isDarkMode ? .white : .black)
-                                    Text("@" + userCreds[userIndex].type).font(.callout)
+
+                                    Text("@" + userCreds[userIndex].type)
+                                        .font(.callout)
                                         .foregroundColor(isDarkMode ? .white : .black)
                                 }
-
-                                
-
                             }
                             .padding(.top, 50)
+
                             Spacer()
                         }
                     
+                    // user information
                     HStack {
                         VStack {
                             Text(String(userCreds[userIndex].following))
                                 .font(.title)
                                 .bold()
                                 .foregroundColor(isDarkMode ? .white : .black)
+                                
                             Text("Following")
                                 .font(.caption)
                                 .foregroundColor(isDarkMode ? .gray : .black)
@@ -94,6 +101,7 @@ struct SlideMenuView: View {
                                 .font(.title)
                                 .bold()
                                 .foregroundColor(isDarkMode ? .white : .black)
+
                             Text("Followers")
                                 .font(.caption)
                                 .foregroundColor(isDarkMode ? .gray : .black)
@@ -106,6 +114,7 @@ struct SlideMenuView: View {
                                 .font(.title)
                                 .bold()
                                 .foregroundColor(isDarkMode ? .white : .black)
+
                             Text("Likes")
                                 .font(.caption)
                                 .foregroundColor(isDarkMode ? .gray : .black)
@@ -117,7 +126,9 @@ struct SlideMenuView: View {
 
                         Divider()
 
+                        // menu options for navigation
                         ScrollView (.vertical,showsIndicators: false) {
+                            // home button
                             HStack {
                                 Button {
                                     isProfileView = false
@@ -130,6 +141,7 @@ struct SlideMenuView: View {
                                     Text("Dashboard")
                                         .foregroundColor(isDarkMode ? .white : .black)
                                         .padding(.trailing, 15)
+
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
                                         .resizable()
                                         .frame(width: 30, height: 30)
@@ -139,7 +151,10 @@ struct SlideMenuView: View {
                                 .padding(.top)
                                 Spacer()
                             }
+
                             Divider()
+
+                            // show profile button
                             HStack {
                                 Button {
                                     isProfileView = true
@@ -152,6 +167,7 @@ struct SlideMenuView: View {
                                     Text("Profile")
                                         .foregroundColor(isDarkMode ? .white : .black)
                                         .padding(.trailing, 50)
+
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
                                         .resizable()
                                         .frame(width: 30, height: 30)
@@ -163,6 +179,7 @@ struct SlideMenuView: View {
                             }
                             Divider()
 
+                            // dark mode button
                             HStack {
                                 Image(systemName: "moon.circle")
                                     .resizable()
@@ -172,13 +189,15 @@ struct SlideMenuView: View {
                                 Text("DarkMode")
                                     .foregroundColor(isDarkMode ? .white : .black)
 
+                                // switch to change the state of the dark mode (with animation)
                                 Button {
                                     isDarkMode.toggle()
                                 } label: {
                                     ZStack {
                                         Capsule()
                                             .frame(width: 90,height: 40)
-                                        .foregroundColor(isDarkMode ? Color.green : Color.gray)
+                                            .foregroundColor(isDarkMode ? Color.green : Color.gray)
+
                                         Circle()
                                             .frame(width: 45, height: 45)
                                             .foregroundColor(.white)
@@ -190,6 +209,7 @@ struct SlideMenuView: View {
                                 .padding()
                                 Spacer()
                             }
+
                             Divider()
 
                             Button {
@@ -225,11 +245,13 @@ struct SlideMenuView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background( isDarkMode ? Image("background_dark")  : Image("background_light"))
-        .ignoresSafeArea(.container, edges: .vertical)
+            .ignoresSafeArea(.container, edges: .vertical)
             
         
     }
 
+    // function to create a button
+    // Consider to remove this function
     func creatButton (title: String, image: String) -> some View
     {
         Button{
@@ -250,14 +272,17 @@ struct SlideMenuView: View {
     }
 }
 
+// consider to remove this extension
+extension View {
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
+    }
+}
+
+// preview
 struct SlideMenu_Previews: PreviewProvider {
     static var previews: some View {
         SlideMenuView(isOpenSlideMenu: .constant(true), isDarkMode: .constant(false), isProfileView: .constant(false))
     }
 }
 
-extension View {
-    func getRect() -> CGRect {
-        return UIScreen.main.bounds
-    }
-}

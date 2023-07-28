@@ -15,39 +15,59 @@
 
 import SwiftUI
 struct CardView: View {
-    @State private var animateGradient = false
+    // Binding for checking dark mode
     @Binding var isDarkMode: Bool
+
+    // Temporarily initialise a place
     var place: Place = Place.topPlaces[0]
+
     var body: some View {
         ZStack(alignment: .top) {
+            // Display a glass morphic card with the provided dark mode binding
             GlassMorphicCard(isDarkMode: $isDarkMode)
             VStack(alignment: .leading) {
+                // Load image of item
                 Image(place.image_url).resizable()
-                .opacity(0.9)
-                .frame(width:360,height:200)
-                Text(place.name)
-                .font(.title)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.leading)
-                .padding(.leading)
-                .foregroundColor(isDarkMode ? .white : .black)
-                Text(place.short_description)
-                .multilineTextAlignment(.leading)
-                .padding(.leading)
-                .font(.body)
-                .foregroundColor(isDarkMode ? .white : .black)
-                Spacer()
-                HStack {
-                    Text(String(place.ratings)).font(.body).padding(.leading)
-                    .foregroundColor(isDarkMode ? .white : .black)
-                    StarsView(rating: place.ratings, maxRating: 5)
-                    Text("(" + String(place.total_ratings.formatted()) + ")").font(.body)
-                    .foregroundColor(isDarkMode ? .white : .black)
-                    Spacer()
-                    Text(place.entrance_fee)
-                    .padding(.trailing)
                     .opacity(0.9)
+                    .frame(width:360,height:200)
+
+                // Load name, description of item
+                Text(place.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading)
                     .foregroundColor(isDarkMode ? .white : .black)
+
+                Text(place.short_description)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading)
+                    .font(.body)
+                    .foregroundColor(isDarkMode ? .white : .black)
+
+                // Spacing between description and rating
+                Spacer()
+
+                // Load rating, total rating, entrance fee of item
+                HStack {
+                    Text(String(place.ratings))
+                        .font(.body)
+                        .padding(.leading)
+                        .foregroundColor(isDarkMode ? .white : .black)
+
+                    // Custom struct that draws stars
+                    StarsView(rating: place.ratings, maxRating: 5)
+
+                    Text("(" + String(place.total_ratings.formatted()) + ")")
+                        .font(.body)
+                        .foregroundColor(isDarkMode ? .white : .black)
+                    
+                    Spacer()
+
+                    Text(place.entrance_fee)
+                        .padding(.trailing)
+                        .opacity(0.9)
+                        .foregroundColor(isDarkMode ? .white : .black)
                 }
                 .padding(.bottom, 15)
             }
@@ -57,17 +77,25 @@ struct CardView: View {
 
         }
     }
-
 }
+
+// creat a glass morphic card view
 struct GlassMorphicCard: View {
+    // Checking for darkmode
     @Binding var isDarkMode: Bool
+
+    // default dimension for card
     @State var width: CGFloat = 360
     @State var height: CGFloat = 360
     @State var minWidth: CGFloat = 0
+
+    // default option for card
     @State var useMinWidth = false
     var body: some View {
+        // custom dimension for card
         if useMinWidth {
             ZStack {
+                // Apply glass morphic effect with the provided dark mode binding
                 GlassMorphicCardView(isDarkMode: $isDarkMode)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .opacity(0.65)
@@ -76,28 +104,30 @@ struct GlassMorphicCard: View {
             .frame(height: height)
         } else {
             ZStack {
+                // Apply glass morphic effect with the provided dark mode binding
                 GlassMorphicCardView(isDarkMode: $isDarkMode)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .opacity(0.65)
             }
             .frame(width: width)
             .frame(height: height)
-            
         }
-        
-        
     }
 }
 
+// creat a glass morphic card view
 struct GlassMorphicCardView: UIViewRepresentable {
+    // Checking for darkmode
     @Binding var isDarkMode: Bool
 
+    // creates the UIView representation of the card
     func makeUIView(context: Context) -> UIVisualEffectView {
         let view = UIVisualEffectView(effect: nil)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }
 
+    // updates the UIView when the isDarkMode state changes
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         let effectStyle: UIBlurEffect.Style = isDarkMode ? .systemMaterialDark : .regular
         let newEffect = UIBlurEffect(style: effectStyle)
@@ -105,19 +135,19 @@ struct GlassMorphicCardView: UIViewRepresentable {
     }
 }
 
-struct Card_Views_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(isDarkMode: .constant(true))
-    }
-
-}
-
+// Custom struct that draws stars
 struct StarsView: View {
+    // current rating
     let rating: CGFloat
+
+    // max rating
     let maxRating: CGFloat
+
+    // size of stars
     var size: CGFloat = 12
 
     var body: some View {
+        // draw stars based on max rating
         let stars = HStack(spacing: 0) {
             ForEach(0..<Int(maxRating), id: \.self) { index in
                         Image(systemName: "star.fill")
@@ -126,9 +156,15 @@ struct StarsView: View {
                     }
                 }
 
+            // Fill stars based on current rating
             GeometryReader { geometry in
+                    // calculate width of filled stars
                     let filledWidth = self.widthForValue(geometry.size.width, value: rating)
+
+                    // calculate width of the rest of stars
                     let emptyWidth = self.widthForValue(geometry.size.width, value: (maxRating - rating))
+
+                    // draw stars
                     HStack(spacing: 0) {
                         Rectangle()
                             .frame(width: filledWidth, height: geometry.size.height)
@@ -143,7 +179,16 @@ struct StarsView: View {
                 .mask(stars)
     }
 
+    // calculate width of stars proportionally
     func widthForValue(_ totalWidth: CGFloat, value: CGFloat) -> CGFloat {
         return value * totalWidth / maxRating
     }
+}
+
+// preview for card view
+struct Card_Views_Previews: PreviewProvider {
+    static var previews: some View {
+        CardView(isDarkMode: .constant(true))
+    }
+
 }
