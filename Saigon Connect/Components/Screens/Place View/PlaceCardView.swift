@@ -14,10 +14,10 @@
 */
 
 import SwiftUI
-struct CardView: View {
+struct PlaceCardView: View {
     // Binding for checking dark mode
     @Binding var isDarkMode: Bool
-
+    var size: CGSize = CGSize(width: 360, height: 200)
     // Temporarily initialise a place
     var place: Place = Place.topPlaces[0]
 
@@ -29,7 +29,7 @@ struct CardView: View {
                 // Load image of item
                 Image(place.image_url).resizable()
                     .opacity(0.9)
-                    .frame(width:360,height:200)
+                    .frame(size.width,size.height)
 
                 // Load name, description of item
                 Text(place.name)
@@ -73,7 +73,7 @@ struct CardView: View {
             }
             .foregroundColor(.black)
             .cornerRadius(20)
-            .frame(width: 360, height:360)
+            .frame(size.width, size.width)
 
         }
     }
@@ -188,7 +188,6 @@ struct StarsView: View {
 // preview for card view
 struct Card_Views_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(isDarkMode: .constant(true))
+        PlaceCardView(isDarkMode: .constant(true))
     }
-
 }

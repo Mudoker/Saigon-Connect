@@ -36,12 +36,12 @@
 */
 
 import SwiftUI
-struct ContentView: View {
+struct EventView: View {
     // Shared state variables for dark mode
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
 
     // check if detail view is active
-    @State private var isDetailView = false
+    @State private var isEventDetailView = false
 
     // get the current date and time
     @State private var currentTime = Date()
@@ -64,18 +64,26 @@ struct ContentView: View {
     // toggle profile view
     @State var isProfileView = false
 
+    // toggle place view
+    @State var isPlaceView = false
+
+    // toggle event view
+    @State var isEventView = true
+
     var body: some View {
         // Navigation stack to navigate between views
         NavigationStack {
             ZStack {
                 // Slide menu view (if open)
                 if isOpenSlideMenu {
-                    SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode, isProfileView: $isProfileView)
+                    SlideMenuView(isOpenSlideMenu: $isOpenSlideMenu, isDarkMode: $isDarkMode, isProfileView: $isProfileView, isEventView: $isEventView, isPlaceView: $isPlaceView)
                 }
 
                 // Consider to delete this
                 if isProfileView {
                     ProfileView(isDarkMode: $isDarkMode)
+                } else if isPlaceView{
+                    PlaceView(isDarkMode: $isDarkMode)
                 } else {
                     // Main view
                     VStack(alignment: .leading) {
@@ -194,18 +202,18 @@ struct ContentView: View {
                                             GeometryReader {
                                                 proxy in
                                                 NavigationLink(
-                                                    destination: DetailView(
-                                                        isDetailView: $isDetailView,
+                                                    destination: EventEventDetailView(
+                                                        isEventDetailView: $isEventDetailView,
                                                         place: Place.topPlaces[index]))
                                                 {
-                                                    CardView(isDarkMode: $isDarkMode, place: Place.topPlaces[index])
+                                                    EventCardView(isDarkMode: $isDarkMode, place: Place.topPlaces[index])
                                                         .padding(.horizontal)
                                                         .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -10), axis: (x: 0, y: 1, z: 0))
                                                         .shadow(color: Color.gray.opacity(0.3), radius: 10,x: 0, y: 10)
                                                 }
                                                 .simultaneousGesture(
                                                     TapGesture().onEnded {
-                                                        isDetailView = true
+                                                        isEventDetailView = true
                                                     })
                                             }
                                         }
@@ -278,16 +286,16 @@ struct ContentView: View {
                                                 {
                                                     index in
                                                     NavigationLink(
-                                                        destination: DetailView(
-                                                            isDetailView: $isDetailView,
+                                                        destination: EventDetailView(
+                                                            isEventDetailView: $isEventDetailView,
                                                             place: Place.allPlace[index]))
                                                     {
-                                                        SmallCardView(isDarkMode: $isDarkMode, place: Place.allPlace[index])
+                                                        SmallEventCardView(isDarkMode: $isDarkMode, place: Place.allPlace[index])
                                                     }
                                                     .simultaneousGesture(
                                                         TapGesture()
                                                         .onEnded {
-                                                            isDetailView = true
+                                                            isEventDetailView = true
                                                         })
                                                 }
                                             }
@@ -306,16 +314,16 @@ struct ContentView: View {
                                             {
                                                 index in
                                                 NavigationLink(
-                                                    destination: DetailView(
-                                                        isDetailView: $isDetailView,
+                                                    destination: EventDetailView(
+                                                        isEventDetailView: $isEventDetailView,
                                                         place: Place.allPlace[index]))
                                                 {
-                                                    SmallCardView(isDarkMode: $isDarkMode ,place: Place.allPlace[index])
+                                                    SmallEventCardView(isDarkMode: $isDarkMode ,place: Place.allPlace[index])
                                                 }
                                                 .simultaneousGesture(
                                                     TapGesture()
                                                     .onEnded {
-                                                        isDetailView = true
+                                                        isEventDetailView = true
                                                     })
                                             }
                                         }
@@ -347,16 +355,16 @@ struct ContentView: View {
                                                 {
                                                     index in
                                                     NavigationLink(
-                                                        destination: DetailView(
-                                                            isDetailView: $isDetailView,
+                                                        destination: EventDetailView(
+                                                            isEventDetailView: $isEventDetailView,
                                                             place: Place.allPlace[index]))
                                                     {
-                                                        SmallCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
+                                                        SmallEventCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
                                                     }
                                                     .simultaneousGesture(
                                                         TapGesture()
                                                         .onEnded {
-                                                            isDetailView = true
+                                                            isEventDetailView = true
                                                         })
                                                 }
                                             }
@@ -370,16 +378,16 @@ struct ContentView: View {
                                             {
                                                 index in
                                                 NavigationLink(
-                                                    destination: DetailView(
-                                                        isDetailView: $isDetailView,
+                                                    destination: EventDetailView(
+                                                        isEventDetailView: $isEventDetailView,
                                                         place: Place.allPlace[index]))
                                                 {
-                                                    SmallCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
+                                                    SmallEventCardView(isDarkMode: $isDarkMode,place: Place.allPlace[index])
                                                 }
                                                 .simultaneousGesture(
                                                     TapGesture()
                                                     .onEnded {
-                                                        isDetailView = true
+                                                        isEventDetailView = true
                                                     }
                                                 )
                                             }
@@ -476,7 +484,6 @@ struct filterCategory: View {
 
 struct Content_View_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        EventView()
     }
-
 }

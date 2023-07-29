@@ -97,7 +97,7 @@ struct WelcomeScreen: View {
                     }
                     .navigationDestination(
                         isPresented: $isTransition) {
-                        LoginView().navigationBarBackButtonHidden(true)
+                        PlaceView().navigationBarBackButtonHidden(true)
                     }
 
                     // Button to show the author information

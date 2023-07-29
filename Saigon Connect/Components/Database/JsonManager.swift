@@ -58,9 +58,8 @@ struct Place: Codable {
     let reviews: [Reviews]
     
     // static variables to store the sample place, all places, all categories, and the number of places
-    static let allPlace = decodeJsonFromJsonFile(jsonFileName: "database.json")
-    static let allCategories = getUniqueCategories(from: allPlace)
-    static let samplePlace: Place = allPlace[0]
+    static let allPlace = decodePlaceJsonFromJsonFile(jsonFileName: "places.json")
+    static let allCategories = getUniquePlaceCategories(from: allPlace)
     static let itemCount = allPlace.count
 
     // static variables to store the top 10 places
@@ -83,8 +82,50 @@ struct Activity: Codable {
     let fee: String
 }
 
+// Struct to store the events
+struct Event: Codable {
+    let name: String
+    let address: String
+    let host: String
+    let location: [Double]
+    let date: String
+    let entranceFee: String
+    let openingHours: String
+    let shortDescription: String
+    let fullDescription: String
+    let imageURL: String
+    let popularActivities: [String]
+    let reason: String
+    let category: String
+    // static variables to store the sample place, all places, all categories, and the number of places
+    static let allEvents = decodeEventJsonFromJsonFile(jsonFileName: "events.json")
+    static let allEventCategories = getUniqueEventCategories(from: allEvents)
+    static let itemCount = allEvents.count
+}
+
 // function to decode the JSON file (load file from the main bundle)
-func decodeJsonFromJsonFile(jsonFileName: String) -> [Place] {
+func decodePlaceJsonFromJsonFile(jsonFileName: String) -> [Place] {
+    // check if the file exists
+    if let file = Bundle.main.url(forResource: jsonFileName, withExtension: nil) {
+        // check if the file can be loaded
+        if let data = try? Data(contentsOf: file) {
+            // decode the JSON file
+            do {
+                let decoder = JSONDecoder()
+                let decoded = try decoder.decode([Place].self, from: data)
+                return decoded
+            } catch let error {
+                fatalError("Failed to decode JSON: \(error)")
+            }
+        }
+    } else {
+        fatalError("Couldn't load \(jsonFileName) file")
+    }
+    return []
+}
+
+// function to decode the JSON file (load file from the main bundle)
+func decodeEventJsonFromJsonFile(jsonFileName: String) -> [Event] {
     // check if the file exists
     if let file = Bundle.main.url(forResource: jsonFileName, withExtension: nil) {
         // check if the file can be loaded
@@ -123,9 +164,24 @@ func decodeUserFromJsonFile(jsonFileName: String) -> [User] {
 }
 
 // function to get the unique categories from the places
-func getUniqueCategories(from places: [Place]) -> [String] {
+func getUniquePlaceCategories(from places: [Place]) -> [String] {
     // get the categories from the places
     let categories = places.map { $0.category }
+
+    // use Set to get the unique categories
+    var uniqueCategories = Array(Set(categories))
+
+    // sort the categories and append "All" to the the array
+    uniqueCategories.append("All")
+    uniqueCategories.sort()
+
+    return uniqueCategories
+}
+
+// function to get the unique categories from the events
+func getUniqueEventCategories(from events: [Event]) -> [String] {
+    // get the categories from the places
+    let categories = events.map { $0.category }
 
     // use Set to get the unique categories
     var uniqueCategories = Array(Set(categories))

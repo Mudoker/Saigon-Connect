@@ -12,7 +12,7 @@
 
 import SwiftUI
 
-struct SmallCardView: View {
+struct SmallPlaceCardView: View {
     // check if the app is in dark mode
     @Binding var isDarkMode: Bool
 
@@ -74,6 +74,6 @@ struct SmallCardView: View {
 // preview for the small card view
 struct small_Card_View_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCardView(isDarkMode: .constant(true))
+        SmallPlaceCardView(isDarkMode: .constant(true))
     }
 }

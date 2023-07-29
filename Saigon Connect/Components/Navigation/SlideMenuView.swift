@@ -29,7 +29,8 @@ struct SlideMenuView: View {
     // Consider to remove this variable
     @State var isLogOut: Bool = false
     @State var isConfirmLogOut: Bool = false
-    @Binding var isProfileView: Bool
+    @Binding var isPlaceView: Bool
+    @Binding var isEventView: Bool
 
     var body: some View {
             // Slide menu
@@ -37,8 +38,7 @@ struct SlideMenuView: View {
                 // close menu button
                 VStack {
                     HStack {
-                        Spacer()
-                        
+                        Spacer()     
                         Button(action: {
                             withAnimation(.spring()) {
                                 isOpenSlideMenu.toggle()
@@ -128,10 +128,11 @@ struct SlideMenuView: View {
 
                         // menu options for navigation
                         ScrollView (.vertical,showsIndicators: false) {
-                            // home button
+                            // place button
                             HStack {
                                 Button {
-                                    isProfileView = false
+                                    isPlaceView = true
+                                    isEventView = false
                                 } label: {
                                     Image(systemName: "house.circle")
                                         .resizable()
@@ -146,13 +147,36 @@ struct SlideMenuView: View {
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                         .foregroundColor(isDarkMode ? .white : .black)
-
                                 }
                                 .padding(.top)
                                 Spacer()
                             }
 
                             Divider()
+
+                            // event button
+                            HStack {
+                                Button {
+                                    isPlaceView = false
+                                    isEventView = true
+                                } label: {
+                                    Image(systemName: "house.circle")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                    Text("Dashboard")
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                        .padding(.trailing, 15)
+
+                                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                }
+                                .padding(.top)
+                                Spacer()
+                            }
 
                             // show profile button
                             HStack {

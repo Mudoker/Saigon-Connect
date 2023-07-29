@@ -1,10 +1,13 @@
 [
     {
         "name": "Bitexco Financial Tower",
-        "address": "Bitexco Financial Tower, 2 Hai Trieu, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.771808423651885, 106.70436796799939],
+        "address": "02 Hai Trieu, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.771906645288361,
+            106.70432225111162
+        ],
         "ratings": 4.5,
-        "total_ratings": 18032,
+        "total_ratings": 18043,
         "entrance_fee": "Free",
         "opening_hours": "8:00 AM - 11:00 PM",
         "short_description": "One of the highest skyscrapers in Vietnam with 68 floors",
@@ -32,26 +35,29 @@
         ],
         "category": "Landmarks",
         "reviews": [
-                    {
-                        "reviewer_name": "Quoc Doan",
-                        "given_stars": 5,
-                        "content": "Nice place. Cool!",
-                        "timestamp": "26/07/2022"
-                    },
-                    {
-                        "reviewer_name": "Nhat Anh",
-                        "given_stars": 4,
-                        "content": "Too hot but the architecture looks great",
-                        "timestamp": "02/09/2018"
-                    }
+            {
+                "reviewer_name": "Quoc Doan",
+                "given_stars": 5,
+                "content": "Nice place. Cool!",
+                "timestamp": "26/07/2022"
+            },
+            {
+                "reviewer_name": "Nhat Anh",
+                "given_stars": 4,
+                "content": "Too hot but the architecture looks great",
+                "timestamp": "02/09/2018"
+            }
         ]
     },
     {
         "name": "Landmark 81",
-        "address": "Landmark 81, 720A Dien Bien Phu, Vinhomes Central Park, Binh Thanh District, Ho Chi Minh City, Vietnam",
-        "location": [10.795203968767177, 106.72180003838334],
+        "address": "720A Dien Bien Phu, Vinhomes Central Park, Binh Thanh District, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.795203968767177,
+            106.72180003838334
+        ],
         "ratings": 4.6,
-        "total_ratings": 5046,
+        "total_ratings": 5050,
         "entrance_fee": "Free",
         "opening_hours": "8:30 AM - 11:00 PM",
         "short_description": "A Skyward Marvel in Vietnam and the World",
@@ -72,32 +78,35 @@
         ],
         "category": "Landmarks",
         "reviews": [
-                    {
-                        "reviewer_name": "Quoc Minh",
-                        "given_stars": 5,
-                        "content": "It's hugeeeeeee",
-                        "timestamp": "02/09/2018"
-                    },
-                    {
-                        "reviewer_name": "Minh Bui",
-                        "given_stars": 5,
-                        "content": "The park around it looks clean and fresh tho.",
-                        "timestamp": "05/09/2018"
-                    },
-                    {
-                        "reviewer_name": "Nhat Quang",
-                        "given_stars": 5,
-                        "content": "Definitely will go again!",
-                        "timestamp": "05/05/2022"
-                    }
+            {
+                "reviewer_name": "Quoc Minh",
+                "given_stars": 5,
+                "content": "It's hugeeeeeee",
+                "timestamp": "02/09/2018"
+            },
+            {
+                "reviewer_name": "Minh Bui",
+                "given_stars": 5,
+                "content": "The park around it looks clean and fresh tho.",
+                "timestamp": "05/09/2018"
+            },
+            {
+                "reviewer_name": "Nhat Quang",
+                "given_stars": 5,
+                "content": "Definitely will go again!",
+                "timestamp": "05/05/2022"
+            }
         ]
     },
     {
         "name": "Ben Thanh Market",
-        "address": "Ben Thanh Market, Le Loi Street, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.772769743552642, 106.6980100672186],
-        "ratings": 4.0,
-        "total_ratings": 46675,
+        "address": "Le Loi Street, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.772590540423925,
+            106.69802076861272
+        ],
+        "ratings": 3.9,
+        "total_ratings": 46654,
         "entrance_fee": "Free",
         "opening_hours": "6:00 AM - 6:00 PM",
         "short_description": "One of the earliest buildings in Vietnam and has been the icon of the city since then",
@@ -125,30 +134,33 @@
         ],
         "category": "Markets",
         "reviews": [
-                    {
-                        "reviewer_name": "Jane",
-                        "given_stars": 4,
-                        "content": "Very local, very saigon. But you gotta know how to bargain",
-                        "timestamp": "01/02/2018"
-                    },
-                    {
-                        "reviewer_name": "Tom Cruise",
-                        "given_stars": 3,
-                        "content": "The prices seems to be higher to foreigners, don't know why",
-                        "timestamp": "05/09/2016"
-                    },
-                    {
-                        "reviewer_name": "Nhat Quang",
-                        "given_stars": 5,
-                        "content": "Now i know that they do support money exchange. The rate is good",
-                        "timestamp": "07/05/2023"
-                    }
+            {
+                "reviewer_name": "Jane",
+                "given_stars": 4,
+                "content": "Very local, very saigon. But you gotta know how to bargain",
+                "timestamp": "01/02/2018"
+            },
+            {
+                "reviewer_name": "Tom Cruise",
+                "given_stars": 3,
+                "content": "The prices seems to be higher to foreigners, don't know why",
+                "timestamp": "05/09/2016"
+            },
+            {
+                "reviewer_name": "Nhat Quang",
+                "given_stars": 5,
+                "content": "Now i know that they do support money exchange. The rate is good",
+                "timestamp": "07/05/2023"
+            }
         ]
     },
     {
         "name": "War Remnants Museum",
-        "address": "War Remnants Museum, 28 Vo Van Tan, Ward 6, District 3, Ho Chi Minh City, Vietnam",
-        "location": [10.779752998161113, 106.69216669790308],
+        "address": "28 Vo Van Tan, Ward 6, District 3, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.779710840089733,
+            106.69209159529221
+        ],
         "ratings": 4.5,
         "total_ratings": 29094,
         "entrance_fee": "40.000 VND",
@@ -177,24 +189,27 @@
         ],
         "category": "Museums",
         "reviews": [
-                {
-                    "reviewer_name": "Linh Nguyen",
-                    "given_stars": 5,
-                    "content": "A deeply moving experience that sheds light on the horrors of war. The museum's exhibits are powerful and thought-provoking.",
-                    "timestamp": "05/12/2022"
-                },
-                {
-                    "reviewer_name": "James Johnson",
-                    "given_stars": 3,
-                    "content": "While informative, the displays can be distressing for some visitors. Not recommended for young children.",
-                    "timestamp": "19/08/2023"
-                }
-            ]
+            {
+                "reviewer_name": "Linh Nguyen",
+                "given_stars": 5,
+                "content": "A deeply moving experience that sheds light on the horrors of war. The museum's exhibits are powerful and thought-provoking.",
+                "timestamp": "05/12/2022"
+            },
+            {
+                "reviewer_name": "James Johnson",
+                "given_stars": 3,
+                "content": "While informative, the displays can be distressing for some visitors. Not recommended for young children.",
+                "timestamp": "19/08/2023"
+            }
+        ]
     },
     {
         "name": "Central Post Office",
-        "address": "Central Post Office, 125 Hai Ba Trung, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.780059248112432, 106.69989071040027],
+        "address": "02 Paris Commune Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.780176349531281,
+            106.69976249374433
+        ],
         "ratings": 4.5,
         "total_ratings": 3651,
         "entrance_fee": "Free",
@@ -223,42 +238,45 @@
         ],
         "category": "Historical Buildings",
         "reviews": [
-                {
-                    "reviewer_name": "John Doe",
-                    "given_stars": 4,
-                    "content": "Really cool old building! Loved the vintage vibes and took some great selfies here. It's a nice break from the busy streets outside.",
-                    "timestamp": "06/10/2023"
-                },
-                {
-                    "reviewer_name": "Jane Smith",
-                    "given_stars": 5,
-                    "content": "WOW! This post office is like a work of art. Soaring ceilings and beautiful architecture. Sending postcards from here was fun!",
-                    "timestamp": "12/09/2023"
-                },
-                {
-                    "reviewer_name": "Bob Nguyen",
-                    "given_stars": 3,
-                    "content": "Not gonna lie, it's pretty, but way too crowded for me. Hard to find a quiet spot to appreciate the history.",
-                    "timestamp": "03/11/2023"
-                },
-                {
-                    "reviewer_name": "Samantha Lee",
-                    "given_stars": 5,
-                    "content": "I'm in love with this post office! If I ever wanted to feel like I'm in a fairytale, this is the place. Instagrammable AF!",
-                    "timestamp": "19/08/2023"
-                },
-                {
-                    "reviewer_name": "Michael Wang",
-                    "given_stars": 4,
-                    "content": "Impressive architecture and the atmosphere inside is bustling. Highly recommend checking it out! PS: Postcards make great souvenirs.",
-                    "timestamp": "02/10/2023"
-                }
-            ]
+            {
+                "reviewer_name": "John Doe",
+                "given_stars": 4,
+                "content": "Really cool old building! Loved the vintage vibes and took some great selfies here. It's a nice break from the busy streets outside.",
+                "timestamp": "06/10/2023"
+            },
+            {
+                "reviewer_name": "Jane Smith",
+                "given_stars": 5,
+                "content": "WOW! This post office is like a work of art. Soaring ceilings and beautiful architecture. Sending postcards from here was fun!",
+                "timestamp": "12/09/2023"
+            },
+            {
+                "reviewer_name": "Bob Nguyen",
+                "given_stars": 3,
+                "content": "Not gonna lie, it's pretty, but way too crowded for me. Hard to find a quiet spot to appreciate the history.",
+                "timestamp": "03/11/2023"
+            },
+            {
+                "reviewer_name": "Samantha Lee",
+                "given_stars": 5,
+                "content": "I'm in love with this post office! If I ever wanted to feel like I'm in a fairytale, this is the place. Instagrammable AF!",
+                "timestamp": "19/08/2023"
+            },
+            {
+                "reviewer_name": "Michael Wang",
+                "given_stars": 4,
+                "content": "Impressive architecture and the atmosphere inside is bustling. Highly recommend checking it out! PS: Postcards make great souvenirs.",
+                "timestamp": "02/10/2023"
+            }
+        ]
     },
     {
         "name": "Saigon Opera House",
-        "address": "Saigon Opera House, 7 Cong Truong Lam Son, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.776793283594854, 106.70315466721863],
+        "address": "07 Cong Truong Lam Son, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.776877600445069,
+            106.70315466645607
+        ],
         "ratings": 4.5,
         "total_ratings": 11919,
         "entrance_fee": "700.000 VND",
@@ -287,30 +305,33 @@
         ],
         "category": "Theaters",
         "reviews": [
-                {
-                    "reviewer_name": "Alice Johnson",
-                    "given_stars": 5,
-                    "content": "Attended a live show here, and it was incredible! The architecture is stunning, and the performances are top-notch. A must-visit in Saigon!",
-                    "timestamp": "07/10/2023"
-                },
-                {
-                    "reviewer_name": "David Lee",
-                    "given_stars": 4,
-                    "content": "Beautiful French colonial building with a touch of Vietnamese culture. Enjoyed the evening vibes around the opera house. Great for photos!",
-                    "timestamp": "15/09/2023"
-                },
-                {
-                    "reviewer_name": "Emily Chen",
-                    "given_stars": 3,
-                    "content": "It's a historical icon, but I expected more from the inside. I guess it's better to catch a show here to fully appreciate it.",
-                    "timestamp": "28/11/2023"
-                }
+            {
+                "reviewer_name": "Alice Johnson",
+                "given_stars": 5,
+                "content": "Attended a live show here, and it was incredible! The architecture is stunning, and the performances are top-notch. A must-visit in Saigon!",
+                "timestamp": "07/10/2023"
+            },
+            {
+                "reviewer_name": "David Lee",
+                "given_stars": 4,
+                "content": "Beautiful French colonial building with a touch of Vietnamese culture. Enjoyed the evening vibes around the opera house. Great for photos!",
+                "timestamp": "15/09/2023"
+            },
+            {
+                "reviewer_name": "Emily Chen",
+                "given_stars": 3,
+                "content": "It's a historical icon, but I expected more from the inside. I guess it's better to catch a show here to fully appreciate it.",
+                "timestamp": "28/11/2023"
+            }
         ]
     },
     {
         "name": "Walking Street",
-        "address": "Walking Street, Nguyen Hue Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.774253064345054, 106.70365918256074],
+        "address": "Nguyen Hue Walking Street, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.774253064345054,
+            106.70365918256074
+        ],
         "ratings": 4.7,
         "total_ratings": 266,
         "entrance_fee": "Free",
@@ -333,30 +354,33 @@
         ],
         "category": "Streets",
         "reviews": [
-                {
-                    "reviewer_name": "John Smith",
-                    "given_stars": 5,
-                    "content": "Love this vibrant walking street! There's always something exciting happening here - street performances, food stalls, and a lively atmosphere. Perfect for an evening hangout!",
-                    "timestamp": "12/07/2023"
-                },
-                {
-                    "reviewer_name": "Lisa Nguyen",
-                    "given_stars": 4,
-                    "content": "Nguyen Hue is a great place to take a stroll and enjoy the city vibes. I especially like the light displays at night. Very picturesque!",
-                    "timestamp": "28/06/2023"
-                },
-                {
-                    "reviewer_name": "Michael Johnson",
-                    "given_stars": 3,
-                    "content": "It's a popular spot for tourists, but it gets too crowded sometimes. The street vendors are a bit pushy. Visit on weekdays for a better experience.",
-                    "timestamp": "05/08/2023"
-                }
-            ]
+            {
+                "reviewer_name": "John Smith",
+                "given_stars": 5,
+                "content": "Love this vibrant walking street! There's always something exciting happening here - street performances, food stalls, and a lively atmosphere. Perfect for an evening hangout!",
+                "timestamp": "12/07/2023"
+            },
+            {
+                "reviewer_name": "Lisa Nguyen",
+                "given_stars": 4,
+                "content": "Nguyen Hue is a great place to take a stroll and enjoy the city vibes. I especially like the light displays at night. Very picturesque!",
+                "timestamp": "28/06/2023"
+            },
+            {
+                "reviewer_name": "Michael Johnson",
+                "given_stars": 3,
+                "content": "It's a popular spot for tourists, but it gets too crowded sometimes. The street vendors are a bit pushy. Visit on weekdays for a better experience.",
+                "timestamp": "05/08/2023"
+            }
+        ]
     },
     {
         "name": "Saigon Notre-Dame Cathedral",
-        "address": "Saigon Notre-Dame Cathedral, 01 Cong Xa Paris, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.779890884423711, 106.69904035372528],
+        "address": "01 Paris Commune Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.779964660905268,
+            106.69891160693115
+        ],
         "ratings": 4.5,
         "total_ratings": 21192,
         "entrance_fee": "Free",
@@ -385,30 +409,33 @@
         ],
         "category": "Religious Sites",
         "reviews": [
-                {
-                    "reviewer_name": "Emma Johnson",
-                    "given_stars": 5,
-                    "content": "Wow, what a magnificent cathedral! The architecture is stunning, and the interior is so peaceful. A must-visit in the heart of the city.",
-                    "timestamp": "17/09/2023"
-                },
-                {
-                    "reviewer_name": "Alex Nguyen",
-                    "given_stars": 4,
-                    "content": "Impressive historical building with beautiful stained glass windows. It can get crowded, but it's worth seeing. I recommend going early to avoid the tourist rush!",
-                    "timestamp": "02/08/2023"
-                },
-                {
-                    "reviewer_name": "Sophia Lee",
-                    "given_stars": 3,
-                    "content": "The cathedral is a symbol of history, but it's under renovation now, so part of it was covered. Kinda disappointed, but I guess it's necessary.",
-                    "timestamp": "12/10/2023"
-                }
-            ]
+            {
+                "reviewer_name": "Emma Johnson",
+                "given_stars": 5,
+                "content": "Wow, what a magnificent cathedral! The architecture is stunning, and the interior is so peaceful. A must-visit in the heart of the city.",
+                "timestamp": "17/09/2023"
+            },
+            {
+                "reviewer_name": "Alex Nguyen",
+                "given_stars": 4,
+                "content": "Impressive historical building with beautiful stained glass windows. It can get crowded, but it's worth seeing. I recommend going early to avoid the tourist rush!",
+                "timestamp": "02/08/2023"
+            },
+            {
+                "reviewer_name": "Sophia Lee",
+                "given_stars": 3,
+                "content": "The cathedral is a symbol of history, but it's under renovation now, so part of it was covered. Kinda disappointed, but I guess it's necessary.",
+                "timestamp": "12/10/2023"
+            }
+        ]
     },
     {
         "name": "Bui Vien Street",
         "address": "Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.767570648504973, 106.69393685187636],
+        "location": [
+            10.767602268273274,
+            106.69403341063634
+        ],
         "ratings": 4.3,
         "total_ratings": 11914,
         "entrance_fee": "Free",
@@ -431,37 +458,39 @@
         ],
         "category": "Streets",
         "reviews": [
-                {
-                    "reviewer_name": "Hoa Nguyen",
-                    "given_stars": 4,
-                    "content": "There are many bars and delicious restaurants on Bui Vien Street. So much fun!",
-                    "timestamp": "25/07/2023"
-                },
-                {
-                    "reviewer_name": "Thang Le",
-                    "given_stars": 5,
-                    "content": "Bui Vien Street is the heart of vibrant parties! Enjoyed hopping from one bar to another and trying various Vietnamese beers. The street food here is also amazing. Highly recommended!",
-                    "timestamp": "01/08/2023"
-                },
-                {
-                    "reviewer_name": "Phuong Tran",
-                    "given_stars": 3,
-                    "content": "It's a bustling street with many entertainment options, but it's too crowded for my liking. Prices can be higher for tourists too.",
-                    "timestamp": "12/09/2023"
-                },
-                {
-                    "reviewer_name": "Quoc Nguyen",
-                    "given_stars": 4,
-                    "content": "Had a fantastic night exploring Bui Vien Street. The live music and friendly atmosphere in every corner were incredible. Don't miss trying the grilled street food!",
-                    "timestamp": "06/10/2023"
-                }
-            ]
-        
+            {
+                "reviewer_name": "Hoa Nguyen",
+                "given_stars": 4,
+                "content": "There are many bars and delicious restaurants on Bui Vien Street. So much fun!",
+                "timestamp": "25/07/2023"
+            },
+            {
+                "reviewer_name": "Thang Le",
+                "given_stars": 5,
+                "content": "Bui Vien Street is the heart of vibrant parties! Enjoyed hopping from one bar to another and trying various Vietnamese beers. The street food here is also amazing. Highly recommended!",
+                "timestamp": "01/08/2023"
+            },
+            {
+                "reviewer_name": "Phuong Tran",
+                "given_stars": 3,
+                "content": "It's a bustling street with many entertainment options, but it's too crowded for my liking. Prices can be higher for tourists too.",
+                "timestamp": "12/09/2023"
+            },
+            {
+                "reviewer_name": "Quoc Nguyen",
+                "given_stars": 4,
+                "content": "Had a fantastic night exploring Bui Vien Street. The live music and friendly atmosphere in every corner were incredible. Don't miss trying the grilled street food!",
+                "timestamp": "06/10/2023"
+            }
+        ]
     },
     {
         "name": "Dam Sen Water Park",
-        "address": "Dam Sen Water Park, 3 Hoa Binh, Ward 3, District 11, Ho Chi Minh City, Vietnam",
-        "location": [10.769063327548828, 106.63598316721851],
+        "address": "03 Hoa Binh, Ward 3, District 11, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.769063327514173,
+            106.63595097994772
+        ],
         "ratings": 4.3,
         "total_ratings": 28128,
         "entrance_fee": "280.000 VND",
@@ -485,35 +514,38 @@
         "category": "Parks",
         "reviews": [
             {
-              "reviewer_name": "Huyen Nguyen",
-              "given_stars": 4,
-              "content": "Dam Sen Water Park is a great place to cool off and have fun with family and friends. The water slides are thrilling!",
-              "timestamp": "25/07/2023"
+                "reviewer_name": "Huyen Nguyen",
+                "given_stars": 4,
+                "content": "Dam Sen Water Park is a great place to cool off and have fun with family and friends. The water slides are thrilling!",
+                "timestamp": "25/07/2023"
             },
             {
-              "reviewer_name": "Anh Tran",
-              "given_stars": 5,
-              "content": "I had a fantastic time at Dam Sen Water Park. The wave pool and lazy river were so enjoyable!",
-              "timestamp": "01/08/2023"
+                "reviewer_name": "Anh Tran",
+                "given_stars": 5,
+                "content": "I had a fantastic time at Dam Sen Water Park. The wave pool and lazy river were so enjoyable!",
+                "timestamp": "01/08/2023"
             },
             {
-              "reviewer_name": "Minh Hoang",
-              "given_stars": 3,
-              "content": "Dam Sen Water Park is fun, but it can get crowded on weekends. Consider visiting on a weekday.",
-              "timestamp": "12/09/2023"
+                "reviewer_name": "Minh Hoang",
+                "given_stars": 3,
+                "content": "Dam Sen Water Park is fun, but it can get crowded on weekends. Consider visiting on a weekday.",
+                "timestamp": "12/09/2023"
             },
             {
-              "reviewer_name": "Tien Le",
-              "given_stars": 4,
-              "content": "The water park is well-maintained and clean. It's a perfect place to spend a hot summer day!",
-              "timestamp": "06/10/2023"
+                "reviewer_name": "Tien Le",
+                "given_stars": 4,
+                "content": "The water park is well-maintained and clean. It's a perfect place to spend a hot summer day!",
+                "timestamp": "06/10/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Independence Palace",
-        "address": "Independence Palace, 135 Nam Ky Khoi Nghia, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.777194441811236, 106.69535573909313],
+        "address": "135 Nam Ky Khoi Nghia, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.77720498136426,
+            106.69537719714477
+        ],
         "ratings": 4.7,
         "total_ratings": 21409,
         "entrance_fee": "40.000 VND",
@@ -543,29 +575,32 @@
         "category": "Historical Buildings",
         "reviews": [
             {
-              "reviewer_name": "Phuong Tran",
-              "given_stars": 5,
-              "content": "The Independence Palace is a historical gem! The guided tour was informative, and the architecture is stunning.",
-              "timestamp": "25/07/2023"
+                "reviewer_name": "Phuong Tran",
+                "given_stars": 5,
+                "content": "The Independence Palace is a historical gem! The guided tour was informative, and the architecture is stunning.",
+                "timestamp": "25/07/2023"
             },
             {
-              "reviewer_name": "Hieu Nguyen",
-              "given_stars": 4,
-              "content": "A must-visit landmark in Ho Chi Minh City. The palace grounds are spacious, and the history is fascinating.",
-              "timestamp": "10/08/2023"
+                "reviewer_name": "Hieu Nguyen",
+                "given_stars": 4,
+                "content": "A must-visit landmark in Ho Chi Minh City. The palace grounds are spacious, and the history is fascinating.",
+                "timestamp": "10/08/2023"
             },
             {
-              "reviewer_name": "Linh Vo",
-              "given_stars": 3,
-              "content": "The Independence Palace is significant, but I wish there were more interactive exhibits.",
-              "timestamp": "15/09/2023"
+                "reviewer_name": "Linh Vo",
+                "given_stars": 3,
+                "content": "The Independence Palace is significant, but I wish there were more interactive exhibits.",
+                "timestamp": "15/09/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Saigon Central Book Street",
-        "address": "Saigon Central Book Street, Nguyen Van Binh Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.781138820783813, 106.7000962660809],
+        "address": "Nguyen Van Binh Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.781149360198778,
+            106.69996752042294
+        ],
         "ratings": 4.6,
         "total_ratings": 1077,
         "entrance_fee": "Free",
@@ -595,23 +630,26 @@
         "category": "Streets",
         "reviews": [
             {
-              "reviewer_name": "Thien Pham",
-              "given_stars": 4,
-              "content": "I loved strolling along Saigon Central Book Street. So many books to explore and cozy cafes to read in!",
-              "timestamp": "18/07/2023"
+                "reviewer_name": "Thien Pham",
+                "given_stars": 4,
+                "content": "I loved strolling along Saigon Central Book Street. So many books to explore and cozy cafes to read in!",
+                "timestamp": "18/07/2023"
             },
             {
-              "reviewer_name": "Trang Nguyen",
-              "given_stars": 3,
-              "content": "Saigon Central Book Street is charming, but the book prices are a bit higher than regular bookstores.",
-              "timestamp": "05/08/2023"
+                "reviewer_name": "Trang Nguyen",
+                "given_stars": 3,
+                "content": "Saigon Central Book Street is charming, but the book prices are a bit higher than regular bookstores.",
+                "timestamp": "05/08/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Saigon Zoo and Botanical Gardens",
-        "address": "Saigon Zoo and Botanical Gardens, 2 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.787712017082608, 106.70533351139652],
+        "address": "02 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.787754173963279,
+            106.70525840878398
+        ],
         "ratings": 4.2,
         "total_ratings": 26122,
         "entrance_fee": "50.000 VND",
@@ -641,41 +679,44 @@
         "category": "Parks",
         "reviews": [
             {
-              "reviewer_name": "Dat Le",
-              "given_stars": 5,
-              "content": "Saigon Zoo and Botanical Garden is a delightful place for a family outing. Kids will love seeing the animals!",
-              "timestamp": "29/07/2023"
+                "reviewer_name": "Dat Le",
+                "given_stars": 5,
+                "content": "Saigon Zoo and Botanical Garden is a delightful place for a family outing. Kids will love seeing the animals!",
+                "timestamp": "29/07/2023"
             },
             {
-              "reviewer_name": "Thu Phan",
-              "given_stars": 4,
-              "content": "I had a wonderful time at the zoo. The botanical garden is a peaceful oasis in the middle of the city.",
-              "timestamp": "02/08/2023"
+                "reviewer_name": "Thu Phan",
+                "given_stars": 4,
+                "content": "I had a wonderful time at the zoo. The botanical garden is a peaceful oasis in the middle of the city.",
+                "timestamp": "02/08/2023"
             },
             {
-              "reviewer_name": "Hoa Tran",
-              "given_stars": 5,
-              "content": "Saigon Zoo and Botanical Garden is well-maintained, and the variety of plant species is impressive.",
-              "timestamp": "09/09/2023"
+                "reviewer_name": "Hoa Tran",
+                "given_stars": 5,
+                "content": "Saigon Zoo and Botanical Garden is well-maintained, and the variety of plant species is impressive.",
+                "timestamp": "09/09/2023"
             },
             {
-              "reviewer_name": "Thang Vo",
-              "given_stars": 4,
-              "content": "The zoo is fantastic! Just be prepared for the hot weather and bring plenty of water.",
-              "timestamp": "16/09/2023"
+                "reviewer_name": "Thang Vo",
+                "given_stars": 4,
+                "content": "The zoo is fantastic! Just be prepared for the hot weather and bring plenty of water.",
+                "timestamp": "16/09/2023"
             },
             {
-              "reviewer_name": "Nga Nguyen",
-              "given_stars": 3,
-              "content": "The zoo is enjoyable, but some enclosures could be larger for the animals' well-being.",
-              "timestamp": "24/09/2023"
+                "reviewer_name": "Nga Nguyen",
+                "given_stars": 3,
+                "content": "The zoo is enjoyable, but some enclosures could be larger for the animals' well-being.",
+                "timestamp": "24/09/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Ho Chi Minh City Museum of Fine Arts",
-        "address": "Ho Chi Minh City Museum of Fine Arts, 97A Pho Duc Chinh, Nguyen Thai Binh Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.773344368926844, 106.69914018281278],
+        "address": "97A Pho Duc Chinh, Nguyen Thai Binh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.77023884490251,
+            106.69897602042288
+        ],
         "ratings": 4.3,
         "total_ratings": 6727,
         "entrance_fee": "30.000 VND",
@@ -705,29 +746,32 @@
         "category": "Museums",
         "reviews": [
             {
-              "reviewer_name": "Hien Bui",
-              "given_stars": 3,
-              "content": "The Museum of Fine Arts has a decent collection, but it lacks some famous artworks I expected to see.",
-              "timestamp": "10/08/2023"
+                "reviewer_name": "Hien Bui",
+                "given_stars": 3,
+                "content": "The Museum of Fine Arts has a decent collection, but it lacks some famous artworks I expected to see.",
+                "timestamp": "10/08/2023"
             },
             {
-              "reviewer_name": "Khanh Nguyen",
-              "given_stars": 4,
-              "content": "I enjoyed my visit to the Museum of Fine Arts. It's a peaceful place to appreciate art.",
-              "timestamp": "16/08/2023"
+                "reviewer_name": "Khanh Nguyen",
+                "given_stars": 4,
+                "content": "I enjoyed my visit to the Museum of Fine Arts. It's a peaceful place to appreciate art.",
+                "timestamp": "16/08/2023"
             },
             {
-              "reviewer_name": "Lan Vo",
-              "given_stars": 3,
-              "content": "The museum has some beautiful pieces, but I wish there were more English descriptions.",
-              "timestamp": "22/08/2023"
+                "reviewer_name": "Lan Vo",
+                "given_stars": 3,
+                "content": "The museum has some beautiful pieces, but I wish there were more English descriptions.",
+                "timestamp": "22/08/2023"
             }
-          ]
+        ]
     },
     {
         "name": "History Museum",
-        "address": "History Museum, 2 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.788289626587737, 106.70471613838322],
+        "address": "02 Nguyen Binh Khiem, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.788099920725092,
+            106.70483415481714
+        ],
         "ratings": 4.4,
         "total_ratings": 2626,
         "entrance_fee": "30.000 VND",
@@ -757,29 +801,32 @@
         "category": "Museums",
         "reviews": [
             {
-              "reviewer_name": "Long Nguyen",
-              "given_stars": 4,
-              "content": "The History Museum provides a fascinating insight into Vietnam's past. Don't miss the ancient artifacts!",
-              "timestamp": "05/07/2023"
+                "reviewer_name": "Long Nguyen",
+                "given_stars": 4,
+                "content": "The History Museum provides a fascinating insight into Vietnam's past. Don't miss the ancient artifacts!",
+                "timestamp": "05/07/2023"
             },
             {
-              "reviewer_name": "Thuy Tran",
-              "given_stars": 5,
-              "content": "I loved exploring the History Museum. Each exhibit is well-curated and educational.",
-              "timestamp": "12/07/2023"
+                "reviewer_name": "Thuy Tran",
+                "given_stars": 5,
+                "content": "I loved exploring the History Museum. Each exhibit is well-curated and educational.",
+                "timestamp": "12/07/2023"
             },
             {
-              "reviewer_name": "Phat Le",
-              "given_stars": 4,
-              "content": "The museum offers a rich history of Vietnam. I recommend hiring a guide for a better understanding.",
-              "timestamp": "19/07/2023"
+                "reviewer_name": "Phat Le",
+                "given_stars": 4,
+                "content": "The museum offers a rich history of Vietnam. I recommend hiring a guide for a better understanding.",
+                "timestamp": "19/07/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Giac Lam Pagoda",
-        "address": "Giac Lam Pagoda, 565 Lac Long Quan, Ward 10, Tan Binh District, Ho Chi Minh City, Vietnam",
-        "location": [10.778838875405707, 106.64927072197798],
+        "address": "565 Lac Long Quan, Ward 10, Tan Binh District, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.778838875405707,
+            106.64927072197798
+        ],
         "ratings": 4.6,
         "total_ratings": 3021,
         "entrance_fee": "Free",
@@ -803,29 +850,32 @@
         "category": "Religious Sites",
         "reviews": [
             {
-              "reviewer_name": "Ngoc Truong",
-              "given_stars": 3,
-              "content": "Giac Lam Pagoda is a peaceful place, but it can get crowded with tourists.",
-              "timestamp": "15/08/2023"
+                "reviewer_name": "Ngoc Truong",
+                "given_stars": 3,
+                "content": "Giac Lam Pagoda is a peaceful place, but it can get crowded with tourists.",
+                "timestamp": "15/08/2023"
             },
             {
-              "reviewer_name": "Minh Do",
-              "given_stars": 4,
-              "content": "I found the architecture and history of Giac Lam Pagoda intriguing. Worth a visit!",
-              "timestamp": "22/08/2023"
+                "reviewer_name": "Minh Do",
+                "given_stars": 4,
+                "content": "I found the architecture and history of Giac Lam Pagoda intriguing. Worth a visit!",
+                "timestamp": "22/08/2023"
             },
             {
-              "reviewer_name": "Hai Huynh",
-              "given_stars": 3,
-              "content": "While the pagoda is beautiful, the surroundings are noisy due to nearby traffic.",
-              "timestamp": "29/08/2023"
+                "reviewer_name": "Hai Huynh",
+                "given_stars": 3,
+                "content": "While the pagoda is beautiful, the surroundings are noisy due to nearby traffic.",
+                "timestamp": "29/08/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Crescent Mall",
-        "address": "Crescent Mall, 101 Ton Dat Tien, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
-        "location": [10.728662050673599, 106.71862007779667],
+        "address": "101 Ton Dat Tien, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.728619881715586,
+            106.71855569559195
+        ],
         "ratings": 4.5,
         "total_ratings": 15050,
         "entrance_fee": "Free",
@@ -838,46 +888,48 @@
             "Dining",
             "Entertainment"
         ],
-        "nearby_activities": [
-        ],
+        "nearby_activities": [],
         "category": "Shopping",
         "reviews": [
             {
-              "reviewer_name": "Trung Phan",
-              "given_stars": 5,
-              "content": "Crescent Mall is a fantastic shopping destination with a great variety of stores and restaurants.",
-              "timestamp": "03/07/2023"
+                "reviewer_name": "Trung Phan",
+                "given_stars": 5,
+                "content": "Crescent Mall is a fantastic shopping destination with a great variety of stores and restaurants.",
+                "timestamp": "03/07/2023"
             },
             {
-              "reviewer_name": "Bao Tran",
-              "given_stars": 5,
-              "content": "I had a wonderful time shopping and dining at Crescent Mall. It's modern and well-designed.",
-              "timestamp": "09/07/2023"
+                "reviewer_name": "Bao Tran",
+                "given_stars": 5,
+                "content": "I had a wonderful time shopping and dining at Crescent Mall. It's modern and well-designed.",
+                "timestamp": "09/07/2023"
             },
             {
-              "reviewer_name": "Giang Le",
-              "given_stars": 4,
-              "content": "Crescent Mall is a shopper's paradise. Just be prepared for occasional crowds on weekends.",
-              "timestamp": "17/07/2023"
+                "reviewer_name": "Giang Le",
+                "given_stars": 4,
+                "content": "Crescent Mall is a shopper's paradise. Just be prepared for occasional crowds on weekends.",
+                "timestamp": "17/07/2023"
             },
             {
-              "reviewer_name": "Nhan Vo",
-              "given_stars": 4,
-              "content": "Crescent Mall has everything you need, from fashion to food. A great place to spend the day.",
-              "timestamp": "24/07/2023"
+                "reviewer_name": "Nhan Vo",
+                "given_stars": 4,
+                "content": "Crescent Mall has everything you need, from fashion to food. A great place to spend the day.",
+                "timestamp": "24/07/2023"
             },
             {
-              "reviewer_name": "Hoa Nguyen",
-              "given_stars": 4,
-              "content": "Crescent Mall offers a wide range of entertainment options, making it suitable for all ages.",
-              "timestamp": "01/08/2023"
+                "reviewer_name": "Hoa Nguyen",
+                "given_stars": 4,
+                "content": "Crescent Mall offers a wide range of entertainment options, making it suitable for all ages.",
+                "timestamp": "01/08/2023"
             }
-          ]
+        ]
     },
     {
         "name": "Tao Dan Park",
-        "address": "Tao Dan Park, 55C Nguyen Thi Minh Khai, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
-        "location": [10.774653802469079, 106.69252790848438],
+        "address": "Truong Dinh Street, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam",
+        "location": [
+            10.774811921181822,
+            106.69242063761992
+        ],
         "ratings": 4.5,
         "total_ratings": 13573,
         "entrance_fee": "Free",
@@ -907,24 +959,23 @@
         "category": "Parks",
         "reviews": [
             {
-              "reviewer_name": "Khoa Nguyen",
-              "given_stars": 4,
-              "content": "Tao Dan Park is a tranquil oasis in the heart of the city. Perfect for morning walks!",
-              "timestamp": "05/08/2023"
+                "reviewer_name": "Khoa Nguyen",
+                "given_stars": 4,
+                "content": "Tao Dan Park is a tranquil oasis in the heart of the city. Perfect for morning walks!",
+                "timestamp": "05/08/2023"
             },
             {
-              "reviewer_name": "Thao Le",
-              "given_stars": 4,
-              "content": "I enjoy reading books under the shade of trees in Tao Dan Park. Such a lovely atmosphere.",
-              "timestamp": "12/08/2023"
+                "reviewer_name": "Thao Le",
+                "given_stars": 4,
+                "content": "I enjoy reading books under the shade of trees in Tao Dan Park. Such a lovely atmosphere.",
+                "timestamp": "12/08/2023"
             },
             {
-              "reviewer_name": "Huy Tran",
-              "given_stars": 3,
-              "content": "Tao Dan Park is nice, but the litter can be an issue on busy days.",
-              "timestamp": "19/08/2023"
+                "reviewer_name": "Huy Tran",
+                "given_stars": 3,
+                "content": "Tao Dan Park is nice, but the litter can be an issue on busy days.",
+                "timestamp": "19/08/2023"
             }
-          ]
+        ]
     }
 ]
-

@@ -16,7 +16,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-struct DetailView: View {
+struct PlaceDetailView: View {
     // Shared variable to control the dark mode
     @AppStorage("isDarkMode") var isDarkMode: Bool = true
 
@@ -106,9 +106,8 @@ struct DetailView: View {
 
                                     } label: {
                                         Image(systemName: "doc.circle").resizable()
-                                            .frame(width: 55, height: 55)
+                                            .frame(width: 60, height: 60)
                                             .foregroundColor(isDarkMode ? .white : .black)
-
                                     }
                                     .padding(.trailing, 20)
                                     
@@ -118,13 +117,13 @@ struct DetailView: View {
                                         }
                                     } label: {
                                         Image(systemName: "map.circle.fill").resizable()
-                                            .frame(width: 55, height: 55)
+                                            .frame(width: 60, height: 60)
                                             .foregroundColor(isDarkMode ? .white : .black)
 
                                     }
                                     Spacer()
                                 }
-                                .padding(.top)
+                                .padding(.top, 22)
                                 .padding(.horizontal)
                                 .frame(height: 100)
 
@@ -546,6 +545,6 @@ struct Detail_View_Previews: PreviewProvider {
     @State static var isDetailView = false
 
     static var previews: some View {
-        DetailView(isDetailView: $isDetailView)
+        PlaceDetailView(isDetailView: $isDetailView)
     }
 }
