@@ -144,7 +144,7 @@
         "date": "March",
         "entrance_fee": "Free",
         "opening_hours": "Varies",
-        "short_description": "A celebration of the traditional Vietnamese attire, Ao Dai, with fashion shows and cultural performances.",
+        "short_description": "A celebration of the traditional Vietnamese Ao Dai.",
         "full_description": "Ao Dai Festival is a vibrant event held in Ho Chi Minh City, celebrating the elegance of the traditional Vietnamese Ao Dai. The festival features fashion shows, cultural performances, and exhibitions, showcasing the beauty and significance of this iconic attire.",
         "image_url": "aodaifestival",
         "popular_activities": [
@@ -166,7 +166,7 @@
         "date": "May",
         "entrance_fee": "1.8M VND",
         "opening_hours": "Varies",
-        "short_description": "A showcase of the latest fashion trends from both Vietnamese and international designers.",
+        "short_description": "A fashion showcase from both Vietnamese and international designers.",
         "full_description": "Vietnam International Fashion Week is a high-profile fashion event in Ho Chi Minh City, featuring collections from prominent Vietnamese and international designers. The runway shows highlight the latest trends, styles, and innovations in the fashion industry.",
         "image_url": "vnfashionweek",
         "popular_activities": [
@@ -188,7 +188,7 @@
         "date": "October/November",
         "entrance_fee": "30.000 VND",
         "opening_hours": "Varies",
-        "short_description": "A major automobile exhibition featuring the latest models and innovations in the automotive industry.",
+        "short_description": "A major automobile exhibition featuring the latest models in the industry.",
         "full_description": "The Vietnam Motor Show showcases an impressive array of automobiles, motorcycles, and automotive technologies. It provides car enthusiasts and industry professionals with an opportunity to explore the latest trends and innovations in the automotive world.",
         "image_url": "vietnammotorshow",
         "popular_activities": [
@@ -210,7 +210,7 @@
         "date": "December 31",
         "entrance_fee": "Free",
         "opening_hours": "8:00 PM - 12:30 AM",
-        "short_description": "A spectacular festival to welcome the New Year with live performances and fireworks.",
+        "short_description": "A festival to welcome the New Year with live performances and fireworks.",
         "full_description": "The New Year Countdown Festival at Nguyen Hue Walking Street is a joyful celebration to say goodbye to the old year and welcome the New Year with live music, cultural shows, and thrilling dance acts. At midnight, a spectacular fireworks display lights up the sky, filling the city with mesmerizing colors.",
         "image_url": "countdown",
         "popular_activities": [
@@ -232,7 +232,7 @@
         "date": "January/February",
         "entrance_fee": "Free",
         "opening_hours": "Varies",
-        "short_description": "A floral display along Nguyen Hue Walking Street to celebrate the Lunar New Year.",
+        "short_description": "A floral display along Nguyen Hue Walking Street.",
         "full_description": "The Nguyen Hue Flower Festival transforms the iconic walking street into a mesmerizing garden of flowers during the Lunar New Year season. The festival showcases intricate floral installations, breathtaking flower arrangements, and beautiful street decorations. Visitors can stroll along the vibrant street, enjoying the fragrant blooms and admiring the skillful craftsmanship of the floral displays.",
         "image_url": "flowerfestival",
         "popular_activities": [
@@ -276,7 +276,7 @@
         "date": "February",
         "entrance_fee": "Free",
         "opening_hours": "Varies",
-        "short_description": "A colorful celebration at Thien Hau Pagoda, honoring the Goddess of the Sea.",
+        "short_description": "A colorful celebration at Thien Hau Pagoda.",
         "full_description": "The Thien Hau Pagoda Festival is an annual event held at Thien Hau Pagoda in District 5, Ho Chi Minh City. This vibrant festival is dedicated to Thien Hau, the Goddess of the Sea, who is revered as the protector of fishermen and sailors. During the festival, the pagoda is adorned with colorful decorations, and elaborate processions take place, with worshippers carrying incense and offerings to pay homage to the deity. Folk performances, lion dances, and traditional music add to the festive atmosphere.",
         "image_url": "thienhaufestival",
         "popular_activities": [

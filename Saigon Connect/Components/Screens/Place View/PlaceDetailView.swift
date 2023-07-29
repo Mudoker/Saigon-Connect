@@ -141,7 +141,7 @@ struct PlaceDetailView: View {
                                 // show the popular activities
                                 if place.popular_activities.count >= 1 {
                                     HStack {
-                                        Text("Popular activiites")
+                                        Text("Popular activities")
                                             .padding([.horizontal, .top])
                                             .font(.title.bold())
                                             .foregroundColor(isDarkMode ? .white : .black)
