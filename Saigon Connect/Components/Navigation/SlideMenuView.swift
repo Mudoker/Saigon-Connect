@@ -57,74 +57,12 @@ struct SlideMenuView: View {
 
                 // menu content
                 VStack (alignment: .leading, spacing: 0) {
-                        // user avatar and name
-                        HStack {
-                            HStack (alignment: .center) {
-                                Image(systemName: userCreds[userIndex].avatar)
-                                    .resizable()
-                                    .foregroundColor(isDarkMode ? .white : .black)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 100, height: 100)
+                    Text("Menu")
+                        .font(.title)
+                        .bold()
+                        .padding(.top, 50)
 
-                                VStack {
-                                    Text(userCreds[userIndex].username)
-                                        .font(.title2.bold())
-                                        .foregroundColor(isDarkMode ? .white : .black)
-
-                                    Text("@" + userCreds[userIndex].type)
-                                        .font(.callout)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                }
-                            }
-                            .padding(.top, 50)
-
-                            Spacer()
-                        }
-                    
-                    // user information
-                    HStack {
-                        VStack {
-                            Text(String(userCreds[userIndex].following))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-                                
-                            Text("Following")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }
-                        
-                        VStack {
-                            Text(String(userCreds[userIndex].followers))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-
-                            Text("Followers")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }.padding(.horizontal)
-                        
-                        VStack {
-                            Text(String(userCreds[userIndex].likes))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-
-                            Text("Likes")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }
-                    }
-                    .padding(.vertical)
-
-                        Divider()
+                    Divider()
 
                         // menu options for navigation
                         ScrollView (.vertical,showsIndicators: false) {
@@ -260,9 +198,7 @@ struct SlideMenuView: View {
                             .fullScreenCover(isPresented: $isLogOut) {
                                         LoginView()
                             }
-                            
                         }
-                       
                     }
                     .padding()
                     .frame(maxHeight: .infinity)

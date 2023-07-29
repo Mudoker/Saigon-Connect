@@ -255,23 +255,17 @@ struct TopView: View {
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
-                // if !isMapView {
-                    Text("Entrence fee")
-                        .fontWeight(.bold)
-                    if (place.entrance_fee == "Free") {
-                        Text(place.entrance_fee)
-                            .font(.system(size: 30, weight: .bold))
-                            .frame(height: 30)
-                    }else {
-                        Text(place.entrance_fee)
-                            .font(.system(size: 23, weight: .bold))
-                            .frame(height: 30)
-                    }
-                    
-                // } else {
-                //     VStack{}.frame(height: 35)
-                // }
-                
+                Text("Entrence fee")
+                    .fontWeight(.bold)
+                if (place.entrance_fee == "Free") {
+                    Text(place.entrance_fee)
+                        .font(.system(size: 30, weight: .bold))
+                        .frame(height: 30)
+                }else {
+                    Text(place.entrance_fee)
+                        .font(.system(size: 23, weight: .bold))
+                        .frame(height: 30)
+                }
             }
             .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
             

@@ -27,7 +27,7 @@ struct EventDetailView: View {
     @State private var isMapView = false
 
     // Initialize the place variable
-    @State var place: Place = Place.topPlaces[0]
+    @State var event: Event = Event.allEvents[0]
 
     // Initialize the image opacity for animation
     @State private var imageOpacity: Float = 1
@@ -55,7 +55,7 @@ struct EventDetailView: View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
                 // Map view
-                MapView(coordinate: CLLocationCoordinate2D(latitude: place.location[0], longitude: place.location[1]))
+                MapView(coordinate: CLLocationCoordinate2D(latitude: event.location[0], longitude: event.location[1]))
                     .frame(height: 400)
                     .edgesIgnoringSafeArea(.all)
                     .opacity(isMapView ? 1.0 : 0) // if isMapView is true, show the map view, otherwise, hide it
@@ -64,12 +64,12 @@ struct EventDetailView: View {
                 VStack(alignment: .leading) {
                     // show the name and category
                     VStack(alignment: .leading) {
-                        Text(place.category)
+                        Text(event.category)
                             .padding(.horizontal)
                             .foregroundColor(isDarkMode ? .white : .black)
 
                             .padding(.top)
-                        Text(place.name)
+                        Text(event.name)
                             .font(.largeTitle)
                             .fontWeight(.black)
                             .padding(.horizontal)
@@ -80,7 +80,7 @@ struct EventDetailView: View {
 
                     // only show the top view if isMapView is false
                     if !isMapView {
-                        TopView(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
+                        EventTopView(event: event, imageOpacity: $scrollOffset ,isMapView: isMapView)
                             .padding(.horizontal)
                             .zIndex(1) // put the top view on top of the map view
                             .foregroundColor(isDarkMode ? .white : .black)
@@ -128,74 +128,16 @@ struct EventDetailView: View {
                                 .frame(height: 100)
 
                                 // show rating and opening hours
-                                RatingOpenHour(place: place)
+                                EventRatingOpenHour(place: place)
                                     .foregroundColor(isDarkMode ? .white : .black)
 
                                 // show the description
-                                Text (place.full_description)
+                                Text (event.full_description)
                                     .font(.body)
                                     .opacity(0.9)
                                     .padding(.horizontal)
                                     .foregroundColor(isDarkMode ? .white : .black)
-
-                                // show the popular activities
-                                if place.popular_activities.count >= 1 {
-                                    HStack {
-                                        Text("Popular activiites")
-                                            .padding([.horizontal, .top])
-                                            .font(.title.bold())
-                                            .foregroundColor(isDarkMode ? .white : .black)
-
-                                        Spacer()
-                                    }
-                                    .frame(height: 20)
-
-                                    // call the popular activity view                        
-                                    popularActivitiy(place: place)
-                                        .padding(.leading)
-                                        .padding(.top,10)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                }
-                                
-                                // show the nearby activities
-                                if place.nearby_activities.count >= 1 {
-                                    HStack {
-                                        Text("Nearby")
-                                            .padding([.horizontal, .top])
-                                            .font(.title.bold())
-                                            .foregroundColor(isDarkMode ? .white : .black)
-
-                                        Spacer()
-                                    }
-                                    .padding(.vertical)
-                                    .frame(height: 20)
-                                    
-                                    // call the nearby activity view
-                                    nearbyActivity(place: place)
-                                        .padding(.leading)
-                                        .padding(.top,10)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                }
-                                
-                                // show the reviews
-                                if place.reviews.count >= 1 {
-                                    HStack {
-                                        Text("Top reviews")
-                                            .padding([.horizontal, .top])
-                                            .font(.title.bold())
-                                            .foregroundColor(isDarkMode ? .white : .black)
-
-                                        Spacer()
-                                    }
-                                    .padding(.vertical)
-                                    .frame(height: 20)
-            
-                                    // call the review view                
-                                    reviewView(place: place)
-                                        .padding(.leading)
-                                        .padding(.top,20)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                }                                                         
+                                                                                        
                                 Spacer()
                             }
                             .background(GeometryReader {
@@ -213,7 +155,7 @@ struct EventDetailView: View {
                         Spacer()
 
                         // show the explore more view
-                        expoloreMore( place: place, background: isDarkMode ? background_dark : background_light)
+                        EventExpoloreMore( place: place, background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
 
 
@@ -239,12 +181,12 @@ struct EventDetailView: View {
 }
 
 // Top view
-struct TopView: View {
+struct EventTopView: View {
     // toggle animation
     @State var isAnimation = false
 
     // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
+    @State var event: Event = Event.allEvents[0]
 
     // Initialize the image opacity for animation
     @Binding var imageOpacity: CGFloat
@@ -255,29 +197,23 @@ struct TopView: View {
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
-                // if !isMapView {
-                    Text("Entrence fee")
-                        .fontWeight(.bold)
-                    if (place.entrance_fee == "Free") {
-                        Text(place.entrance_fee)
-                            .font(.system(size: 30, weight: .bold))
-                            .frame(height: 30)
-                    }else {
-                        Text(place.entrance_fee)
-                            .font(.system(size: 23, weight: .bold))
-                            .frame(height: 30)
-                    }
-                    
-                // } else {
-                //     VStack{}.frame(height: 35)
-                // }
-                
+                Text("Entrence fee")
+                    .fontWeight(.bold)
+                if (event.entrance_fee == "Free") {
+                    Text(event.entrance_fee)
+                        .font(.system(size: 30, weight: .bold))
+                        .frame(height: 30)
+                } else {
+                    Text(event.entrance_fee)
+                        .font(.system(size: 23, weight: .bold))
+                        .frame(height: 30)
+                }
             }
             .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
             
             Spacer()
             
-            Image(place.image_url)
+            Image(event.image_url)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
@@ -304,45 +240,8 @@ struct TopView: View {
         return 1
     }
 }
-
-// Custom shape for the top border
-struct CustomTopBorder: Shape {
-    // radius of the corner
-    var radius = 35
-
-    // draw the shape
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-// Custom shape for the top left border
-struct CustomTopLeftBorder: Shape {
-    // radius of the corner
-    var radius = 35
-
-    // draw the shape
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-// Custom shape for the bottom border
-struct CustomBottomBorder: Shape {
-    // radius of the corner
-    var radius = 35
-
-    // draw the shape
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
 // Rating and opening hours view
-struct RatingOpenHour: View {
+struct EventRatingOpenHour: View {
     // Initialize the place variable
     @State var place: Place = Place.allPlace[0]
 
@@ -382,7 +281,7 @@ struct RatingOpenHour: View {
 }
 
 // explore more view
-struct expoloreMore: View {
+struct EventExpoloreMore: View {
     // Initialize the place variable
     @State var place: Place = Place.allPlace[1]
 
@@ -406,137 +305,6 @@ struct expoloreMore: View {
         .frame(height: 100)
         .background(background)
         .clipShape(CustomTopLeftBorder(radius: 180))
-    }
-}
-
-// popular activity view
-struct popularActivitiy: View {
-    // check if the dark mode is on or off
-    @AppStorage("isDarkMode") var isDarkMode: Bool = true
-
-    // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
-
-    var body: some View {
-        // show the popular activities
-        // use lazy grid to enhance the performance
-        LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 20) {
-            ForEach(place.popular_activities, id: \.self) { activity in
-                Text(activity)
-                    .padding()
-                    .frame(width: UIScreen.main.bounds.width / 2 - 20)
-                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
-                    .foregroundColor(isDarkMode ? Color.white : Color.black)
-                    .cornerRadius(20)
-            }
-        }
-    }
-}
-
-// nearby activity view
-struct nearbyActivity: View {
-    // check if the dark mode is on or off
-    @AppStorage("isDarkMode") var isDarkMode: Bool = true
-
-    // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
-    
-    var body: some View {
-        // show the nearby activities
-        ScrollView {
-            // use lazy grid to enhance the performance
-            LazyVGrid(columns: [GridItem(.flexible(), spacing: 20)], spacing: 20) {
-                ForEach(place.nearby_activities.indices, id: \.self) { index in
-                    HStack {
-                        // show the image and name of the activity
-                        Image(systemName: place.nearby_activities[index].image_url)
-                            .foregroundColor(isDarkMode ? Color.white : Color.black)
-                            .padding(.leading)
-
-                        Text(place.nearby_activities[index].event_name)
-                            .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                        Spacer()
-
-                        // show the rating and fee
-                        VStack {
-                            StarsView(rating: place.nearby_activities[index].ratings, maxRating: 5)
-                                .padding(.trailing)
-
-                            Text( place.nearby_activities[index].fee)
-                                .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                        }
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
-                    .cornerRadius(20)
-                }
-            }
-        }
-    }
-}
-
-// review view
-struct reviewView: View {
-    // check if the dark mode is on or off
-    @AppStorage("isDarkMode") var isDarkMode: Bool = true
-
-    // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
-
-    var body: some View {
-        // show the reviews
-        ForEach(place.reviews.indices, id: \.self) { index in
-            VStack (alignment: .leading) {
-                // show the reviewer name, timestamp and stars
-                HStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                    VStack (alignment: .leading) {
-                        Text(place.reviews[index].reviewer_name)
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                        Text(place.reviews[index].timestamp)
-                            .opacity(0.6)
-                            .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                    }
-                    Spacer()
-
-                    // call the stars view
-                    HStack {
-                        Spacer()
-
-                        StarsView(rating: CGFloat(place.reviews[index].given_stars), maxRating: 5)
-                    }
-                    .padding(.horizontal)
-                }
-
-                // show the review content
-                Text(place.reviews[index].content)
-                    .opacity(0.6)
-                    .foregroundColor(isDarkMode ? Color.white : Color.black)
-
-                Divider()
-                    .foregroundColor(isDarkMode ? Color.white : Color.black)
-            }
-        }
-    }
-}
-
-// struct to get the offset of the scroll view
-struct ViewOffsetKey: PreferenceKey {
-    typealias Value = CGFloat
-    static var defaultValue = CGFloat.zero
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value += nextValue()
     }
 }
 
