@@ -14,8 +14,6 @@
 import SwiftUI
 
 struct SlideMenuView: View {
-    // variables to store the user credentials
-    @State var userCreds: [User] = User.allUsers
 
     // variables to store the index of the user and the state of the slide menu
     @AppStorage("userIndex") var userIndex = 0

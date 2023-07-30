@@ -14,32 +14,6 @@
 
 import Foundation
 
-// Consider remove this struct
-struct User: Codable {
-    let account: String
-    let password: String
-    var username: String
-    var pronouns: String
-    var bio: String
-    var skill: String
-    var followers: Int
-    var following: Int
-    var likes: Int
-    let avatar: String
-    let type: String
-    var connections: Connections
-    var isRegistered: Bool
-    let joinDate: String
-    
-    struct Connections: Codable {
-        var facebook: String?
-        var github: String?
-        var spotify: String?
-    }
-    
-    static var allUsers = decodeUserFromJsonFile(jsonFileName: "user.json")
-}
-
 // struct to store the place information
 struct Place: Codable {
     let name: String
@@ -146,23 +120,6 @@ func decodeEventJsonFromJsonFile(jsonFileName: String) -> [Event] {
     return []
 }
 
-// consider remove this function
-func decodeUserFromJsonFile(jsonFileName: String) -> [User] {
-    if let file = Bundle.main.url(forResource: jsonFileName, withExtension: nil) {
-        if let data = try? Data(contentsOf: file) {
-            do {
-                let decoder = JSONDecoder()
-                let decoded = try decoder.decode([User].self, from: data)
-                return decoded
-            } catch let error {
-                fatalError("Failed to decode JSON: \(error)")
-            }
-        }
-    } else {
-        fatalError("Couldn't load \(jsonFileName) file")
-    }
-    return []
-}
 
 // function to get the unique categories from the places
 func getUniquePlaceCategories(from places: [Place]) -> [String] {
@@ -193,43 +150,3 @@ func getUniqueEventCategories(from events: [Event]) -> [String] {
 
     return uniqueCategories
 }
-
-// consider remove this function
-func saveUserCredsToFile(userCreds: [User]) {
-    do {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        let data = try encoder.encode(userCreds)
-        
-        guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("Couldn't access documents directory.")
-        }
-        
-        let fileURL = documentsDirectoryURL.appendingPathComponent("user.json")
-        try data.write(to: fileURL)
-        print("Updated user data successfully saved to file.")
-    } catch {
-        print("Error saving userCreds to file: \(error)")
-    }
-}
-
-
-//func updateUserToFile(updatedUsers: [User]) {
-//    do {
-//        let encoder = JSONEncoder()
-//        encoder.outputFormatting = .prettyPrinted
-//        let data = try encoder.encode(updatedUsers)
-//
-//        guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-//            fatalError("Couldn't access documents directory.")
-//        }
-//
-//        let fileURL = documentsDirectoryURL.appendingPathComponent("user.json")
-//        try data.write(to: fileURL)
-//        print("Updated user data successfully saved to file.")
-//    } catch {
-//        print("Error saving updated user data to file: \(error)")
-//    }
-//}
-
-
