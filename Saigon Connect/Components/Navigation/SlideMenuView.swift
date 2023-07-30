@@ -14,30 +14,31 @@
 import SwiftUI
 
 struct SlideMenuView: View {
+    // variables to store the user credentials
     @State var userCreds: [User] = User.allUsers
+
+    // variables to store the index of the user and the state of the slide menu
     @AppStorage("userIndex") var userIndex = 0
+
+    // variables to check for the state of the slide menu
     @Binding var isOpenSlideMenu: Bool
+
+    // variables to check for dark mode
     @Binding var isDarkMode: Bool
+
+    // Consider to remove this variable
     @State var isLogOut: Bool = false
     @State var isConfirmLogOut: Bool = false
-    @Binding var isProfileView: Bool
+    @Binding var isPlaceView: Bool
+    @Binding var isEventView: Bool
 
-    var background_light = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-    var background_dark = LinearGradient(
-        gradient: Gradient(colors: [Color(red: 0.06, green: 0.13, blue: 0.15), Color(red: 0.13, green: 0.23, blue: 0.26), Color(red: 0.17, green: 0.33, blue: 0.39)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
     var body: some View {
+            // Slide menu
             ZStack {
+                // close menu button
                 VStack {
                     HStack {
                         Spacer()
-                        
                         Button(action: {
                             withAnimation(.spring()) {
                                 isOpenSlideMenu.toggle()
@@ -50,77 +51,28 @@ struct SlideMenuView: View {
                                 .foregroundColor(isDarkMode ? .white : .black)
                         })
                     }
-                    .padding(.top, 50)
+                    .padding(.top, 65)
                     Spacer()
                 }
+
+                // menu content
                 VStack (alignment: .leading, spacing: 0) {
-                        HStack {
-                            HStack (alignment: .center) {
-                                Image(systemName: userCreds[userIndex].avatar)
-                                    .resizable()
-                                    .foregroundColor(isDarkMode ? .white : .black)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 100, height: 100)
+                    Text("Let's explore")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(isDarkMode ? .white : .black)
+                        .padding(.top, 80)
+                        .padding(.bottom, 30)
 
-                                VStack {
-                                    Text(userCreds[userIndex].username).font(.title2.bold())
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                    Text("@" + userCreds[userIndex].type).font(.callout)
-                                        .foregroundColor(isDarkMode ? .white : .black)
-                                }
+                    Divider()
 
-                                
-
-                            }
-                            .padding(.top, 50)
-                            Spacer()
-                        }
-                    
-                    HStack {
-                        VStack {
-                            Text(String(userCreds[userIndex].following))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-                            Text("Following")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }
-                        
-                        VStack {
-                            Text(String(userCreds[userIndex].followers))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-                            Text("Followers")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }.padding(.horizontal)
-                        
-                        VStack {
-                            Text(String(userCreds[userIndex].likes))
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(isDarkMode ? .white : .black)
-                            Text("Likes")
-                                .font(.caption)
-                                .foregroundColor(isDarkMode ? .gray : .black)
-                                .opacity(0.5)
-
-                        }
-                    }
-                    .padding(.vertical)
-
-                        Divider()
-
+                        // menu options for navigation
                         ScrollView (.vertical,showsIndicators: false) {
+                            // place button
                             HStack {
                                 Button {
-                                    isProfileView = false
+                                    isPlaceView = true
+                                    isEventView = false
                                 } label: {
                                     Image(systemName: "house.circle")
                                         .resizable()
@@ -129,40 +81,48 @@ struct SlideMenuView: View {
 
                                     Text("Dashboard")
                                         .foregroundColor(isDarkMode ? .white : .black)
-                                        .padding(.trailing, 15)
+
+                                    Spacer()
+                                    
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                         .foregroundColor(isDarkMode ? .white : .black)
-
                                 }
                                 .padding(.top)
                                 Spacer()
                             }
+
                             Divider()
+
+                            // event button
                             HStack {
                                 Button {
-                                    isProfileView = true
+                                    isPlaceView = false
+                                    isEventView = true
                                 } label: {
-                                    Image(systemName: "person.circle")
+                                    Image(systemName: "figure.play")
                                         .resizable()
                                         .frame(width: 35, height: 35)
                                         .foregroundColor(isDarkMode ? .white : .black)
 
-                                    Text("Profile")
+                                    Text("Events")
                                         .foregroundColor(isDarkMode ? .white : .black)
-                                        .padding(.trailing, 50)
+                                    
+                                     Spacer()
+                                    
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                         .foregroundColor(isDarkMode ? .white : .black)
-
                                 }
                                 .padding(.top)
                                 Spacer()
                             }
+
                             Divider()
 
+                            // dark mode button
                             HStack {
                                 Image(systemName: "moon.circle")
                                     .resizable()
@@ -172,13 +132,15 @@ struct SlideMenuView: View {
                                 Text("DarkMode")
                                     .foregroundColor(isDarkMode ? .white : .black)
 
+                                // switch to change the state of the dark mode (with animation)
                                 Button {
                                     isDarkMode.toggle()
                                 } label: {
                                     ZStack {
                                         Capsule()
                                             .frame(width: 90,height: 40)
-                                        .foregroundColor(isDarkMode ? Color.green : Color.gray)
+                                            .foregroundColor(isDarkMode ? Color.green : Color.gray)
+
                                         Circle()
                                             .frame(width: 45, height: 45)
                                             .foregroundColor(.white)
@@ -190,46 +152,22 @@ struct SlideMenuView: View {
                                 .padding()
                                 Spacer()
                             }
+
                             Divider()
-
-                            Button {
-                                isConfirmLogOut.toggle()
-                            } label: {
-                                ZStack {
-                                    Text("Sign out")
-                                        .foregroundColor(.red)
-                                        .bold()
-                                        .font(.title3)
-                                }
-
-                            }
-                            .alert(isPresented: $isConfirmLogOut) {
-                                Alert(
-                                    title: Text("Confirmation"),
-                                    message: Text("Are you sure you want to sign out?"),
-                                    primaryButton: .destructive(Text("Sign out")) {
-                                        isLogOut = true
-                                    },
-                                    secondaryButton: .cancel(Text("Cancel"))
-                                )
-                            }
-                            .fullScreenCover(isPresented: $isLogOut) {
-                                        LoginView()
-                            }
-                            
                         }
-                       
                     }
                     .padding()
                     .frame(maxHeight: .infinity)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background( isDarkMode ? Image("background_dark")  : Image("background_light"))
-        .ignoresSafeArea(.container, edges: .vertical)
+            .ignoresSafeArea(.container, edges: .vertical)
             
         
     }
 
+    // function to create a button
+    // Consider to remove this function
     func creatButton (title: String, image: String) -> some View
     {
         Button{
@@ -250,14 +188,17 @@ struct SlideMenuView: View {
     }
 }
 
-struct SlideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        SlideMenuView(isOpenSlideMenu: .constant(true), isDarkMode: .constant(false), isProfileView: .constant(false))
-    }
-}
-
+// consider to remove this extension
 extension View {
     func getRect() -> CGRect {
         return UIScreen.main.bounds
     }
 }
+
+// preview
+struct SlideMenu_Previews: PreviewProvider {
+    static var previews: some View {
+        SlideMenuView(isOpenSlideMenu: .constant(true), isDarkMode: .constant(false), isPlaceView: .constant(false), isEventView: .constant(false))
+    }
+}
+

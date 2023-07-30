@@ -1,0 +1,303 @@
+[
+    {
+        "name": "International Travel Event",
+        "address": "Saigon Exhibition and Convention Center, 799 Nguyen Van Linh, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "host": "Vietnam National Administration of Tourism (VNAT)",
+        "location": [
+            10.731026131997236,
+            106.72128995111119
+        ],
+        "date": "07/09/2023 - 09/09/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "short_description": "An anual event to promote travel and local business",
+        "full_description": "ITE HCMC 2023 is Vietnam's annual international travel and trade event, hosted for the 16th time with the theme 'Moving Together, Rising Together.' Organized by the Ho Chi Minh City People's Committee and the Ministry of Culture, Sports, and Tourism, the event will combine in-person activities with online elements such as virtual B2B meetings, conferences, and live broadcasts. This international tourism event aims to promote tourism and expand business opportunities for companies both domestic and international.",
+        "image_url": "itehcm",
+        "popular_activities": [
+            "Travel market seminar",
+            "Travel Consumer Festival.",
+            "ITE HCMC 2023 Travel Awards.",
+            "Tourism forum"
+        ],
+        "reason": "The event will feature exciting activities including the opening ceremony and themed Gala Dinner 'Vietnamese Night', ITE Travel Awards, workshops on key tourism markets, conferences discussing the recovery plan for tourism in Ho Chi Minh City and Vietnam in the new normal context, and the Vietnam-Asia MICE Tourism Forum.",
+        "category": "Fair",
+        "link": "https://itehcmc.travel"
+    },
+    {
+        "name": "Theme Park Vietnam Expo",
+        "address": "Pavillon Restaurant, 202 Hoang Van Thu, Ward 9, Phu Nhuan District, Ho Chi Minh City, Vietnam",
+        "host": "Fireworks Trade Media",
+        "location": [
+            10.801298413310226,
+            106.67080297994795
+        ],
+        "date": "23/08/2023 - 24/08/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "short_description": "A free exhibition for Landscape Machinery, Amusement Parks, and Water Park",
+        "full_description": "Theme Park Expo Vietnam 2023 is a great opportunity for anyone involved in the amusement and entertainment industries to learn about the latest trends and technologies and network with industry leaders. The exhibition will feature over 100 exhibitors from around the world and provide a variety of conferences and workshops throughout the event. The expo will also feature a number of networking opportunities, giving attendees the chance to connect with potential partners and clients.",
+        "image_url": "themeparkexpo",
+        "popular_activities": [
+            "VR Games",
+            "Cosplay",
+            "Pump it up",
+            "Minigame"
+        ],
+        "reason": "Theme Park Expo Vietnam 2023 promises to be a platform for expanding trade relationships and sharing experiences through conferences featuring top speakers in the Entertainment Industry.",
+        "category": "Expo",
+        "link": "https://www.themeparkvietnam.com"
+    },
+    {
+        "name": "OCTF 2023",
+        "address": "Saigon Exhibition and Convention Center, 799 Nguyen Van Linh, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "host": "China Council for the Promotion of International Trade (CCPIT)",
+        "location": [
+            10.730889096220887,
+            106.72134359529166
+        ],
+        "date": "21/09/2023 - 23/09/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "short_description": "Intelligent Technology Exhibition in Ho Chi Minh City",
+        "full_description": "Intelligent Technology Exhibition Vietnam 2023 promotes commercial opportunities for Vietnamese businesses to connect with potential customers and advanced products. It features technology companies in electronics and footwear manufacturing, showcasing new products and automation solutions, emphasizing the allure of the smart manufacturing industry.",
+        "image_url": "octf",
+        "popular_activities": [
+            "Exhibitors",
+            "Conferences",
+            "Speeches"
+        ],
+        "reason": "Join this expo to explore cutting-edge technologies, connect with potential customers and partners, and stay updated on industry trends. Expand your business network and discover innovative technologies to boost your company's competitiveness.",
+        "category": "Expo",
+        "link": "https://sansukien.com/su-kien/octf"
+    },
+    {
+        "name": "VIFA Asean 2023",
+        "address": "Saigon Exhibition and Convention Center, 799 Nguyen Van Linh, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "host": "Lien minh wood process company limited",
+        "location": [
+            10.730889096220887,
+            106.72134359529166
+        ],
+        "date": "29/08/2023 - 01/09/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "short_description": "Leading Autumn Furniture Export Fair in the Vietnam",
+        "full_description": "VIFA ASEAN 2023 with the theme 'Gathering the Essence of Southeast Asian Furniture' will feature over 1,400 booths from more than 350 domestic and international businesses, covering an area of over 20,000 m2. The event will showcase shared exhibition areas of Southeast Asian countries like Malaysia, Indonesia, Singapore, Philippines, and more, providing buyers with the opportunity to explore unique products made from diverse materials.",
+        "image_url": "vifa",
+        "popular_activities": [
+            "Souvenirs",
+            "Design gifts",
+            "Shopping"
+        ],
+        "reason": "VIFA ASEAN 2023 is part of a series of international furniture fairs in the autumn season in Asia, including KOFURN (South Korea), IFFINA (Indonesia), CIFF Shanghai & FC Furniture China (China). Therefore, VIFA ASEAN is will be an attractive event, drawing thousands of international buyers and providing numerous benefits for businesses.",
+        "category": "Fair",
+        "link": "https://vifaasean.com"
+    },
+    {
+        "name": "Plase Show HCM",
+        "address": "The Adora Center, 431 Hoang Van Thu, Ward 4, Tan Binh District, Ho Chi Minh City, Vietnam",
+        "host": "AVAShow",
+        "location": [
+            10.798551499052868,
+            106.65912154370136
+        ],
+        "date": "19/10/2023 - 21/10/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "short_description": "The first exhibition for professional audio equipment, stage, musical instruments, karaoke, and car audio",
+        "full_description": " Plase Show is an annual event held in Hanoi and Ho Chi Minh City at the end of October each year. It is considered to be a transformative event in the professional audio market, showcasing the strength of Vietnamese manufacturers, who are producing a variety of professional speakers to meet domestic demands. This show will feature around 30 brands for introduction and demonstration and visitors can enjoy performances from 66 booths showcasing the powerful capabilities of this product line.",
+        "image_url": "plase",
+        "popular_activities": [
+            "Music performance",
+            "Minigames",
+            "3D Slideshow"
+        ],
+        "reason": "Attendees will have the opportunity to firsthand admire and explore the latest and most captivating commercial products, showcasing the hottest product lines in Vietnam. Moreover, visitors will be delighted with enticing gifts offered by the organizers and participating exhibitors",
+        "category": "Fair",
+        "link": "http://plase.com.vn"
+    },
+    {
+        "name": "Smart Delivery Vietnam 2023",
+        "address": "Holiday Inn & Suites Saigon Airport, 18E Cong Hoa, Ward 4, Tan Binh District, Ho Chi Minh City, Vietnam",
+        "host": "CEA Vietnam",
+        "location": [
+            10.802066151265302,
+            106.65486540878413
+        ],
+        "date": "19/10/2023 - 20/10/2023",
+        "entrance_fee": "Free",
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "short_description": "The first exhibition for professional audio equipment, stage, musical instruments, karaoke, and car audio",
+        "full_description": " Plase Show is an annual event held in Hanoi and Ho Chi Minh City at the end of October each year. It is considered to be a transformative event in the professional audio market, showcasing the strength of Vietnamese manufacturers, who are producing a variety of professional speakers to meet domestic demands. This show will feature around 30 brands for introduction and demonstration and visitors can enjoy performances from 66 booths showcasing the powerful capabilities of this product line.",
+        "image_url": "smartdeli",
+        "popular_activities": [
+            "Music performance",
+            "Minigames",
+            "3D Slideshow"
+        ],
+        "reason": "Attendees will have the opportunity to firsthand admire and explore the latest and most captivating commercial products, showcasing the hottest product lines in Vietnam. Moreover, visitors will be delighted with enticing gifts offered by the organizers and participating exhibitors",
+        "category": "Fair",
+        "link": "https://www.smartdeliveryvietnam.com"
+    },
+    {
+        "name": "Ao Dai Festival",
+        "address": "Walking Street, Nguyen Hue Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam",
+        "host": "People’s Committee of Ho Chi Minh City",
+        "location": [
+            10.774253064345054,
+            106.70365918256074
+        ],
+        "date": "March",
+        "entrance_fee": "Free",
+        "opening_hours": "Varies",
+        "short_description": "A celebration of the traditional Vietnamese Ao Dai.",
+        "full_description": "Ao Dai Festival is a vibrant event held in Ho Chi Minh City, celebrating the elegance of the traditional Vietnamese Ao Dai. The festival features fashion shows, cultural performances, and exhibitions, showcasing the beauty and significance of this iconic attire.",
+        "image_url": "aodaifestival",
+        "popular_activities": [
+            "Fashion Shows",
+            "Cultural Performances",
+            "Exhibitions"
+        ],
+        "reason": "Visitors will immerse themselves in the rich culture of Vietnam, experiencing the beauty and charm of the Ao Dai. The festival provides an excellent opportunity to witness stunning fashion displays and cultural expressions.",
+        "category": "Festival",
+        "link": "https://en.vietnamplus.vn/ao-dai-festival-to-honour-vietnams-traditional-culture/249079.vnp"
+    },
+    {
+        "name": "Vietnam International Fashion Week",
+        "address": "7th Military Region Stadium, 2A Phan Dinh Giot, Ward 2, Tan Binh District, Ho Chi Minh City, Vietnam",
+        "host": "Multimedia JSC",
+        "location": [
+            10.801235153475414,
+            106.67088878395992
+        ],
+        "date": "May",
+        "entrance_fee": "1.8M VND",
+        "opening_hours": "Varies",
+        "short_description": "A fashion showcase from both Vietnamese and international designers.",
+        "full_description": "Vietnam International Fashion Week is a high-profile fashion event in Ho Chi Minh City, featuring collections from prominent Vietnamese and international designers. The runway shows highlight the latest trends, styles, and innovations in the fashion industry.",
+        "image_url": "vnfashionweek",
+        "popular_activities": [
+            "Fashion Shows",
+            "Designer Collections",
+            "Fashion Networking"
+        ],
+        "reason": "The fashion week presents an excellent platform for designers to exhibit their creativity, and fashion enthusiasts can witness cutting-edge designs and gain insights into the ever-evolving world of fashion.",
+        "category": "Fashion Event",
+        "link": "https://thanhnien.vn/vietnam-international-fashion-week-2023-tags1174056.html"
+    },
+    {
+        "name": "Vietnam Motor Show",
+        "address": "Saigon Exhibition and Convention Center, 799 Nguyen Van Linh, Tan Phu Ward, District 7, Ho Chi Minh City, Vietnam",
+        "host": "Vietnam Automobile Manufacturers Association (VAMA)",
+        "location": [
+            10.730857472571369,
+            106.72135432412774
+        ],
+        "date": "October/November",
+        "entrance_fee": "30.000 VND",
+        "opening_hours": "Varies",
+        "short_description": "A major automobile exhibition featuring the latest models in the industry.",
+        "full_description": "The Vietnam Motor Show showcases an impressive array of automobiles, motorcycles, and automotive technologies. It provides car enthusiasts and industry professionals with an opportunity to explore the latest trends and innovations in the automotive world.",
+        "image_url": "vietnammotorshow",
+        "popular_activities": [
+            "Car Displays",
+            "Motorcycle Exhibits",
+            "Technology Showcase"
+        ],
+        "reason": "The motor show offers an insight into the advancements and trends in the automotive industry, making it an essential event for car enthusiasts and industry stakeholders.",
+        "category": "Expo",
+        "link": "https://www.vietnammotorshow.vn/en/"
+    },
+    {
+        "name": "New Year Countdown Festival",
+        "address": "Nguyen Hue Walking Street, District 1, Ho Chi Minh City, Vietnam",
+        "host": "Ho Chi Minh City Department of Culture and Sports",
+        "location": [
+            10.774253064345054,
+            106.70365918256074
+        ],
+        "date": "December 31",
+        "entrance_fee": "Free",
+        "opening_hours": "8:00 PM - 12:30 AM",
+        "short_description": "A festival to welcome the New Year with live performances and fireworks.",
+        "full_description": "The New Year Countdown Festival at Nguyen Hue Walking Street is a joyful celebration to say goodbye to the old year and welcome the New Year with live music, cultural shows, and thrilling dance acts. At midnight, a spectacular fireworks display lights up the sky, filling the city with mesmerizing colors.",
+        "image_url": "countdown",
+        "popular_activities": [
+            "Live Performances",
+            "Cultural Shows",
+            "Fireworks Display"
+        ],
+        "reason": "The New Year Countdown Festival is a memorable event that brings people together to celebrate the beginning of a new chapter, creating lasting memories and starting the year with positivity and hope.",
+        "category": "Festival",
+        "link": "https://en.vietnamplus.vn/new-year-countdown-music-party-to-be-held-in-downtown-hcm-city/246361.vnp"
+    },
+    {
+        "name": "Nguyen Hue Flower Festival",
+        "address": "Nguyen Hue Walking Street, District 1, Ho Chi Minh City, Vietnam",
+        "host": "People’s Committee of Ho Chi Minh City",
+        "location": [
+            10.774253064345054,
+            106.70365918256074
+        ],
+        "date": "January/February",
+        "entrance_fee": "Free",
+        "opening_hours": "Varies",
+        "short_description": "A floral display along Nguyen Hue Walking Street.",
+        "full_description": "The Nguyen Hue Flower Festival transforms the iconic walking street into a mesmerizing garden of flowers during the Lunar New Year season. The festival showcases intricate floral installations, breathtaking flower arrangements, and beautiful street decorations. Visitors can stroll along the vibrant street, enjoying the fragrant blooms and admiring the skillful craftsmanship of the floral displays.",
+        "image_url": "flowerfestival",
+        "popular_activities": [
+            "Flower Exhibition",
+            "Floral Art Installations",
+            "Photo Opportunities"
+        ],
+        "reason": "The Nguyen Hue Flower Festival is a delightful way to immerse in the festive spirit of Tet, appreciating the beauty of nature's wonders and the artistry of floral design.",
+        "category": "Festival",
+        "link": "https://www.visithcmc.vn/en/event/duong-hoa-xuan-nguyen-hue-1"
+    },
+    {
+        "name": "Nghinh Ong Can Gio Festival",
+        "address": "Can Thanh Town, Can Gio District, Ho Chi Minh City, Vietnam",
+        "host": "Can Gio District",
+        "location": [
+            10.753363368680096,
+            106.6611554109387
+        ],
+        "date": "September/October",
+        "entrance_fee": "Free",
+        "opening_hours": "Varies",
+        "short_description": "A traditional festival honoring the Whale God and promoting local fishing culture.",
+        "full_description": "The Nghinh Ong Can Gio Festival is a significant event celebrated by the fishing community in Can Gio District. The festival is dedicated to honoring the Whale God, who is believed to protect fishermen and ensure a bountiful catch. During the festivities, local fishermen gather to express their gratitude and pay respects to the Whale God. The festival features vibrant processions, folk performances, and various rituals that showcase the deep-rooted fishing culture of the region.",
+        "image_url": "nghinhhongcangio",
+        "popular_activities": [
+            "Whale God Procession",
+            "Folk Music and Dance",
+            "Offering Rituals"
+        ],
+        "reason": "The Nghinh Ong Cangio Festival is not only a cultural celebration but also an occasion for locals to pray for favorable weather, abundant fish, and safe journeys at sea. It serves as a reminder of the close bond between the fishing community and the sea.",
+        "category": "Festival",
+        "link": "https://anchoikhapchon.com/discover-the-famous-nghinh-ong-festival-in-can-gio/?lang=en"
+    },
+    {
+        "name": "Thien Hau Pagoda Festival",
+        "address": "710 Nguyen Trai, Ward 11, District 5, Ho Chi Minh City, Vietnam",
+        "host": "Thien Hau Pagoda",
+        "location": [
+            10.753363368680096,
+            106.6611554109387
+        ],
+        "date": "February",
+        "entrance_fee": "Free",
+        "opening_hours": "Varies",
+        "short_description": "A colorful celebration at Thien Hau Pagoda.",
+        "full_description": "The Thien Hau Pagoda Festival is an annual event held at Thien Hau Pagoda in District 5, Ho Chi Minh City. This vibrant festival is dedicated to Thien Hau, the Goddess of the Sea, who is revered as the protector of fishermen and sailors. During the festival, the pagoda is adorned with colorful decorations, and elaborate processions take place, with worshippers carrying incense and offerings to pay homage to the deity. Folk performances, lion dances, and traditional music add to the festive atmosphere.",
+        "image_url": "thienhaufestival",
+        "popular_activities": [
+            "Thien Hau Procession",
+            "Lion Dances",
+            "Cultural Performances"
+        ],
+        "reason": "The Thien Hau Pagoda Festival is a time-honored tradition that showcases the rich cultural heritage of the local Chinese community. It is an opportunity for people to express their gratitude to the Goddess of the Sea and seek her blessings for a safe and prosperous year ahead.",
+        "category": "Religious and Cultural Festival",
+        "link": "https://vinpearl.com/en/thien-hau-pagoda-ho-chi-minh-city-a-renowned-symbol-for-spiritual-culture"
+    }
+]
