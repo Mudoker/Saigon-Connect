@@ -8,8 +8,8 @@
   Created  date: 18/07/2023
   Last modified: 26/07/2023
   Acknowledgement:
-    Credo Academy. How to improve the UX with SwiftUI - Beginner iOS App Development Tutorial - Part 9 (Mar. 8, 2021). Accessed Jul. 19, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=zfPqWO_Syzs&t=365s
-    Please refer to ContentView.swift file to see references for image used
+    Please refer to EventView.swift file to see references for images used
+    Refer to PlaceDetailView for references on codes used
 */
 
 import SwiftUI
@@ -27,7 +27,7 @@ struct EventDetailView: View {
     @State private var isMapView = false
 
     // Initialize the place variable
-    @State var event: Event = Event.allEvents[0]
+    @State var event: Event = Event.allEvents[5]
 
     // Initialize the image opacity for animation
     @State private var imageOpacity: Float = 1
@@ -125,7 +125,7 @@ struct EventDetailView: View {
                                     }
                                     Spacer()
                                 }
-                                .padding(.top, 22)
+                                .padding(.top)
                                 .padding(.horizontal)
                                 .frame(height: 100)
 
@@ -221,6 +221,7 @@ struct EventDetailView: View {
                         }
                         .coordinateSpace(name: "scroll")
                         .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                        
                         Spacer()
 
                         // show the explore more view
@@ -262,7 +263,7 @@ struct EventDetailView: View {
 struct EventTopView: View {
     // toggle animation
     @State var isAnimation = false
-
+    
     // Initialize the place variable
     @State var event: Event = Event.allEvents[0]
 

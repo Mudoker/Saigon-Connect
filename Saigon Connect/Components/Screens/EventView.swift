@@ -8,10 +8,7 @@
   Created  date: 18/07/2023
   Last modified: 26/07/2023
   Acknowledgement:
-    Q.Doan, "app logo dark" unpublished, Jul. 2023.
-    Q.Doan, "app logo light" unpublished, Jul. 2023.
-    DesignCode. Building your first iOS app - SwiftUI Livestream (Apr. 24, 2021). Accessed Jul. 24, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=1AXyC24NCkE&t=5s
-    Kavsoft. Expandable Search Bar Using SwiftUI - Custom Search Bar Using SwiftUI - SwiftUI Tutorial (Mar. 10, 2020). Accessed Jul. 20, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=4_uP61b0d1E
+    Refer to PlaceView for references
 */
 
 import SwiftUI

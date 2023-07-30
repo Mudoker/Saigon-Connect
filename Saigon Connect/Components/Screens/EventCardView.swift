@@ -8,8 +8,7 @@
   Created  date: 18/07/2023
   Last modified: 26/07/2023
   Acknowledgement:
-    Kavsoft. Glass Morphism SwiftUI - Glass Card Effect - Xcode 14 - SwiftUI Tutorials (Mar. 10, 2020). Accessed Jul. 20, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=5jPmILEQygY&t=627s
-    Ramis. "How to present accurate star rating using SwiftUI?" Stackoverflow.https://stackoverflow.com/questions/64379079/how-to-present-accurate-star-rating-using-swiftui (accessed Jul. 19, 2023).
+    Refer to PlaceCardView for references on codes used
 */
 
 import SwiftUI
