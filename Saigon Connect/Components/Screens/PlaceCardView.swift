@@ -129,7 +129,7 @@ struct GlassMorphicCardView: UIViewRepresentable {
 
     // updates the UIView when the isDarkMode state changes
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-        let effectStyle: UIBlurEffect.Style = isDarkMode ? .systemMaterialDark : .regular
+        let effectStyle: UIBlurEffect.Style = isDarkMode ? .systemUltraThinMaterialLight : .regular
         let newEffect = UIBlurEffect(style: effectStyle)
         uiView.effect = newEffect
     }
