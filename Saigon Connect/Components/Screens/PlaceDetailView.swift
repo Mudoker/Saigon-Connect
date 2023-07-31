@@ -27,7 +27,7 @@ struct PlaceDetailView: View {
     @State private var isMapView = false
 
     // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
+    @State var place: Place = Place.allPlace[9]
 
     // Initialize the image opacity for animation
     @State private var imageOpacity: Float = 1
@@ -81,7 +81,6 @@ struct PlaceDetailView: View {
                     // only show the top view if isMapView is false
                     
                         TopView(place: place, imageOpacity: $scrollOffset ,isMapView: $isMapView)
-                            .padding(.horizontal)
                             .zIndex(1) // put the top view on top of the map view
                             .foregroundColor(isDarkMode ? .white : .black)
                             .frame(height: 180)
@@ -119,7 +118,7 @@ struct PlaceDetailView: View {
 
                                     // call the popular activity view
                                     popularActivitiy(place: place)
-                                        .padding(.top,10)
+                                        .padding(.top,25)
                                         .foregroundColor(isDarkMode ? .white : .black)
                                 }
                                 
@@ -147,7 +146,7 @@ struct PlaceDetailView: View {
                                     Text("Collections")
                                         .padding(.horizontal)
                                         .font(.title.bold())
-                                        .padding(.top, 45)
+                                        .padding(.top, 25)
                                         .foregroundColor(isDarkMode ? .white : .black)
 
                                     Spacer()
@@ -197,7 +196,7 @@ struct PlaceDetailView: View {
                                         .foregroundColor(isDarkMode ? .white : .black)
                                     Spacer()
                                 }
-                                .frame(height: 40)
+                                .frame(height: 20)
                                 
                                 PlaceExploreMore()
                                     .frame(height:100)
@@ -213,7 +212,7 @@ struct PlaceDetailView: View {
                             }
                         }
                         .coordinateSpace(name: "scroll")
-                        .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                        .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                         
                         Spacer()
 
@@ -232,12 +231,12 @@ struct PlaceDetailView: View {
                         Color(red: 0.20, green: 0.20, blue: 0.20)
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                         :
                         Color.white
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                     )
                     .shadow(radius: 20)
                     
@@ -301,7 +300,7 @@ struct TopView: View {
                     .frame(width: 200, height: 200)
                     .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
                     .shadow(radius: 40)
-                    .padding(.leading, 50)
+                    .padding(.leading, 130)
                     .offset(y: isAnimation ? 0 : -35)
                 
                 HStack {
@@ -327,10 +326,10 @@ struct TopView: View {
                     }
                     Spacer()
                 }
+                .frame(width: UIScreen.main.bounds.width)
                 .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
-                .offset(x: -130)
                 .padding(.top, 120)
-                .padding(.horizontal)
+                .padding(.horizontal, 10)
                 .frame(height: 100)
             } // move the image down when the animation is on
         }

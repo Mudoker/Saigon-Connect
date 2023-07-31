@@ -82,7 +82,6 @@ struct EventDetailView: View {
 
                     // only show the top view if isMapView is false
                     EventTopView(event: event, imageOpacity: $scrollOffset ,isMapView: $isMapView)
-                            .padding(.horizontal)
                             .zIndex(1) // put the top view on top of the map view
                             .foregroundColor(isDarkMode ? .white : .black)
                             .frame(height: 180)
@@ -189,8 +188,8 @@ struct EventDetailView: View {
                             .frame(height: 20)
                             
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(isDarkMode ? Color.white : .gray)
-                                        .frame(width: 240, height: 80)
+                                .fill(!isDarkMode ? Color.white : .black.opacity(0.7))
+                                        .frame(width: 240, height: 100)
                                         .overlay(
                                             ZStack {
                                                 Image(event.host_url)
@@ -203,7 +202,7 @@ struct EventDetailView: View {
                                         .padding(.top, 45)
                         }
                         .coordinateSpace(name: "scroll")
-                        .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                        .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                         
                         Spacer()
 
@@ -219,12 +218,12 @@ struct EventDetailView: View {
                         Color(red: 0.20, green: 0.20, blue: 0.20)
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                         :
                         Color.white
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
                     )
                     .shadow(radius: 20)
                     
@@ -287,7 +286,7 @@ struct EventTopView: View {
                     .frame(width: 200, height: 200)
                     .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
                     .shadow(radius: 40)
-                    .padding(.leading, 50)
+                    .padding(.leading, 130)
                     .offset(y: isAnimation ? 0 : -35)
                 
                 HStack {
@@ -313,10 +312,10 @@ struct EventTopView: View {
                     }
                     Spacer()
                 }
+                .frame(width: UIScreen.main.bounds.width)
                 .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
-                .offset(x: -130)
                 .padding(.top, 120)
-                .padding(.horizontal)
+                .padding(.horizontal, 10)
                 .frame(height: 100)
             } // move the image down when the animation is on
         }
