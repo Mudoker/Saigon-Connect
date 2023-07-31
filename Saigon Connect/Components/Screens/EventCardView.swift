@@ -17,7 +17,7 @@ struct EventCardView: View {
     @Binding var isDarkMode: Bool
 
     // Temporarily initialise a place
-    var event: Event = Event.allEvents[1]
+    var event: Event = Event.allEvents[7]
 
     var body: some View {
         ZStack(alignment: .top) {

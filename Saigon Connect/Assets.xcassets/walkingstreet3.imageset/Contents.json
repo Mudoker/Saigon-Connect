@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "kinh-nghiem-di-pho-di-bo-nguyen-hue-quan-1-tphcm-h1-1683608245093102441654.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

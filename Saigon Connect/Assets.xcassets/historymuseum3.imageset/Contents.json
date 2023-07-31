@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "bao-tang-lich-su-noi-tieng-sai-gon-5.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

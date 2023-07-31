@@ -27,7 +27,7 @@ struct PlaceDetailView: View {
     @State private var isMapView = false
 
     // Initialize the place variable
-    @State var place: Place = Place.topPlaces[0]
+    @State var place: Place = Place.allPlace[0]
 
     // Initialize the image opacity for animation
     @State private var imageOpacity: Float = 1
@@ -37,14 +37,14 @@ struct PlaceDetailView: View {
     
     // background color for light and dark mode (bottom part of the screen)
     @State var background_light = LinearGradient(
-        gradient: 
+        gradient:
                 Gradient(colors: [Color(red: 1, green: 0.90, blue: 0.95), Color(red: 0.43, green: 0.84, blue: 0.98)]),
                 startPoint: .top,
                 endPoint: .bottom
             )
     @State var background_dark = LinearGradient(
-        gradient: 
-                Gradient(colors: [Color(red: 0.33, green: 0.15, blue: 0.53), Color(red: 0.42, green: 0.21, blue: 0.61), Color(red: 0.50, green: 0.31, blue: 0.70)]),
+        gradient:
+                Gradient(colors: [Color(red: 0.17, green: 0.20, blue: 0.24), Color(red: 0.14, green: 0.17, blue: 0.20), Color(red: 0.09, green: 0.11, blue: 0.13)]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -79,53 +79,20 @@ struct PlaceDetailView: View {
                     .opacity(!isMapView ? 1.0 : 0) // if isMapView is false, show the name and category, otherwise, hide it
 
                     // only show the top view if isMapView is false
-                    if !isMapView {
-                        TopView(place: place, imageOpacity: $scrollOffset ,isMapView: isMapView)
+                    
+                        TopView(place: place, imageOpacity: $scrollOffset ,isMapView: $isMapView)
                             .padding(.horizontal)
                             .zIndex(1) // put the top view on top of the map view
                             .foregroundColor(isDarkMode ? .white : .black)
                             .frame(height: 180)
-                    } else {
-                        VStack{
-
-                        }
-                        .frame(height: 180) // an empty view to keep the height of the top view
-                    }
 
                     // main content
                     VStack(alignment: .center) {
                         // scroll view to show the main content
                         ScrollView(showsIndicators: false) {
                             VStack {
-                                // Buttons to toggle between map view and detail view
-                                HStack {
-                                    Button {
-                                        DispatchQueue.main.async {
-                                            isMapView = false // turn off the map view
-                                        }
-
-                                    } label: {
-                                        Image(systemName: "doc.circle").resizable()
-                                            .frame(width: 60, height: 60)
-                                            .foregroundColor(isDarkMode ? .white : .black)
-                                    }
-                                    .padding(.trailing, 20)
-                                    
-                                    Button {
-                                        DispatchQueue.main.async {
-                                            isMapView = true // turn on the map view
-                                        }
-                                    } label: {
-                                        Image(systemName: "map.circle.fill").resizable()
-                                            .frame(width: 60, height: 60)
-                                            .foregroundColor(isDarkMode ? .white : .black)
-
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.top, 22)
-                                .padding(.horizontal)
-                                .frame(height: 100)
+                                // Stack to preserve padding
+                                HStack{}.frame(height: 100)
 
                                 // show rating and opening hours
                                 RatingOpenHour(place: place)
@@ -150,9 +117,8 @@ struct PlaceDetailView: View {
                                     }
                                     .frame(height: 20)
 
-                                    // call the popular activity view                        
+                                    // call the popular activity view
                                     popularActivitiy(place: place)
-                                        .padding(.leading)
                                         .padding(.top,10)
                                         .foregroundColor(isDarkMode ? .white : .black)
                                 }
@@ -173,10 +139,34 @@ struct PlaceDetailView: View {
                                     
                                     // call the nearby activity view
                                     nearbyActivity(place: place)
-                                        .padding(.leading)
                                         .padding(.top,35)
                                         .foregroundColor(isDarkMode ? .white : .black)
                                 }
+                                
+                                HStack {
+                                    Text("Collections")
+                                        .padding(.horizontal)
+                                        .font(.title.bold())
+                                        .padding(.top, 45)
+                                        .foregroundColor(isDarkMode ? .white : .black)
+
+                                    Spacer()
+                                }
+                                
+                                TabView {
+                                    // Use geometry reader to animate the transition between cards
+                                    ForEach(place.pictures.indices, id: \.self) { index in
+                                            Image(place.pictures[index])
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 350, height: 300)
+                                                .cornerRadius(35)
+                                        
+                                    }
+                                }
+                                .tabViewStyle(.page)
+                                .frame(height: 300)
+                                .padding(.bottom)
                                 
                                 // show the reviews
                                 if place.reviews.count >= 1 {
@@ -192,32 +182,48 @@ struct PlaceDetailView: View {
                                     .padding(.vertical)
                                     .frame(height: 20)
             
-                                    // call the review view                
+                                    // call the review view
                                     reviewView(place: place)
                                         .padding(.leading)
                                         .padding(.top,35)
                                         .foregroundColor(isDarkMode ? .white : .black)
-                                }                                                         
-                                Spacer()
+                                }
+                                
+                                HStack {
+                                    Text("Explore more")
+                                        .padding(.horizontal)
+                                        .padding(.top, 15)
+                                        .font(.title.bold())
+                                        .foregroundColor(isDarkMode ? .white : .black)
+                                    Spacer()
+                                }
+                                .frame(height: 40)
+                                
+                                PlaceExploreMore()
+                                    .frame(height:100)
+                                    .padding(.top)
                             }
                             .background(GeometryReader {
                                 Color.clear.preference(key: ViewOffsetKey.self,
                                     value: -$0.frame(in: .named("scroll")).origin.y)
                                 }
                             )
-                            .onPreferenceChange(ViewOffsetKey.self) {   
+                            .onPreferenceChange(ViewOffsetKey.self) {
                                 scrollOffset = $0
                             }
                         }
                         .coordinateSpace(name: "scroll")
-                        .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                        .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                         
                         Spacer()
 
+                        
+                        
                         // show the explore more view
-                        expoloreMore( place: place, background: isDarkMode ? background_dark : background_light)
+                        PlaceAddress( place: place, background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
-
+                            .frame(height:80)
+                        
 
 
                     }
@@ -226,12 +232,12 @@ struct PlaceDetailView: View {
                         Color(red: 0.20, green: 0.20, blue: 0.20)
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                         :
                         Color.white
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                     )
                     .shadow(radius: 20)
                     
@@ -261,7 +267,7 @@ struct TopView: View {
     @Binding var imageOpacity: CGFloat
 
     // check if the map view is on or off
-    var isMapView: Bool
+    @Binding var isMapView: Bool
 
     var body: some View {
         HStack(alignment: .center) {
@@ -269,32 +275,64 @@ struct TopView: View {
                 
                 Text("Entrence fee")
                     .fontWeight(.bold)
-                    .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
                 
                 if (place.entrance_fee == "Free") {
                     Text(place.entrance_fee)
                         .font(.system(size: 30, weight: .bold))
                         .frame(height: 30)
-                        .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
                 }else {
                     Text(place.entrance_fee)
                         .font(.system(size: 23, weight: .bold))
                         .frame(height: 30)
-                        .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
                 }
             }
             .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
             
             Spacer()
             
-            Image(place.image_url)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
-                .frame(width: 200, height: 200)
-                .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
-                .shadow(radius: 40)
-                .offset(y: isAnimation ? 0 : -35) // move the image down when the animation is on
+            ZStack {
+                Image(place.image_url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                    .frame(width: 200, height: 200)
+                    .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
+                    .shadow(radius: 40)
+                    .padding(.leading, 50)
+                    .offset(y: isAnimation ? 0 : -35)
+                
+                HStack {
+                    Button {
+                        DispatchQueue.main.async {
+                            isMapView = false // turn off the map view
+                        }
+
+                    } label: {
+                        Image(systemName: "doc.circle").resizable()
+                            .frame(width: 60, height: 60)
+                    }
+                    .padding(.trailing, 20)
+                    
+                    Button {
+                        DispatchQueue.main.async {
+                            isMapView = true // turn on the map view
+                        }
+                    } label: {
+                        Image(systemName: "map.circle.fill").resizable()
+                            .frame(width: 60, height: 60)
+
+                    }
+                    Spacer()
+                }
+                .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
+                .offset(x: -130)
+                .padding(.top, 120)
+                .padding(.horizontal)
+                .frame(height: 100)
+            } // move the image down when the animation is on
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 0.8)) {
@@ -392,7 +430,7 @@ struct RatingOpenHour: View {
 }
 
 // explore more view
-struct expoloreMore: View {
+struct PlaceAddress: View {
     // Initialize the place variable
     @State var place: Place = Place.allPlace[1]
 
@@ -548,6 +586,55 @@ struct ViewOffsetKey: PreferenceKey {
     static func reduce(value: inout Value, nextValue: () -> Value) {
         value += nextValue()
     }
+}
+
+// social link
+struct PlaceExploreMore: View {
+    // check if the dark mode is on or off
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
+
+   
+
+    // Initialize the place variable
+    @State var place: Place = Place.allPlace[0]
+    
+    var body: some View {
+        // show the nearby activities
+        ScrollView {
+            // use lazy grid to enhance the performance
+            LazyHGrid(rows: [GridItem(.flexible(), spacing: 20)], spacing: 20) {
+                if let encodedURL = encodeURL(place.youtube_url) {
+                            Link(destination: encodedURL) {
+                                Image(!isDarkMode ? "youtube_light" : "youtube_dark")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 170, height: 80)
+                                    .cornerRadius(20)
+                            }
+                        }
+                if let encodedURL = encodeURL(place.website_url) {
+                            Link(destination: encodedURL) {
+                                HStack {
+                                    Image(systemName: "globe")
+                                        .font(.title)
+                                    Text("Website")
+                                        .font(.title)
+                                }
+                                .frame(width: 170, height: 80)
+                                .background(!isDarkMode ? .white : .black)
+                                .cornerRadius(20)
+                            }
+                        }
+            }
+        }
+    }
+    
+    func encodeURL(_ urlString: String) -> URL? {
+            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                return URL(string: encodedString)
+            }
+            return nil
+        }
 }
 
 // preview

@@ -27,7 +27,7 @@ struct EventDetailView: View {
     @State private var isMapView = false
 
     // Initialize the place variable
-    @State var event: Event = Event.allEvents[5]
+    @State var event: Event = Event.allEvents[10]
 
     // Initialize the image opacity for animation
     @State private var imageOpacity: Float = 1
@@ -44,8 +44,8 @@ struct EventDetailView: View {
             )
     
     @State var background_dark = LinearGradient(
-        gradient: 
-                Gradient(colors: [Color(red: 0.33, green: 0.15, blue: 0.53), Color(red: 0.42, green: 0.21, blue: 0.61), Color(red: 0.50, green: 0.31, blue: 0.70)]),
+        gradient:
+                Gradient(colors: [Color(red: 0.17, green: 0.20, blue: 0.24), Color(red: 0.14, green: 0.17, blue: 0.20), Color(red: 0.09, green: 0.11, blue: 0.13)]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -81,53 +81,19 @@ struct EventDetailView: View {
                     .opacity(!isMapView ? 1.0 : 0) // if isMapView is false, show the name and category, otherwise, hide it
 
                     // only show the top view if isMapView is false
-                    if !isMapView {
-                        EventTopView(event: event, imageOpacity: $scrollOffset ,isMapView: isMapView)
+                    EventTopView(event: event, imageOpacity: $scrollOffset ,isMapView: $isMapView)
                             .padding(.horizontal)
                             .zIndex(1) // put the top view on top of the map view
                             .foregroundColor(isDarkMode ? .white : .black)
                             .frame(height: 180)
-                    } else {
-                        VStack{
-
-                        }
-                        .frame(height: 180) // an empty view to keep the height of the top view
-                    }
 
                     // main content
                     VStack(alignment: .center) {
                         // scroll view to show the main content
                         ScrollView(showsIndicators: false) {
                             VStack {
-                                // Buttons to toggle between map view and detail view
-                                HStack {
-                                    Button {
-                                        DispatchQueue.main.async {
-                                            isMapView = false // turn off the map view
-                                        }
-
-                                    } label: {
-                                        Image(systemName: "doc.circle").resizable()
-                                            .frame(width: 60, height: 60)
-                                            .foregroundColor(isDarkMode ? .white : .black)
-                                    }
-                                    .padding(.trailing, 20)
-                                    
-                                    Button {
-                                        DispatchQueue.main.async {
-                                            isMapView = true // turn on the map view
-                                        }
-                                    } label: {
-                                        Image(systemName: "map.circle.fill").resizable()
-                                            .frame(width: 60, height: 60)
-                                            .foregroundColor(isDarkMode ? .white : .black)
-
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.top)
-                                .padding(.horizontal)
-                                .frame(height: 100)
+                                // Stack to preserve padding
+                                HStack{}.frame(height: 100)
 
                                 // show rating and opening hours
                                 EventRatingOpenHour(event: event)
@@ -188,25 +154,16 @@ struct EventDetailView: View {
                                     .foregroundColor(isDarkMode ? .white : .black)
                                 
                                 HStack {
-                                    Text("Organiser")
+                                    Text("Explore more")
                                         .padding(.horizontal)
-                                        .padding(.top, 55)
+                                        .padding(.top, 15)
                                         .font(.title.bold())
                                         .foregroundColor(isDarkMode ? .white : .black)
                                     Spacer()
                                 }
-                                .frame(height: 20)
-                                
-                                HStack {
-                                    Text(event.host)
-                                        .font(.body)
-                                        .opacity(0.9)
-                                        .padding(.top, 35)
-                                    .foregroundColor(isDarkMode ? .white : .black)
-                                    
-                                    Spacer()
-                                }
-                                .padding(.horizontal)
+                                .frame(height: 40)
+                                EventExploreMore()
+                                    .padding(.top)
                                 
                                 Spacer()
                             }
@@ -218,14 +175,40 @@ struct EventDetailView: View {
                             .onPreferenceChange(ViewOffsetKey.self) {   
                                 scrollOffset = $0
                             }
+                            
+                            
+                            
+                            HStack {
+                                Text("Organiser")
+                                    .padding(.horizontal)
+                                    .padding(.top, 55)
+                                    .font(.title.bold())
+                                    .foregroundColor(isDarkMode ? .white : .black)
+                                Spacer()
+                            }
+                            .frame(height: 20)
+                            
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(isDarkMode ? Color.white : .gray)
+                                        .frame(width: 240, height: 80)
+                                        .overlay(
+                                            ZStack {
+                                                Image(event.host_url)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 20, height: 80)
+                                                    .opacity(0.9)
+                                            }
+                                        )
+                                        .padding(.top, 45)
                         }
                         .coordinateSpace(name: "scroll")
-                        .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                        .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                         
                         Spacer()
 
-                        // show the explore more view
-                        EventExpoloreMore( event: event, background: isDarkMode ? background_dark : background_light)
+                        // show the address
+                        EventAddress( event: event, background: isDarkMode ? background_dark : background_light)
                             .foregroundColor(isDarkMode ? .white : .black)
 
 
@@ -236,12 +219,12 @@ struct EventDetailView: View {
                         Color(red: 0.20, green: 0.20, blue: 0.20)
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                         :
                         Color.white
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/2) >= -220 ? -90 - scrollOffset/2 : -220) // Adjust the padding based on scrollOffset
+                            .padding(.top, (-90 - scrollOffset/3) >= -180 ? -90 - scrollOffset/3 : -180) // Adjust the padding based on scrollOffset
                     )
                     .shadow(radius: 20)
                     
@@ -271,46 +254,71 @@ struct EventTopView: View {
     @Binding var imageOpacity: CGFloat
 
     // check if the map view is on or off
-    var isMapView: Bool
+    @Binding var isMapView: Bool
 
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Text("Entrence fee")
                     .fontWeight(.bold)
-                    .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
 
                 if (event.entrance_fee == "Free") {
                     Text(event.entrance_fee)
-                        .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
                         .font(.system(size: 30, weight: .bold))
                         .frame(height: 30)
                 } else {
                     Text(event.entrance_fee)
-                        .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
+                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
                         .font(.system(size: 23, weight: .bold))
                         .frame(height: 30)
                 }
-                
-                Link(destination: URL(string: event.link)!) {
-                    Text("Read more")
-                        .underline()
-                        .foregroundColor(.blue)
-                }
-                .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
             }
             .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
             
             Spacer()
             
-            Image(event.image_url)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .opacity(imageOpacity == 0 ? 1 : calculateOpacity())
-                .frame(width: 200, height: 200)
-                .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
-                .shadow(radius: 40)
-                .offset(y: isAnimation ? 0 : -35) // move the image down when the animation is on
+            ZStack {
+                Image(event.image_url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                    .frame(width: 200, height: 200)
+                    .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
+                    .shadow(radius: 40)
+                    .padding(.leading, 50)
+                    .offset(y: isAnimation ? 0 : -35)
+                
+                HStack {
+                    Button {
+                        DispatchQueue.main.async {
+                            isMapView = false // turn off the map view
+                        }
+
+                    } label: {
+                        Image(systemName: "doc.circle").resizable()
+                            .frame(width: 60, height: 60)
+                    }
+                    .padding(.trailing, 20)
+                    
+                    Button {
+                        DispatchQueue.main.async {
+                            isMapView = true // turn on the map view
+                        }
+                    } label: {
+                        Image(systemName: "map.circle.fill").resizable()
+                            .frame(width: 60, height: 60)
+
+                    }
+                    Spacer()
+                }
+                .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
+                .offset(x: -130)
+                .padding(.top, 120)
+                .padding(.horizontal)
+                .frame(height: 100)
+            } // move the image down when the animation is on
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 0.8)) {
@@ -364,8 +372,57 @@ struct EventRatingOpenHour: View {
     }
 }
 
+// social link
+struct EventExploreMore: View {
+    // check if the dark mode is on or off
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
+
+   
+
+    // Initialize the place variable
+    @State var event: Event = Event.allEvents[0]
+    
+    var body: some View {
+        // show the nearby activities
+        ScrollView {
+            // use lazy grid to enhance the performance
+            LazyHGrid(rows: [GridItem(.flexible(), spacing: 20)], spacing: 20) {
+                if let encodedURL = encodeURL(event.youtube_url) {
+                            Link(destination: encodedURL) {
+                                Image(!isDarkMode ? "youtube_light" : "youtube_dark")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 170, height: 80)
+                                    .cornerRadius(20)
+                            }
+                        }
+                if let encodedURL = encodeURL(event.link) {
+                            Link(destination: encodedURL) {
+                                HStack {
+                                    Image(systemName: "globe")
+                                        .font(.title)
+                                    Text("Website")
+                                        .font(.title)
+                                }
+                                .frame(width: 170, height: 80)
+                                .background(!isDarkMode ? .white : .black)
+                                .cornerRadius(20)
+                            }
+                        }
+            }
+        }
+    }
+    
+    func encodeURL(_ urlString: String) -> URL? {
+            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                return URL(string: encodedString)
+            }
+            return nil
+        }
+}
+
 // explore more view
-struct EventExpoloreMore: View {
+struct EventAddress: View {
     // Initialize the place variable
     @State var event: Event = Event.allEvents[1]
 

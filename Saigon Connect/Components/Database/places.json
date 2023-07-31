@@ -47,7 +47,16 @@
                 "content": "Too hot but the architecture looks great",
                 "timestamp": "02/09/2018"
             }
-        ]
+        ],
+        "pictures": [
+            "bitexco1",
+            "bitexco2",
+            "bitexco3",
+            "bitexco4",
+            "bitexco5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=O_ckK7Hxlrk&ab_channel=WanderlustTravelVideos",
+        "website_url": "https://bitexco.com.vn/en/"
     },
     {
         "name": "Landmark 81",
@@ -62,7 +71,7 @@
         "opening_hours": "8:30 AM - 11:00 PM",
         "short_description": "A Skyward Marvel in Vietnam and the World",
         "full_description": "Standing as an iconic symbol of soaring ambition, The Landmark 81 proudly claims the title of the tallest skyscraper in Vietnam and ranks 8th globally. Over the years, this architectural masterpiece has been awarded with numerous titles, including the noble awards for the best sky view, largest indoor ice skating rink, and excellent luxury offerings.",
-        "image_url": "landmark81-2",
+        "image_url": "landmark81",
         "popular_activities": [
             "Observation Deck",
             "Shopping",
@@ -91,12 +100,21 @@
                 "timestamp": "05/09/2018"
             },
             {
-                "reviewer_name": "Nhat Quang",
+                "reviewer_name": "Nhat Long",
                 "given_stars": 5,
                 "content": "Definitely will go again!",
                 "timestamp": "05/05/2022"
             }
-        ]
+        ],
+        "pictures": [
+            "landmark811",
+            "landmark812",
+            "landmark813",
+            "landmark814",
+            "landmark815"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=W3rNwp48jiU&ab_channel=MrABroad",
+        "website_url": "https://www.landmark81skyview.com/"
     },
     {
         "name": "Ben Thanh Market",
@@ -152,7 +170,16 @@
                 "content": "Now i know that they do support money exchange. The rate is good",
                 "timestamp": "07/05/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "chobenthanh1",
+            "chobenthanh2",
+            "chobenthanh3",
+            "chobenthanh4",
+            "chobenthanh5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=Q4ZANPEcsxM&ab_channel=TRAVELVIETNAM4K",
+        "website_url": ""
     },
     {
         "name": "War Remnants Museum",
@@ -201,7 +228,16 @@
                 "content": "While informative, the displays can be distressing for some visitors. Not recommended for young children.",
                 "timestamp": "19/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "warmuseum1",
+            "warmuseum2",
+            "warmuseum3",
+            "warmuseum4",
+            "warmuseum5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=9GzYNlG31v8&ab_channel=MichelePonte",
+        "website_url": "https://baotangchungtichchientranh.vn/?language=en"
     },
     {
         "name": "Central Post Office",
@@ -268,7 +304,16 @@
                 "content": "Impressive architecture and the atmosphere inside is bustling. Highly recommend checking it out! PS: Postcards make great souvenirs.",
                 "timestamp": "02/10/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "postoffice1",
+            "postoffice2",
+            "postoffice3",
+            "postoffice4",
+            "postoffice5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=jCayjSVzfrI&ab_channel=PopHeyHey",
+        "website_url": "http://hcmpost.vn/"
     },
     {
         "name": "Saigon Opera House",
@@ -323,7 +368,16 @@
                 "content": "It's a historical icon, but I expected more from the inside. I guess it's better to catch a show here to fully appreciate it.",
                 "timestamp": "28/11/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "saigonoperahouse1",
+            "saigonoperahouse2",
+            "saigonoperahouse3",
+            "saigonoperahouse4",
+            "saigonoperahouse5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=PTzW2dSCqBc&ab_channel=BubbleNomad",
+        "website_url": "https://www.luneproduction.com/saigon-opera-house"
     },
     {
         "name": "Walking Street",
@@ -372,7 +426,16 @@
                 "content": "It's a popular spot for tourists, but it gets too crowded sometimes. The street vendors are a bit pushy. Visit on weekdays for a better experience.",
                 "timestamp": "05/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "walkingstreet1",
+            "walkingstreet2",
+            "walkingstreet3",
+            "walkingstreet4",
+            "walkingstreet5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=pOYJ13nDW1c&ab_channel=SlowWalks",
+        "website_url": "https://vinwonders.com/en/news/nguyen-hue-street-enjoy-the-walk-of-your-life-in-the-center-of-saigon/"
     },
     {
         "name": "Saigon Notre-Dame Cathedral",
@@ -427,7 +490,16 @@
                 "content": "The cathedral is a symbol of history, but it's under renovation now, so part of it was covered. Kinda disappointed, but I guess it's necessary.",
                 "timestamp": "12/10/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "nhathoducba1",
+            "nhathoducba2",
+            "nhathoducba3",
+            "nhathoducba4",
+            "nhathoducba5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=R2PVLDHY8z0&ab_channel=VietPrestigeTravel",
+        "website_url": "https://vietnamtravel.com/notre-dame-cathedral-of-saigon-things-to-know/"
     },
     {
         "name": "Bui Vien Street",
@@ -482,7 +554,16 @@
                 "content": "Had a fantastic night exploring Bui Vien Street. The live music and friendly atmosphere in every corner were incredible. Don't miss trying the grilled street food!",
                 "timestamp": "06/10/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "buivien1",
+            "buivien2",
+            "buivien3",
+            "buivien4",
+            "buivien5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=MIQ2VCKXFY8&ab_channel=4KWalking",
+        "website_url": "https://vietnamdiscovery.com/ho-chi-minh-city/attractions/bui-vien-street/"
     },
     {
         "name": "Dam Sen Water Park",
@@ -537,7 +618,16 @@
                 "content": "The water park is well-maintained and clean. It's a perfect place to spend a hot summer day!",
                 "timestamp": "06/10/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "damsen1",
+            "damsen2",
+            "damsen3",
+            "damsen4",
+            "damsen5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=kTmc65KclPg&ab_channel=NEXT%2FCharl%26Christine",
+        "website_url": "https://www.damsenwaterpark.com.vn/"
     },
     {
         "name": "Independence Palace",
@@ -592,7 +682,16 @@
                 "content": "The Independence Palace is significant, but I wish there were more interactive exhibits.",
                 "timestamp": "15/09/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "dinhdoclap1",
+            "dinhdoclap2",
+            "dinhdoclap3",
+            "dinhdoclap4",
+            "dinhdoclap5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=18mXLVtL7Tk&ab_channel=JayRuleProductions🎬",
+        "website_url": "https://independencepalace.gov.vn/"
     },
     {
         "name": "Saigon Central Book Street",
@@ -641,7 +740,16 @@
                 "content": "Saigon Central Book Street is charming, but the book prices are a bit higher than regular bookstores.",
                 "timestamp": "05/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "book1",
+            "book2",
+            "book3",
+            "book4",
+            "book5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=hVS5r-2TkCo&ab_channel=MaxJavon",
+        "website_url": "https://vinpearl.com/en/ho-chi-minh-city-book-street-pinpoint-the-paradise-for-bookworms"
     },
     {
         "name": "Saigon Zoo and Botanical Gardens",
@@ -708,7 +816,16 @@
                 "content": "The zoo is enjoyable, but some enclosures could be larger for the animals' well-being.",
                 "timestamp": "24/09/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "saigonzoo1",
+            "saigonzoo2",
+            "saigonzoo3",
+            "saigonzoo4",
+            "saigonzoo5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=qBQwylTI4gA&ab_channel=MrCrazySmile",
+        "website_url": "https://saigonzoo.net/"
     },
     {
         "name": "Ho Chi Minh City Museum of Fine Arts",
@@ -763,7 +880,16 @@
                 "content": "The museum has some beautiful pieces, but I wish there were more English descriptions.",
                 "timestamp": "22/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "art1",
+            "art2",
+            "art3",
+            "art4",
+            "art5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=sZz41_ahWvo&ab_channel=JayRuleProductions🎬",
+        "website_url": "http://baotangmythuattphcm.com.vn/"
     },
     {
         "name": "History Museum",
@@ -818,7 +944,16 @@
                 "content": "The museum offers a rich history of Vietnam. I recommend hiring a guide for a better understanding.",
                 "timestamp": "19/07/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "history1",
+            "history2",
+            "history3",
+            "history4",
+            "history5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=Qm0WP5JPA20&ab_channel=Lo-FiTravel",
+        "website_url": "http://www.baotanglichsutphcm.com.vn/en-US/Default.aspx"
     },
     {
         "name": "Giac Lam Pagoda",
@@ -867,7 +1002,16 @@
                 "content": "While the pagoda is beautiful, the surroundings are noisy due to nearby traffic.",
                 "timestamp": "29/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "giaclam1",
+            "giaclam2",
+            "giaclam3",
+            "giaclam4",
+            "giaclam5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=iEzzEke9wKA&ab_channel=For91DaysTravelBlog",
+        "website_url": "https://localvietnam.com/blog/giac-lam-pagoda/"
     },
     {
         "name": "Crescent Mall",
@@ -921,7 +1065,16 @@
                 "content": "Crescent Mall offers a wide range of entertainment options, making it suitable for all ages.",
                 "timestamp": "01/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "crescentmall1",
+            "crescentmall2",
+            "crescentmall3",
+            "crescentmall4",
+            "crescentmall5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=294dIu6qm_o&ab_channel=TriệuĐôVICTORIAVlogs-Sweden-ViệtNam",
+        "website_url": "https://www.crescentmall.com.vn/"
     },
     {
         "name": "Tao Dan Park",
@@ -976,6 +1129,15 @@
                 "content": "Tao Dan Park is nice, but the litter can be an issue on busy days.",
                 "timestamp": "19/08/2023"
             }
-        ]
+        ],
+        "pictures": [
+            "taodanpark1",
+            "taodanpark2",
+            "taodanpark3",
+            "taodanpark4",
+            "taodanpark5"
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=SEsRxsfQQaA&ab_channel=MrCrazySmile",
+        "website_url": "https://www.vietnamdrive.com/tao-dan-park/"
     }
 ]

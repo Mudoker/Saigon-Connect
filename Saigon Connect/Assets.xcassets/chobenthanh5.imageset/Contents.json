@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "sai-gon-vang-ve-2-2335-1645262792.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

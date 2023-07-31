@@ -30,7 +30,9 @@ struct Place: Codable {
     let nearby_activities: [Activity]
     let category: String
     let reviews: [Reviews]
-    
+    let pictures: [String]
+    let youtube_url: String
+    let website_url: String
     // static variables to store the sample place, all places, all categories, and the number of places
     static let allPlace = decodePlaceJsonFromJsonFile(jsonFileName: "places.json")
     static let allCategories = getUniquePlaceCategories(from: allPlace)
@@ -60,7 +62,7 @@ struct Activity: Codable {
 struct Event: Codable {
     let name: String
     let address: String
-    let host: String
+    let host_url: String
     let location: [Double]
     let date: String
     let entrance_fee: String
@@ -72,6 +74,7 @@ struct Event: Codable {
     let reason: String
     let category: String
     let link: String
+    let youtube_url: String
     // static variables to store the sample place, all places, all categories, and the number of places
     static let allEvents = decodeEventJsonFromJsonFile(jsonFileName: "events.json")
     static let allEventCategories = getUniqueEventCategories(from: allEvents)
