@@ -25,7 +25,8 @@ struct EventCardView: View {
             GlassMorphicCard(isDarkMode: $isDarkMode, width: 360, height: 400, opacity: 0.8)
             VStack(alignment: .leading) {
                 // Load image of item
-                Image(event.image_url).resizable()
+                Image(event.image_url)
+                    .resizable()
                     .opacity(0.9)
                     .frame(width:360,height:200)
 

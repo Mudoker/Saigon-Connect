@@ -10,10 +10,11 @@
   Acknowledgement:
     Kavsoft. Glass Morphism SwiftUI - Glass Card Effect - Xcode 14 - SwiftUI Tutorials (Mar. 10, 2020). Accessed Jul. 20, 2023. [Online Video]. Available: https://www.youtube.com/watch?v=5jPmILEQygY&t=627s
     Ramis. "How to present accurate star rating using SwiftUI?" Stackoverflow.https://stackoverflow.com/questions/64379079/how-to-present-accurate-star-rating-using-swiftui (accessed Jul. 19, 2023).
-    
+
 */
 
 import SwiftUI
+
 struct PlaceCardView: View {
     // Binding for checking dark mode
     @Binding var isDarkMode: Bool
@@ -27,9 +28,10 @@ struct PlaceCardView: View {
             GlassMorphicCard(isDarkMode: $isDarkMode)
             VStack(alignment: .leading) {
                 // Load image of item
-                Image(place.image_url).resizable()
+                Image(place.image_url)
+                    .resizable()
                     .opacity(0.9)
-                    .frame(width: size.width,height: size.height)
+                    .frame(width: size.width, height: size.height)
 
                 // Load name, description of item
                 Text(place.name)
@@ -61,7 +63,7 @@ struct PlaceCardView: View {
                     Text("(" + String(place.total_ratings.formatted()) + ")")
                         .font(.body)
                         .foregroundColor(isDarkMode ? .white : .black)
-                    
+
                     Spacer()
 
                     Text(place.entrance_fee)
@@ -130,6 +132,7 @@ struct GlassMorphicCardView: UIViewRepresentable {
     // updates the UIView when the isDarkMode state changes
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         let effectStyle: UIBlurEffect.Style = isDarkMode ? .systemUltraThinMaterialLight : .regular
+        
         let newEffect = UIBlurEffect(style: effectStyle)
         uiView.effect = newEffect
     }
@@ -150,33 +153,33 @@ struct StarsView: View {
         // draw stars based on max rating
         let stars = HStack(spacing: 0) {
             ForEach(0..<Int(maxRating), id: \.self) { index in
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .frame(width: size, height: size)
-                    }
-                }
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .frame(width: size, height: size)
+            }
+        }
 
-            // Fill stars based on current rating
-            GeometryReader { geometry in
-                    // calculate width of filled stars
-                    let filledWidth = self.widthForValue(geometry.size.width, value: rating)
+        // Fill stars based on current rating
+        GeometryReader { geometry in
+            // calculate width of filled stars
+            let filledWidth = self.widthForValue(geometry.size.width, value: rating)
 
-                    // calculate width of the rest of stars
-                    let emptyWidth = self.widthForValue(geometry.size.width, value: (maxRating - rating))
+            // calculate width of the rest of stars
+            let emptyWidth = self.widthForValue(geometry.size.width, value: (maxRating - rating))
 
-                    // draw stars
-                    HStack(spacing: 0) {
-                        Rectangle()
-                            .frame(width: filledWidth, height: geometry.size.height)
-                            .foregroundColor(.yellow)
+            // draw stars
+            HStack(spacing: 0) {
+                Rectangle()
+                    .frame(width: filledWidth, height: geometry.size.height)
+                    .foregroundColor(.yellow)
 
-                        Rectangle()
-                            .frame(width: emptyWidth, height: geometry.size.height)
-                            .foregroundColor(.gray)
-                    }
-                }
-                .frame(width: size * maxRating, height: size)
-                .mask(stars)
+                Rectangle()
+                    .frame(width: emptyWidth, height: geometry.size.height)
+                    .foregroundColor(.gray)
+            }
+        }
+        .frame(width: size * maxRating, height: size)
+        .mask(stars)
     }
 
     // calculate width of stars proportionally

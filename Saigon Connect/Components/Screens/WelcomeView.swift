@@ -15,6 +15,7 @@
 */
 
 import SwiftUI
+
 struct WelcomeScreen: View {
     // check to show author information or not
     @State private var showingAlert = false
@@ -54,15 +55,15 @@ struct WelcomeScreen: View {
                         // ZStack to store the app logo
                         ZStack(alignment: .center) {
                             Image("app logo light")
-                            .resizable()
-                            .aspectRatio( contentMode: .fill)
-                            .frame(height: 250)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 250)
                         }
                         .frame(height: 150)
                     }
 
                     // VStack to store the banner with animation
-                    VStack (alignment: .leading) {
+                    VStack(alignment: .leading) {
                         Spacer()
 
                         ColoredText(text: banner, size: 40)
@@ -81,44 +82,47 @@ struct WelcomeScreen: View {
                     // Button to navigate to the login screen
                     Button {
                         isTransition.toggle()
-                    }
-                    label: {
+                    } label: {
                         HStack {
                             Text("Let's explore")
+                            
                             Spacer()
+                            
                             Image(systemName: "arrow.up.forward")
                         }
                         .foregroundColor(.black)
-                        .padding(.horizontal,25)
+                        .padding(.horizontal, 25)
                         .frame(width: 340, height: 70)
                         .background(.white)
                         .clipShape(Capsule())
                         .padding(.bottom)
                     }
                     .navigationDestination(
-                        isPresented: $isTransition) {
-                        PlaceView().navigationBarBackButtonHidden(true)
+                        isPresented: $isTransition
+                    ) {
+                        PlaceView()
+                            .navigationBarBackButtonHidden(true)
                     }
 
                     // Button to show the author information
-                    Button{
-                        showingAlert = true;
-                    }
-                    label :{
+                    Button {
+                        showingAlert = true
+                    } label: {
                         Image(systemName: "info.circle")
                             .resizable()
                             .frame(width: 25, height: 25)
                             .foregroundColor(.white)
                     }
-                    .alert( isPresented: $showingAlert) {
+                    .alert(isPresented: $showingAlert) {
                         return Alert(
                             title: Text("Saigon Connect"),
-                            message: (Text("""
-                                Author: Huu Quoc Doan
-                                Sid: S3927776
-                                Major: Software Engineering
-                                Version: 1.1.0
-                            """))
+                            message: (Text(
+                                """
+                                    Author: Huu Quoc Doan
+                                    Sid: S3927776
+                                    Major: Software Engineering
+                                    Version: 1.1.0
+                                """))
                         )
                     }
                 }
@@ -131,7 +135,11 @@ struct WelcomeScreen: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .offset(x: backgroundAnimation ? 10 : -50)
-                    .animation(Animation.easeInOut(duration: 4.0).repeatForever(), value: backgroundAnimation))
+                    .animation(
+                        Animation.easeInOut(duration: 4.0).repeatForever(),
+                        value: backgroundAnimation
+                    )
+            )
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     backgroundAnimation.toggle()
@@ -183,7 +191,11 @@ struct ColoredText: View {
             .mask(
                 Rectangle()
                     .fill(
-                        LinearGradient(gradient: .init(colors: [Color.white.opacity(1), Color.white, Color.white.opacity(1)]), startPoint: .top, endPoint: .bottom)
+                        LinearGradient(
+                            gradient: .init(colors: [
+                                Color.white.opacity(1), Color.white, Color.white.opacity(1),
+                            ]
+                            ), startPoint: .top, endPoint: .bottom)
                     )
                     .rotationEffect(.init(degrees: 70))
                     .offset(x: bannerAnimation ? 300 : -150)

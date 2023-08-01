@@ -92,7 +92,8 @@ struct EventDetailView: View {
                         ScrollView(showsIndicators: false) {
                             VStack {
                                 // Stack to preserve padding
-                                HStack{}.frame(height: 100)
+                                HStack{}
+                                    .frame(height: 100)
 
                                 // show rating and opening hours
                                 EventRatingOpenHour(event: event)
@@ -161,6 +162,7 @@ struct EventDetailView: View {
                                     Spacer()
                                 }
                                 .frame(height: 40)
+                                
                                 EventExploreMore()
                                     .padding(.top)
                                 
@@ -183,26 +185,32 @@ struct EventDetailView: View {
                                     .padding(.top, 55)
                                     .font(.title.bold())
                                     .foregroundColor(isDarkMode ? .white : .black)
+                                
                                 Spacer()
                             }
                             .frame(height: 20)
                             
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(!isDarkMode ? Color.white : .black.opacity(0.7))
-                                        .frame(width: 240, height: 100)
-                                        .overlay(
-                                            ZStack {
-                                                Image(event.host_url)
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 20, height: 80)
-                                                    .opacity(0.9)
-                                            }
-                                        )
-                                        .padding(.top, 45)
+                            VStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(!isDarkMode ? Color.white : .black.opacity(0.7))
+                                            .frame(width: 240, height: 100)
+                                            .overlay(
+                                                ZStack {
+                                                    Image(event.host_url)
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 20, height: 80)
+                                                        .opacity(0.9)
+                                                }
+                                            )
+                                    .padding(.top, 45)
+                                
+                                Spacer()
+                            }
+                            .frame(height: 180)
                         }
                         .coordinateSpace(name: "scroll")
-                        .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
+                        .padding(.top, scrollOffset > 0 ? ((-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) : -90) // Adjust the padding based on scrollOffset
                         
                         Spacer()
 
@@ -218,12 +226,12 @@ struct EventDetailView: View {
                         Color(red: 0.20, green: 0.20, blue: 0.20)
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
+                            .padding(.top, scrollOffset > 0 ? ((-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) : -90) // Adjust the padding based on scrollOffset
                         :
                         Color.white
                             .clipShape(CustomTopBorder())
                             .edgesIgnoringSafeArea(.all)
-                            .padding(.top, (-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) // Adjust the padding based on scrollOffset
+                            .padding(.top, scrollOffset > 0 ? ((-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) : -90) // Adjust the padding based on scrollOffset
                     )
                     .shadow(radius: 20)
                     
@@ -256,74 +264,77 @@ struct EventTopView: View {
     @Binding var isMapView: Bool
 
     var body: some View {
-        HStack(alignment: .center) {
-            VStack(alignment: .leading) {
-                Text("Entrence fee")
-                    .fontWeight(.bold)
-                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
-
-                if (event.entrance_fee == "Free") {
-                    Text(event.entrance_fee)
-                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
-                        .font(.system(size: 30, weight: .bold))
-                        .frame(height: 30)
-                } else {
-                    Text(event.entrance_fee)
-                        .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
-                        .font(.system(size: 23, weight: .bold))
-                        .frame(height: 30)
-                }
-            }
-            .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
-            
-            Spacer()
-            
-            ZStack {
-                Image(event.image_url)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
-                    .frame(width: 200, height: 200)
-                    .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
-                    .shadow(radius: 40)
-                    .padding(.leading, 130)
-                    .offset(y: isAnimation ? 0 : -35)
+        ZStack {
+            HStack {
+                VStack(alignment: .leading) {
+                   Text("Entrence fee")
+                       .fontWeight(.bold)
+                       .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                   
+                   if (event.entrance_fee == "Free") {
+                       Text(event.entrance_fee)
+                           .font(.system(size: 30, weight: .bold))
+                           .frame(height: 30)
+                           .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                   } else {
+                       Text(event.entrance_fee)
+                           .font(.system(size: 23, weight: .bold))
+                           .frame(height: 30)
+                           .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                   }
+               }
+                .offset(y: isAnimation ? -50 : -75) // move the text down when the animation is on
                 
-                HStack {
-                    Button {
-                        DispatchQueue.main.async {
-                            isMapView = false // turn off the map view
-                        }
-
-                    } label: {
-                        Image(systemName: "doc.circle").resizable()
-                            .frame(width: 60, height: 60)
+                Spacer()
+                
+            }
+            .padding(.horizontal)
+            
+            Image(event.image_url)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .opacity(isMapView ? 0 : imageOpacity == 0 ? 1 : calculateOpacity())
+                .frame(width: 200, height: 200)
+                .mask(Circle().scaleEffect(isAnimation ? 1 : 0.7)) // mask the image with a circle with scale effect
+                .shadow(radius: 40)
+                .padding(.leading, 130)
+                .offset(y: isAnimation ? 0 : -35)
+            
+            HStack {
+                Button {
+                    DispatchQueue.main.async {
+                        isMapView = false // turn off the map view
                     }
-                    .padding(.trailing, 20)
-                    
-                    Button {
-                        DispatchQueue.main.async {
-                            isMapView = true // turn on the map view
-                        }
-                    } label: {
-                        Image(systemName: "map.circle.fill").resizable()
-                            .frame(width: 60, height: 60)
 
-                    }
-                    Spacer()
+                } label: {
+                    Image(systemName: "doc.circle").resizable()
+                        .frame(width: 60, height: 60)
                 }
-                .frame(width: UIScreen.main.bounds.width)
-                .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
-                .padding(.top, 120)
-                .padding(.horizontal, 10)
-                .frame(height: 100)
-            } // move the image down when the animation is on
+                .padding(.trailing, 20)
+                
+                Button {
+                    DispatchQueue.main.async {
+                        isMapView = true // turn on the map view
+                    }
+                } label: {
+                    Image(systemName: "map.circle.fill").resizable()
+                        .frame(width: 60, height: 60)
+
+                }
+                
+                Spacer()
+            }
+            .frame(width: UIScreen.main.bounds.width)
+            .opacity( imageOpacity == 0 ? 1 : calculateOpacity())
+            .padding(.top, 120)
+            .padding(.horizontal, 10)
+            .frame(height: 100)
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 0.8)) {
                 isAnimation = true // turn on the animation
             }
-        }
+        }// move the image down when the animation is on
     }
 
     // calculate the opacity of the image

@@ -126,7 +126,7 @@ struct EventView: View {
                                     {
                                         Image(systemName: "xmark.circle.fill")
                                             .resizable()
-                                            .frame(width: 25, height: 25)                                    
+                                            .frame(width: 25, height: 25)
                                             .foregroundColor(isDarkMode ? .white : .black)
                                     }
                                     .padding()
@@ -141,7 +141,8 @@ struct EventView: View {
                                     {
                                         Image(systemName: "magnifyingglass")
                                             .resizable()
-                                            .frame(width: 30, height: 30)                                    .foregroundColor(isDarkMode ? .white : .black)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(isDarkMode ? .white : .black)
                                             .padding()
                                     }
                                     .foregroundColor(isDarkMode ? .white : .black)

@@ -24,24 +24,24 @@ struct SmallPlaceCardView: View {
         ZStack(alignment: .top) {
             // Glass morphism card with the size of 180x270
             GlassMorphicCard(isDarkMode: $isDarkMode, width: 180, height: 270)
-            
+
             // VStack to store the image, name, description, rating, and entrance fee of the place
             VStack(alignment: .leading) {
                 Image(place.image_url)
                     .resizable()
-                    .frame(width:180,height:110)
+                    .frame(width: 180, height: 110)
                     .foregroundColor(isDarkMode ? .white : .black)
 
                 Text(place.name)
                     .font(.headline)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading,5)
+                    .padding(.leading, 5)
                     .foregroundColor(isDarkMode ? .white : .black)
 
                 Text(place.short_description)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading,5)
+                    .padding(.leading, 5)
                     .font(.body)
                     .foregroundColor(isDarkMode ? .white : .black)
 
@@ -50,17 +50,16 @@ struct SmallPlaceCardView: View {
                 // HStack to store the rating and entrance fee of the place
                 HStack {
                     StarsView(rating: place.ratings, maxRating: 5)
-                        .padding(.leading,5)
+                        .padding(.leading, 5)
                         .font(.caption2)
 
                     Spacer()
 
                     Text(place.entrance_fee)
                         .font(.caption2)
-                        .padding(.trailing,5)
+                        .padding(.trailing, 5)
                         .foregroundColor(isDarkMode ? .white : .black)
 
-                    
                 }
                 .padding(.bottom)
                 .padding(.horizontal)
