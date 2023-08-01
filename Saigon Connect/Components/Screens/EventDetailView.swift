@@ -69,10 +69,12 @@ struct EventDetailView: View {
                 // Detail view
                 VStack(alignment: .leading) {
                     // show the name and category
+                    // show the name and category
                     VStack(alignment: .leading) {
                         Text(event.category)
                             .padding(.horizontal)
                             .foregroundColor(isDarkMode ? .white : .black)
+                        
                             .padding(.top)
                         Text(event.name)
                             .font(.largeTitle)
@@ -81,6 +83,7 @@ struct EventDetailView: View {
                             .foregroundColor(isDarkMode ? .white : .black)
                     }
                     .frame(height: 145)
+                    .padding(.top, -30)
                     .opacity(!isMapView ? 1.0 : 0) // if isMapView is false, show the name and category, otherwise, hide it
 
                     // only show the top view if isMapView is false
