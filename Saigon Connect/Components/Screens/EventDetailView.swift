@@ -23,6 +23,9 @@ struct EventDetailView: View {
     // Shared variable to control the detail view
     @Binding var isEventDetailView: Bool
 
+    //Show full description or not
+    @State var showFullContent = false
+    
     // toggle the map view
     @State private var isMapView = false
 
@@ -100,12 +103,7 @@ struct EventDetailView: View {
                                     .foregroundColor(isDarkMode ? .white : .black)
                                     .padding(.bottom)
                                 
-                                // show the description
-                                Text (event.full_description)
-                                    .font(.body)
-                                    .opacity(0.9)
-                                    .padding(.horizontal)
-                                    .foregroundColor(isDarkMode ? .white : .black)
+                                EventFullDescriptionView(showFullContent: $showFullContent, isDarkMode: $isDarkMode, event: event)
                                 
                                 if event.popular_activities.count >= 1 {
                                     HStack {
@@ -126,7 +124,7 @@ struct EventDetailView: View {
                                             Text(activity)
                                                 .padding()
                                                 .frame(width: UIScreen.main.bounds.width / 2 - 20)
-                                                .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
+                                                .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white)
                                                 .foregroundColor(isDarkMode ? Color.white : Color.black)
                                                 .cornerRadius(20)
                                         }
@@ -163,7 +161,7 @@ struct EventDetailView: View {
                                 }
                                 .frame(height: 40)
                                 
-                                EventExploreMore()
+                                EventExploreMore(event: $event)
                                     .padding(.top)
                                 
                                 Spacer()
@@ -191,20 +189,13 @@ struct EventDetailView: View {
                             .frame(height: 20)
                             
                             VStack {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(!isDarkMode ? Color.white : .black.opacity(0.7))
-                                            .frame(width: 240, height: 100)
-                                            .overlay(
-                                                ZStack {
-                                                    Image(event.host_url)
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-                                                        .frame(width: 20, height: 80)
-                                                        .opacity(0.9)
-                                                }
-                                            )
-                                    .padding(.top, 45)
-                                
+                                Spacer()
+                                Image(event.host_url)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 30, height: 120)
+                                    .opacity(0.9)
+                                    .padding(.top, 40)
                                 Spacer()
                             }
                             .frame(height: 180)
@@ -233,6 +224,7 @@ struct EventDetailView: View {
                             .edgesIgnoringSafeArea(.all)
                             .padding(.top, scrollOffset > 0 ? ((-90 - scrollOffset/3) >= -200 ? -90 - scrollOffset/3 : -200) : -90) // Adjust the padding based on scrollOffset
                     )
+                    .preferredColorScheme(!isDarkMode ? .light : .dark)
                     .shadow(radius: 20)
                     
                 }
@@ -310,7 +302,7 @@ struct EventTopView: View {
                     Image(systemName: "doc.circle").resizable()
                         .frame(width: 60, height: 60)
                 }
-                .padding(.trailing, 20)
+                .padding(.trailing, 10)
                 
                 Button {
                     DispatchQueue.main.async {
@@ -348,6 +340,41 @@ struct EventTopView: View {
         return 1
     }
 }
+
+// Show full content for description
+struct EventFullDescriptionView: View {
+    // checking to show full description or not
+    @Binding var showFullContent: Bool
+    
+    // Check for dark mode
+    @Binding var isDarkMode: Bool
+    
+    // Initialize the place variable
+    @State var event: Event = Event.allEvents[0]
+    
+    var body: some View {
+        VStack {
+            // Show the description
+            Text(event.full_description)
+                .font(.body)
+                .opacity(0.9)
+                .padding(.horizontal)
+                .foregroundColor(isDarkMode ? .white : .black)
+                .lineLimit(showFullContent ? nil : 6)
+
+            if !showFullContent && event.full_description.count > 6 {
+                Button("Show more") {
+                    showFullContent.toggle()
+                }
+            } else if showFullContent {
+                Button("Show less") {
+                    showFullContent.toggle()
+                }
+            }
+        }
+    }
+}
+
 // Rating and opening hours view
 struct EventRatingOpenHour: View {
     // Initialize the place variable
@@ -390,7 +417,7 @@ struct EventExploreMore: View {
    
 
     // Initialize the place variable
-    @State var event: Event = Event.allEvents[0]
+    @Binding var event: Event
     
     var body: some View {
         // show the nearby activities

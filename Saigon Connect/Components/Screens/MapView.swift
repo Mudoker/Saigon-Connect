@@ -54,8 +54,8 @@ struct MapView: View {
                             Image(systemName: "location.circle.fill")
                                 .resizable()
                                 .frame(width: 45, height: 45)
-                                .foregroundColor(.blue)
-                                .padding(.top, 40)
+                                .foregroundColor(isDarkMode ? .white : .black)
+                                .padding(.top, 60)
                         }
                         .padding(.horizontal)
                         .padding(.top, 40)

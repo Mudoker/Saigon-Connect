@@ -353,6 +353,7 @@ struct EventView: View {
                 
             }
             .background( isDarkMode ? Image("background_dark")  : Image("background_light")) // background image based on dark mode
+            .preferredColorScheme(!isDarkMode ? .light : .dark)
             .edgesIgnoringSafeArea(.bottom)
         }
     }

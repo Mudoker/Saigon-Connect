@@ -410,7 +410,9 @@ struct PlaceView: View {
             }
             .background(isDarkMode ? Image("background_dark")  : Image("background_light")) // background image based on dark mode
             .edgesIgnoringSafeArea(.bottom)
+            .preferredColorScheme(!isDarkMode ? .light : .dark)
         }
+        
     }
     
     // greeting based on time

@@ -23,6 +23,9 @@ struct PlaceDetailView: View {
     // Shared variable to control the detail view
     @Binding var isDetailView: Bool
     
+    //Show full description or not
+    @State var showFullContent = false
+    
     // toggle the map view
     @State private var isMapView = false
     
@@ -98,12 +101,7 @@ struct PlaceDetailView: View {
                                 RatingOpenHour(place: place)
                                     .foregroundColor(isDarkMode ? .white : .black)
                                 
-                                // show the description
-                                Text (place.full_description)
-                                    .font(.body)
-                                    .opacity(0.9)
-                                    .padding(.horizontal)
-                                    .foregroundColor(isDarkMode ? .white : .black)
+                                PlaceFullDescriptionView(showFullContent: $showFullContent, isDarkMode: $isDarkMode, place: place)
                                 
                                 // show the popular activities
                                 if place.popular_activities.count >= 1 {
@@ -199,7 +197,7 @@ struct PlaceDetailView: View {
                                 }
                                 .frame(height: 20)
                                 
-                                PlaceExploreMore()
+                                PlaceExploreMore(place: $place)
                                     .frame(height:100)
                                     .padding(.top)
                             }
@@ -246,6 +244,7 @@ struct PlaceDetailView: View {
             }
             .background( isDarkMode ? Image("background_dark") : Image("background_light"))
             .zIndex(0) // put the background on the bottom
+            .preferredColorScheme(!isDarkMode ? .light : .dark)
         }
         .edgesIgnoringSafeArea(.bottom)
         .onDisappear {
@@ -315,7 +314,7 @@ struct TopView: View {
                     Image(systemName: "doc.circle").resizable()
                         .frame(width: 60, height: 60)
                 }
-                .padding(.trailing, 20)
+                .padding(.trailing, 10)
                 
                 Button {
                     DispatchQueue.main.async {
@@ -475,7 +474,7 @@ struct popularActivitiy: View {
                 Text(activity)
                     .padding()
                     .frame(width: UIScreen.main.bounds.width / 2 - 30)
-                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
+                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white)
                     .foregroundColor(isDarkMode ? Color.white : Color.black)
                     .cornerRadius(20)
             }
@@ -521,8 +520,41 @@ struct nearbyActivity: View {
                     }
                     .padding()
                     .frame(width: 350)
-                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white.opacity(0.7))
+                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.white)
                     .cornerRadius(20)
+                }
+            }
+        }
+    }
+}
+
+struct PlaceFullDescriptionView: View {
+    // checking to show full description or not
+    @Binding var showFullContent: Bool
+    
+    // Check for dark mode
+    @Binding var isDarkMode: Bool
+    
+    // Initialize the place variable
+    @State var place: Place = Place.allPlace[0]
+    
+    var body: some View {
+        VStack {
+            // Show the description
+            Text(place.full_description)
+                .font(.body)
+                .opacity(0.9)
+                .padding(.horizontal)
+                .foregroundColor(isDarkMode ? .white : .black)
+                .lineLimit(showFullContent ? nil : 6)
+
+            if !showFullContent && place.full_description.count > 6 {
+                Button("Show more") {
+                    showFullContent.toggle()
+                }
+            } else if showFullContent {
+                Button("Show less") {
+                    showFullContent.toggle()
                 }
             }
         }
@@ -599,7 +631,7 @@ struct PlaceExploreMore: View {
     
     
     // Initialize the place variable
-    @State var place: Place = Place.allPlace[0]
+    @Binding var place: Place
     
     var body: some View {
         // show the nearby activities

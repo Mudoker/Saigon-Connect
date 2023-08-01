@@ -11,7 +11,7 @@
         "entrance_fee": "Free",
         "opening_hours": "8:00 AM - 11:00 PM",
         "short_description": "One of the highest skyscrapers in Vietnam with 68 floors",
-        "full_description": "The Bitexco Financial Tower proudly stands among Vietnam's tallest skyscrapers, boasting a total impressive 68 floors. With its lotus-inspired design, it gives off a sense of determination and positive energy. Officially inaugurated in 2010, this architectural wonder has always been praised as one of Vietnam's finest achievements, captivating all who behold its aesthetic appearance.",
+        "full_description": "Bitexco Financial Tower, an architectural marvel and a symbol of modernity, proudly stands as one of Vietnam's most iconic skyscrapers. Located in the heart of Ho Chi Minh City, this impressive structure soars into the sky, dominating the city's skyline with its striking design and towering height.\n\nCompleted in 2010, the Bitexco Financial Tower is a testament to Vietnam's rapid development and progress on the global stage. Rising to a height of 262 meters (861 feet) with 68 floors, it claims the title of the tallest building in Vietnam and holds the distinction of being the 8th tallest building in the world.\n\nInspired by the delicate beauty of the lotus flower, a cherished symbol in Vietnamese culture, the tower's architecture reflects a sense of determination and positive energy. Its sleek and modern facade, clad in glass and aluminum, exudes elegance and sophistication.",
         "image_url": "bitexco",
         "popular_activities": [
             "Observation Deck",
@@ -70,7 +70,7 @@
         "entrance_fee": "Free",
         "opening_hours": "8:30 AM - 11:00 PM",
         "short_description": "A Skyward Marvel in Vietnam and the World",
-        "full_description": "Standing as an iconic symbol of soaring ambition, The Landmark 81 proudly claims the title of the tallest skyscraper in Vietnam and ranks 8th globally. Over the years, this architectural masterpiece has been awarded with numerous titles, including the noble awards for the best sky view, largest indoor ice skating rink, and excellent luxury offerings.",
+        "full_description": "The Landmark 81 is an impressive skyscraper that stands tall in Vietnam's bustling city. It proudly holds the title of the country's tallest building and ranks among the top eight tallest buildings in the world. With its remarkable architecture and design, it reflects the nation's ambition and progress.\n\nOver the years, The Landmark 81 has gained recognition for its outstanding features. It offers a stunning sky view of the city, making it a favorite spot for visitors. Inside, it houses the largest indoor ice skating rink, providing fun and entertainment for all.\n\nThe building is also known for its luxury offerings and excellent amenities. It caters to those seeking a lavish living experience, ensuring they have everything they need for a comfortable and sophisticated lifestyle.",
         "image_url": "landmark81",
         "popular_activities": [
             "Observation Deck",
@@ -128,7 +128,7 @@
         "entrance_fee": "Free",
         "opening_hours": "6:00 AM - 6:00 PM",
         "short_description": "One of the earliest buildings in Vietnam and has been the icon of the city since then",
-        "full_description": "Ben Thanh Market, an age-old treasure of Vietnam, has graced our city for centuries, becoming an unforgettable symbol of Saigon. It holds a special place in the hearts of locals and tourists, leaving an impression that lingers on through time.",
+        "full_description": "Ben Thanh Market, an iconic landmark and bustling marketplace in the heart of Ho Chi Minh City, Vietnam, has been an integral part of the city's history and culture for centuries. This age-old treasure stands as a testament to the enduring spirit of the Vietnamese people and serves as a vibrant hub of commerce and cultural exchange.\n\nLocated at the intersection of Le Loi, Ham Nghi, Tran Hung Dao, and Le Lai streets, the market is easily recognizable by its striking clock tower, which has become a symbol of Saigon's dynamic energy. As the sun rises, the market comes alive with a flurry of activity, with vendors setting up their stalls and eager shoppers exploring the vast array of goods on display.\n\nBen Thanh Market offers a delightful sensory experience, with its vibrant colors, tantalizing aromas, and lively sounds. Inside, you'll find a treasure trove of local handicrafts, clothing, textiles, jewelry, souvenirs, and fresh produce. The market is divided into various sections, each specializing in different products, ensuring there's something for everyone.",
         "image_url": "chobenthanh",
         "popular_activities": [
             "Shopping",
@@ -179,7 +179,7 @@
             "chobenthanh5"
         ],
         "youtube_url": "https://www.youtube.com/watch?v=Q4ZANPEcsxM&ab_channel=TRAVELVIETNAM4K",
-        "website_url": ""
+        "website_url": "https://www.ben-thanh-market.com"
     },
     {
         "name": "War Remnants Museum",
@@ -193,7 +193,7 @@
         "entrance_fee": "40.000 VND",
         "opening_hours": "7:30 AM - 5:30 PM",
         "short_description": "A member of the International Network of Peace Museums",
-        "full_description": "The War Remnants Museum in Ho Chi Minh City offers a sobering glimpse into the Vietnam War's devastating impact. It stores a collection of artifacts, photographs, and exhibits that remind the war's atrocities and the resilience of the Vietnamese people. A visit to this museum serves as a powerful reminder of the importance of pursuing peace and understanding",
+        "full_description": "The War Remnants Museum, located in Ho Chi Minh City, Vietnam, stands as a poignant testament to the harrowing realities of the Vietnam War. Formerly known as the 'Exhibition House for US and Puppet Crimes' the museum is a must-visit for those seeking to understand the war's impact on Vietnam and its people.\n\nAs visitors step into the museum, they are immersed in a chronicle of the war's history, depicted through an extensive collection of photographs, artifacts, and exhibits. The photographs, captured by renowned war photographers, provide a haunting visual narrative of the war's atrocities, showcasing the human toll and the devastating effects on the lives of Vietnamese civilians and soldiers.",
         "image_url": "warmuseum",
         "popular_activities": [
             "History Exhibits",
@@ -251,7 +251,7 @@
         "entrance_fee": "Free",
         "opening_hours": "7:30 AM - 6:00 PM",
         "short_description": "An iconic French-inspired historical building in Saigon",
-        "full_description": "The Central Post Office in Saigon boasts an iconic French-inspired design, standing as a sign of Vietnam's colonial past. This historical building showcases a stunning architecture that transport visitors back in time. Serving as a functional post office and a popular tourist attraction, it offers a glimpse into the city's rich heritage and beauty",
+        "full_description": "As visitors step inside the Central Post Office, they are greeted by the soaring arched ceilings and the sight of the meticulously crafted interior. The large portrait of Ho Chi Minh, a beloved figure in Vietnam's history, adorns the walls, reminding everyone of the nation's resilience and unity. The post office's bustling atmosphere, filled with people mailing letters and packages, blends harmoniously with the whispers of history that echo through the halls. From the ornate telephone booths to the vintage maps and clocks, every corner tells a story of the past, creating a sense of wonder and nostalgia. The Central Post Office stands not only as a functional hub for communication but also as a timeless tribute to the enduring spirit of Saigon, preserving its heritage for generations to come.",
         "image_url": "postoffice",
         "popular_activities": [
             "Architecture",
@@ -327,7 +327,7 @@
         "entrance_fee": "700.000 VND",
         "opening_hours": "8:00 AM - 5:00 PM",
         "short_description": "Immerse yourself in a classical atmosphere amidst the modernity of Saigon",
-        "full_description": " The Saigon Opera House is a magnificent gem that embraces elegance and sophistication. Built in the late 19th century, it stands as a historic cultural landmark and hosts a myriad of captivating performances, from traditional Vietnamese opera to contemporary shows.",
+        "full_description": "The Saigon Opera House is a magnificent gem that embraces elegance and sophistication. Built in the late 19th century, it stands as a historic cultural landmark and hosts a myriad of captivating performances, from traditional Vietnamese opera to contemporary shows.\n\nWith its grand facade and ornate architecture, the Opera House exudes an air of timeless beauty, drawing art enthusiasts and curious onlookers alike. The stage inside becomes a canvas for artistic expressions, where tales of love, heroism, and drama come to life, leaving audiences spellbound. Whether you are a local or a traveler passing through, the Saigon Opera House invites you to immerse yourself in the magic of the performing arts, creating cherished memories that resonate long after the curtains close.",
         "image_url": "saigonoperahouse",
         "popular_activities": [
             "Architecture",
@@ -391,7 +391,7 @@
         "entrance_fee": "Free",
         "opening_hours": "24/7",
         "short_description": "A famous walking route within the heart of the city",
-        "full_description": "Nguyen Hue Walking Street is a vibrant and bustling pedestrian walking route. Lined with colorful flowers and modern sculptures, it offers a delightful ambiance for sightseeing and outdoor activities. This popular destination is a hub of cultural events, street performances, and other events, making it a must-visit spot for both locals and tourists. It never fails to mesmerize visitors with its lively atmosphere and captivating charm.",
+        "full_description": "Nguyen Hue Walking Street is a vibrant and bustling pedestrian promenade located in the heart of Ho Chi Minh City, Vietnam. Stretching from the iconic Saigon City Hall to the Saigon River, this picturesque street is a favorite gathering spot for both locals and tourists.\n\nThe walking street is named after Nguyen Hue, a famous Vietnamese military commander, and is a symbol of the city's rich history and culture. Lined with majestic trees and colorful flower beds, the street exudes a lively and welcoming ambiance. It serves as a central hub for various social activities and events, making it a popular destination for people of all ages.\n\nThroughout the day, Nguyen Hue Walking Street teems with activity. As the sun sets, the street comes alive with dazzling lights that illuminate the entire area, creating a magical atmosphere. Local artists and performers showcase their talents, entertaining the crowds with traditional music, dance performances, and other cultural displays.",
         "image_url": "walkingstreet",
         "popular_activities": [
             "Nightlife",
@@ -449,7 +449,7 @@
         "entrance_fee": "Free",
         "opening_hours": "6:00 AM - 7:00 PM",
         "short_description": "A noble symbol of Catholicism in Vietnam",
-        "full_description": "The Saigon Notre-Dame Cathedral acts as a significant symbol of Catholicism in Vietnam. Possessing a stunning design and unique sculptures, it continues to be a spiritual sanctuary for believers and a excellent sight for all visitors in Ho Chi Minh City.",
+        "full_description": "The Notre-Dame Cathedral Basilica of Saigon, located in the heart of Ho Chi Minh City (formerly known as Saigon), Vietnam, is an exquisite masterpiece of architecture and a significant religious landmark in the country. Also known as Saigon Notre-Dame Cathedral, it stands as a symbol of faith, history, and French colonial influence in Vietnam.\n\nConstructed between 1863 and 1880 during the French colonial period, the cathedral was inspired by the iconic Notre-Dame de Paris in France. Its imposing facade, built with red bricks brought from France, showcases twin bell towers that soar majestically into the sky, reaching a height of about 58 meters (190 feet). The exterior is adorned with beautiful sculptures and delicate stained glass windows, adding to its grandeur and allure.\n\nThroughout its history, the cathedral has witnessed significant events, including religious ceremonies, state functions, and moments of historical importance. It has stood as a witness to the changing tides of Vietnam's history and continues to be a place of prayer and worship for the Catholic community.",
         "image_url": "nhathoducba",
         "popular_activities": [
             "Architecture",
@@ -513,7 +513,7 @@
         "entrance_fee": "Free",
         "opening_hours": "24/7",
         "short_description": "Experience the vibrant nightlife of Saigon, a city that never sleeps",
-        "full_description": "Bui Vien Walking Street is a vibrant and bustling nightlife destination. It is famous for its lively atmosphere, lined with bars and pubs that cater for both locals and tourists. Visitors can immerse themselves in the energetic ambiance and enjoy a wide variety of cuisines. This place offers an memorable experience for those seeking to explore the city's nightlife.",
+        "full_description": "Bui Vien Walking Street, situated in the heart of Ho Chi Minh City's bustling District 1, is a vibrant and lively hub that offers an unforgettable experience for both locals and tourists alike. Stretching along Bui Vien Street and its adjacent alleys, this popular destination has earned its reputation as the 'backpacker's area' due to its appeal to international travelers seeking a taste of the city's vibrant nightlife and cultural diversity.\n\nAs the sun sets, Bui Vien Walking Street comes alive with a kaleidoscope of colors, sounds, and aromas. The street is lined with a plethora of restaurants, bars, cafes, and street food stalls, offering a delightful range of Vietnamese and international cuisines. From savoring the rich flavors of traditional pho and banh mi to indulging in Western dishes and exotic delicacies, there's something to tantalize every palate.",
         "image_url": "buivien",
         "popular_activities": [
             "Nightlife",
@@ -577,7 +577,7 @@
         "entrance_fee": "280.000 VND",
         "opening_hours": "8:30 AM - 6:00 PM",
         "short_description": "A famous water park in Ho Chi Minh City.",
-        "full_description": "Dam Sen Water Park is a renowned oasis of excitement and leisure in Ho Chi Minh City. Delight in a variety of water-based activities, including water slides, lazy rivers, and refreshing pools. Perfect for families and friend groups, it guarantees a memorable experience for all.",
+        "full_description": "Dam Sen Water Park is a cherished oasis of fun and relaxation nestled in the bustling city of Ho Chi Minh, Vietnam. A beloved destination for families, friends, and thrill-seekers, it promises an unforgettable experience filled with joy and excitement.\n\nAs you step into Dam Sen Water Park, you are greeted by a vibrant world of aquatic wonders. The park boasts a myriad of water-based activities, perfect for beating the tropical heat. Adventurers can indulge in thrilling water slides that twist and turn, offering heart-pounding moments of exhilaration. The lazy rivers gently carry visitors on a soothing journey through lush greenery, providing a tranquil escape from the city's hustle and bustle.\n\nThe refreshing pools at Dam Sen Water Park invite guests to dive into a refreshing aquatic paradise. Whether you're a skilled swimmer or just looking to relax, the pools cater to every preference. Families can splash around in the shallow areas, creating cherished memories with their little ones.",
         "image_url": "damsen",
         "popular_activities": [
             "Water Slides",
@@ -641,7 +641,7 @@
         "entrance_fee": "40.000 VND",
         "opening_hours": "7:30 AM - 5:00 PM",
         "short_description": "A symbol of peace and national unity",
-        "full_description": "The Independence Palace has always been one of the most aesthetically mesmerizing historical relics in Ho Chi Minh City, Vietnam. Its design blends the modern influences of the Western world with the solemnity of the Eastern countries. Everyday, this palace attracts hundreds of visitors, and it holds a special significance as a symbol of peace and national unity.",
+        "full_description": "Independence Palace, also known as Reunification Palace, is an iconic historical landmark situated in Ho Chi Minh City, Vietnam. It holds deep significance as the site where pivotal events in Vietnam's history unfolded, leading to the reunification of North and South Vietnam.\n\nOriginally constructed as the Norodom Palace during the French colonial era, the building's construction began in 1868 and was completed in 1873. However, the palace underwent significant renovations and expansions in the following years, culminating in its current form, which was completed in 1966.\n\nThe architecture of Independence Palace blends modernist elements with traditional Vietnamese design, creating a unique and captivating visual appeal. The sprawling compound features spacious gardens, elegant corridors, and ceremonial halls, exuding a sense of grandeur and authority.",
         "image_url": "dinhdoclap",
         "popular_activities": [
             "Architecture",
@@ -705,7 +705,7 @@
         "entrance_fee": "Free",
         "opening_hours": "8:00 AM - 10:00 PM",
         "short_description": "A dream destination for book enthusiasts",
-        "full_description": "Saigon Central Book Street is a dream destination for book enthusiasts, offering an array of bookshops and stalls. From classic novels to modern bestsellers, this vibrant street has it all. The street is a cultural hub, hosting events, book fairs, and signings. With its charming atmosphere and love for literature, it is a must-visit spot for all book lovers.",
+        "full_description": "Central Book Street, a literary haven nestled in the heart of the city, is a beloved destination for book enthusiasts and casual readers alike. Located in the bustling downtown area, this enchanting street is dedicated to the world of books, fostering a vibrant literary culture and celebrating the written word.\n\nLined with charming bookshops, cozy cafes, and inviting reading corners, Central Book Street offers a unique and immersive experience for bibliophiles. As you stroll along the cobblestone pathways, the rich aroma of freshly printed books fills the air, enticing you to explore the treasures that lie within.\n\nAt the heart of Central Book Street, a picturesque square serves as a hub of cultural activities and book-related events. Authors' book signings, poetry readings, and book fairs are just a few of the enchanting happenings that breathe life into this literary oasis.",
         "image_url": "bookstreet",
         "popular_activities": [
             "Book Shopping",
@@ -763,7 +763,7 @@
         "entrance_fee": "50.000 VND",
         "opening_hours": "7:00 AM - 5:30 PM",
         "short_description": "An oasis of nature in the heart of the city",
-        "full_description": "Saigon Zoo and Botanical Gardens is a green area located in the heart of Ho Chi Minh City. Established in 1865, it is one of the oldest zoos in the world. The zoo boasts a diverse collection of animals and a beautiful botanical garden with various plant species. It provides a serene destination for families and nature lovers.",
+        "full_description": "Saigon Zoo and Botanical Garden, nestled in the heart of Ho Chi Minh City, Vietnam, is a captivating oasis of natural beauty and wildlife wonders. Established in 1865, it holds the distinction of being the oldest zoo in the country and has since become a beloved destination for locals and tourists seeking a respite from the bustling city.\n\nSpread across a sprawling expanse, the zoo and botanical garden offer a delightful escape into the wonders of the animal kingdom and the lush embrace of nature. As you wander through its verdant pathways, you are greeted by a diverse array of flora and fauna, showcasing the rich biodiversity of Vietnam and beyond.\n\nThe botanical garden enchants visitors with its carefully curated collection of plants, trees, and flowers from various regions, creating a mesmerizing tapestry of colors and fragrances. Rare and exotic species coexist alongside native plants, creating a harmonious sanctuary for nature enthusiasts and botany aficionados.",
         "image_url": "saigonzoo",
         "popular_activities": [
             "Animal Watching",
@@ -839,7 +839,7 @@
         "entrance_fee": "30.000 VND",
         "opening_hours": "8:00 AM - 5:00 PM",
         "short_description": "An exquisite collection of artistic masterpieces",
-        "full_description": "The Ho Chi Minh City Museum of Fine Arts houses a remarkable collection of masterpieces, showcasing both traditional and contemporary Vietnamese art. The museum exhibits a wide range of items, from paintings and sculptures to ceramics. Art enthusiasts will appreciate the cultural treasures found within its walls.",
+        "full_description": "The Ho Chi Minh City Museum of Fine Arts, situated in the heart of bustling Ho Chi Minh City, Vietnam, is a cultural gem that showcases the country's rich artistic heritage. Housed in an elegant colonial-era building, the museum itself is a work of art and a testament to the city's historical charm.\n\nUpon entering the museum, visitors are greeted with a diverse collection of artworks spanning various periods, styles, and mediums. From traditional Vietnamese paintings, sculptures, and lacquerware to contemporary art and modern installations, the museum offers a comprehensive and immersive journey through the evolution of Vietnamese art.\n\nThe museum's exhibits provide a glimpse into the country's artistic traditions, reflecting its cultural diversity and the fusion of Eastern and Western influences. Visitors can marvel at intricate silk paintings depicting scenes of daily life, ancient ceramics adorned with exquisite patterns, and delicate woodcarvings that showcase the skill of Vietnamese artisans.",
         "image_url": "finearts",
         "popular_activities": [
             "Art Appreciation",
@@ -903,7 +903,7 @@
         "entrance_fee": "30.000 VND",
         "opening_hours": "8:00 AM - 5:00 PM",
         "short_description": "A journey through Vietnam's fascinating history",
-        "full_description": "The History Museum in Ho Chi Minh City offers visitors a journey through Vietnam's rich history. From prehistoric times to the modern era, the museum showcases various artifacts, relics, and cultural objects that reflect the country's rich heritage. History enthusiasts and curious travelers will find this museum an enlightening and educational experience.",
+        "full_description": "The History Museum of Ho Chi Minh City, located in the heart of Vietnam's bustling metropolis, is a treasure trove of the nation's rich heritage and storied past. Housed within a grand neoclassical building that reflects its historical significance, the museum stands as a gateway to understanding the cultural evolution of this vibrant city and the entire country.\n\nThe museum's extensive collection spans thousands of years, showcasing artifacts and exhibits that highlight Vietnam's diverse history, from its ancient civilizations to the modern era. Visitors are taken on a captivating journey through time, exploring the rise and fall of dynasties, the influence of various cultures, and the resilience of the Vietnamese people.",
         "image_url": "historymuseum",
         "popular_activities": [
             "Historical Exhibits",
@@ -967,7 +967,7 @@
         "entrance_fee": "Free",
         "opening_hours": "5:00 AM - 8:00 PM",
         "short_description": "The oldest pagoda in Ho Chi Minh City",
-        "full_description": "Giac Lam Pagoda is the oldest pagoda in Ho Chi Minh City, dating back to the early 18th century. This spiritual landmark is renowned for its impressive architecture, featuring a mix of Chinese, Vietnamese, and Khmer influences. Visitors will find tranquility and a sense of history while exploring the pagoda's halls and beautiful gardens.",
+        "full_description": "Giac Lam Pagoda, an ancient and revered Buddhist temple, is a cultural and spiritual gem nestled within the bustling city of Ho Chi Minh City, Vietnam. With its origins dating back over three centuries, it stands as one of the oldest and most significant pagodas in the region, holding a cherished place in the hearts of locals and pilgrims alike.\n\nLocated in the Tan Binh District, the pagoda's serene and inviting atmosphere offers a respite from the urban clamor, providing a tranquil sanctuary for contemplation and prayer. As you approach the entrance, the intricate gate and imposing stone pillars welcome you into this sacred realm, where the essence of Buddhism permeates the air.\n\nThe pagoda's architectural design follows a blend of Chinese and Vietnamese influences, showcasing a distinctive blend of cultural traditions. Its ornate and colorful facade features splendidly crafted carvings and statues of Buddhist deities, dragons, and mythical creatures, each contributing to the pagoda's allure.",
         "image_url": "giaclam",
         "popular_activities": [
             "Religious Visits",
@@ -1025,7 +1025,7 @@
         "entrance_fee": "Free",
         "opening_hours": "10:00 AM - 10:00 PM",
         "short_description": "A modern shopping, dining and entertainment complex",
-        "full_description": "Crescent Mall is a popular destination located in District 7. The mall houses a wide variety of stores, boutiques, and international brands, making it a favorite places for shoppers. In addition to shopping, visitors can also enjoy dining at various restaurants, watching movies at the cinema, and participating in fun events and activities.",
+        "full_description": "A bustling destination that caters to the diverse needs and desires of locals and tourists alike. Situated in the Phu My Hung urban area, Crescent Mall has become an iconic landmark, drawing shoppers from all corners of the city.\n\nAs you step inside, you are greeted with a contemporary and spacious interior, designed to provide a pleasant and comfortable shopping experience. The mall boasts a wide array of retail stores, offering everything from high-end fashion brands to popular international and local labels. Fashion enthusiasts can explore the latest trends and styles, while those seeking unique souvenirs can find a variety of specialty shops.\n\nBeyond fashion, Crescent Mall is a haven for food lovers. Its extensive food court and a variety of restaurants offer a diverse range of cuisines, ranging from traditional Vietnamese delicacies to international flavors. Visitors can indulge in mouthwatering dishes while relishing the vibrant atmosphere of the mall.",
         "image_url": "crescentmall",
         "popular_activities": [
             "Shopping",
@@ -1088,7 +1088,7 @@
         "entrance_fee": "Free",
         "opening_hours": "6:00 AM - 9:00 PM",
         "short_description": "A great place to enjoy the fresh air and rewind",
-        "full_description": "Tao Dan Park is a green oasis located in the heart of Ho Chi Minh City. The park is a favorite spot for locals and visitors alike to relax, exercise, and enjoy the tranquility within the bustling city. It features beautiful gardens, walking paths, exercising equiments and lots of tropical trees, creating a peaceful environment for leisure activities.",
+        "full_description": "Tao Dan Park, a lush urban oasis nestled in the heart of Ho Chi Minh City, Vietnam, is a beloved green sanctuary that offers respite from the bustling city life. Spanning over 10 hectares, the park serves as a haven for locals and visitors alike, drawing people of all ages to its serene and picturesque surroundings.\n\nAs you enter the park, you are greeted by a canopy of towering trees and a symphony of chirping birds, creating a soothing atmosphere that instantly transports you away from the urban chaos. The well-maintained pathways wind their way through the park, inviting visitors to take leisurely strolls, jog, or simply enjoy a moment of tranquility amid nature's embrace.\n\nTao Dan Park is a place of gathering and social interaction. In the early morning, you will find groups of people practicing tai chi, yoga, or other forms of exercise, fostering a sense of community and wellness. As the day progresses, families and friends converge to enjoy picnics, play games, or engage in various recreational activities.",
         "image_url": "taodanpark",
         "popular_activities": [
             "Relaxation",
