@@ -71,16 +71,16 @@
 		AB5A54352A69A5FE00169B2D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E1882ACD2A766DC900176201 /* MapView.swift */,
+				E19BCE342A77B57300432AE0 /* SplashView.swift */,
 				E1882ACF2A766E6400176201 /* WelcomeView.swift */,
 				E1882ABB2A76462800176201 /* PlaceCardView.swift */,
 				E1882AC12A76462E00176201 /* SmallPlaceCardView.swift */,
 				E1882ABF2A76462D00176201 /* PlaceView.swift */,
 				E1882ABD2A76462B00176201 /* PlaceDetailView.swift */,
 				E1882AC32A76463500176201 /* EventCardView.swift */,
-				E19BCE342A77B57300432AE0 /* SplashView.swift */,
 				E1882AC72A76463B00176201 /* EventView.swift */,
 				E1882AC52A76463900176201 /* EventDetailView.swift */,
+				E1882ACD2A766DC900176201 /* MapView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
